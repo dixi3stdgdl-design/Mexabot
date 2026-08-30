@@ -1,0 +1,14 @@
+{
+  "appId": "com.mexabot.ai",
+  "appName": "MexaBot",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}
