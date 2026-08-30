@@ -3,628 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEXABOT — Protocolo de Instalación Determinista & Orquestación de Agentes</title>
-    <meta name="description" content="Guía de arquitectura e instalación determinista de OpenClaw y MEXABOT. Requisitos de cómputo, emparejamiento por Enlace Móvil / USB Debugging y despliegue empresarial seguro.">
-    <!-- Google Fonts Minimalist Tech -->
+    <title>MEXABOT — Neural Command OS & Despliegue Autónomo</title>
+    <meta name="description" content="Centro de mando neural para desplegar agentes autónomos de WhatsApp en Windows y móviles con OpenClaw.">
+    <!-- Google Fonts Avant-Garde Futuristic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="minimal-dark">
-    <!-- Top Progress Subtle Border -->
-    <div class="top-nav-border"></div>
+<body class="deck-os">
+    <!-- Matrix Grid & Ambient HUD -->
+    <div class="hud-grid-background"></div>
+    <div class="hud-scanline"></div>
+    <div class="floating-hud-coords">SYS.LOC // 20.6597° N, 103.3496° W [MEXABOT-OS v4.2]</div>
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="brand">
-                <div class="brand-monogram">M</div>
-                <div class="brand-meta">
-                    <span class="brand-name">MEXABOT</span>
-                    <span class="brand-tag">DETERMINISTIC SUITE</span>
-                </div>
+    <!-- HUD Control Topbar -->
+    <header class="hud-topbar">
+        <div class="hud-topbar-left">
+            <div class="claw-emblem">
+                <span class="emblem-core"></span>
             </div>
-
-            <nav class="nav-links">
-                <a href="#pipeline" class="nav-link">Pipeline de Instalación</a>
-                <a href="#computo" class="nav-link">Capacidad de Cómputo</a>
-                <a href="#hardware" class="nav-link">Enlace Móvil & USB</a>
-                <a href="#marketplace" class="nav-link">Planes & Modelos</a>
-                <a href="#despliegue-visual" class="nav-link">Orquestador</a>
-                <a href="#sandbox" class="nav-link">Simulador</a>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="#pipeline" class="btn btn-secondary btn-sm">Ver Requisitos</a>
-                <a href="https://github.com/dixi3stdgdl-design/Mexabot" target="_blank" class="btn btn-primary btn-sm">
-                    <i data-lucide="github"></i> Repositorio
-                </a>
+            <div class="hud-title-block">
+                <span class="hud-brand-title">MEXABOT<span class="accent-dot">.</span>AI</span>
+                <span class="hud-status-chip"><span class="chip-dot"></span> GATEWAY ONLINE :18789</span>
             </div>
+        </div>
+
+        <!-- Live Metrics HUD -->
+        <div class="hud-telemetry">
+            <div class="telemetry-node">
+                <span class="node-label">INFERENCIA</span>
+                <span class="node-val highlight-blue">GEMINI FLASH</span>
+            </div>
+            <div class="telemetry-node">
+                <span class="node-label">SOCKET WHATSAPP</span>
+                <span class="node-val highlight-green">ACTIVO // LINK</span>
+            </div>
+            <div class="telemetry-node">
+                <span class="node-label">CONCURRENCIA</span>
+                <span class="node-val highlight-purple">MULTI-THREAD</span>
+            </div>
+        </div>
+
+        <div class="hud-topbar-right">
+            <a href="#command-center" class="hud-btn hud-btn-primary">
+                <i data-lucide="terminal"></i> CONSOLA DE MANDO
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section con Arte Fotorealista (Creación de Adán Reinterpretada) -->
-    <section class="hero-section">
-        <div class="hero-backdrop-wrapper">
-            <img src="hero-creation-claw.jpg" alt="La Creación de la Inteligencia: Mano humana y garra robótica" class="hero-bg-img">
-            <div class="hero-gradient-mask"></div>
-        </div>
+    <!-- Master Stage: HUD Command Deck -->
+    <main class="hud-master-deck">
+        
+        <!-- Hero HUD Canvas: La Creación de la Inteligencia -->
+        <section class="hud-panel hero-deck-panel">
+            <div class="panel-hud-corner corner-tl"></div>
+            <div class="panel-hud-corner corner-tr"></div>
+            <div class="panel-hud-corner corner-bl"></div>
+            <div class="panel-hud-corner corner-br"></div>
 
-        <div class="hero-container">
-            <div class="status-pill">
-                <span class="status-indicator-dot"></span>
-                <span>DESPLIEGUE DETERMINISTA • ENLACE MÓVIL PC • CERO IMPROVISACIÓN</span>
-            </div>
-
-            <h1 class="hero-heading">
-                Instalación guiada sin improvisaciones: <span class="highlight-text">tu agente en WhatsApp paso a paso</span>.
-            </h1>
-
-            <p class="hero-lead">
-                Sin dependencias fantasma ni errores de consola. Un proceso transparente que prepara tu entorno de Windows con OpenClaw, vincula tu smartphone por Enlace Móvil o Depuración USB y activa la IA con máxima estabilidad operativa.
-            </p>
-
-            <div class="hero-actions">
-                <button class="btn btn-primary btn-lg" onclick="scrollToSection('pipeline')">
-                    <i data-lucide="cpu"></i> Ver Protocolo de Instalación Paso a Paso
-                </button>
-                <button class="btn btn-outline btn-lg" onclick="scrollToSection('computo')">
-                    <i data-lucide="server"></i> Matriz de Capacidad de Cómputo
-                </button>
-            </div>
-
-            <!-- Value Pillars -->
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="check-shield"></i></div>
-                    <h3>Instalación 100% Determinista</h3>
-                    <p>El instalador automatizado descarga OpenClaw y activa ClawBoard en PC Manager sin requerir comandos manuales.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="smartphone"></i></div>
-                    <h3>Emparejamiento de Hardware</h3>
-                    <p>Conexión directa vía Enlace Móvil (Windows Phone Link) o USB con Depuración ADB para una tasa de éxito de 99.8%.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="lock"></i></div>
-                    <h3>Aislamiento y Seguridad</h3>
-                    <p>Inyección de credenciales por variables de entorno de sistema, eliminando bloqueos de SQLite y fugas de datos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pipeline de Instalación Determinista Paso a Paso -->
-    <section id="pipeline" class="section">
-        <div class="section-header">
-            <span class="section-kicker">PROTOCOLO ESTÁNDAR DE DESPLIEGUE</span>
-            <h2 class="section-title">El Camino Seguro: Cómo Cobra Vida tu Asistente</h2>
-            <p class="section-subtitle">El sistema no inventa dependencias ni requiere que seas programador. Sigue este orden estructurado.</p>
-        </div>
-
-        <div class="steps-flow-container">
-            <!-- Paso 1 -->
-            <div class="flow-step-card">
-                <div class="step-num-badge">FASE 01</div>
-                <div class="flow-icon"><i data-lucide="download-cloud"></i></div>
-                <h3>1. Selección de Plan y Descarga Base</h3>
-                <p>Eliges el plan según el volumen de tu negocio. La suite descarga el paquete certificado de <strong>OpenClaw</strong> y configura el runtime de Node.js en WSL/Windows de forma desatendida.</p>
-                <div class="step-meta-tag">Descarga Certificada</div>
-            </div>
-
-            <!-- Paso 2 -->
-            <div class="flow-step-card">
-                <div class="step-num-badge">FASE 02</div>
-                <div class="flow-icon"><i data-lucide="sliders"></i></div>
-                <h3>2. Activación de ClawBoard en PC Manager</h3>
-                <p>El instalador interactúa con el gestor de sistema para habilitar el servicio <strong>ClawBoard / OpenClaw Gateway</strong> en el puerto local <code>18789</code> con arranque automático.</p>
-                <div class="step-meta-tag">Gateway de Sistema</div>
-            </div>
-
-            <!-- Paso 3 -->
-            <div class="flow-step-card highlight-step">
-                <div class="step-num-badge">FASE 03</div>
-                <div class="flow-icon"><i data-lucide="cable"></i></div>
-                <h3>3. Vinculación de Dispositivo Móvil</h3>
-                <p>Para garantizar que los mensajes no se pierdan, se empareja el smartphone con Windows mediante <strong>Enlace Móvil (Phone Link)</strong> o conexión USB con Depuración.</p>
-                <div class="step-meta-tag success">Máxima Estabilidad (99.8%)</div>
-            </div>
-
-            <!-- Paso 4 -->
-            <div class="flow-step-card">
-                <div class="step-num-badge">FASE 04</div>
-                <div class="flow-icon"><i data-lucide="key"></i></div>
-                <h3>4. Inyección de Reglas & API Key</h3>
-                <p>Se inyecta la clave de Gemini a nivel de variables de entorno de sistema (<code>env.GEMINI_API_KEY</code>) y se compila el archivo <code>SOUL.md</code> con el arquetipo seleccionado.</p>
-                <div class="step-meta-tag">Entorno Seguro</div>
-            </div>
-
-            <!-- Paso 5 -->
-            <div class="flow-step-card">
-                <div class="step-num-badge">FASE 05</div>
-                <div class="flow-icon"><i data-lucide="play-circle"></i></div>
-                <h3>5. Verificación & Pruebas en Vivo</h3>
-                <p>El bot realiza una prueba de eco y queda activo en WhatsApp Business, listo para atender a clientes 24/7 con traspaso asistido a humanos.</p>
-                <div class="step-meta-tag">Producción Activa</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Matriz de Capacidad de Cómputo e Infraestructura -->
-    <section id="computo" class="section bg-elevated">
-        <div class="section-header">
-            <span class="section-kicker">DIMENSIONAMIENTO DE HARDWARE & NUBE</span>
-            <h2 class="section-title">Requisitos de Capacidad de Cómputo por Volumen</h2>
-            <p class="section-subtitle">Tener un asistente para un equipo pequeño no requiere los mismos recursos que un bot para miles de clientes simultáneos.</p>
-        </div>
-
-        <div class="compute-matrix-grid">
-            <!-- Tier 1: Micro / Profesional -->
-            <div class="compute-card">
-                <div class="tier-badge">TIER 01: PROFESIONAL / PYME</div>
-                <div class="tier-capacity">1 a 10 Usuarios / Equipo</div>
-                <h3 class="tier-name">Plan Starter Local</h3>
-                <p class="tier-summary">Ideal para profesionistas independientes, consultorios o despachos pequeños con atención local.</p>
-                
-                <div class="tier-specs">
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="cpu"></i> Hardware Mínimo:</span>
-                        <span class="spec-val">PC con 4 Cores / 8 GB RAM</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
-                        <span class="spec-val">10 GB SSD libres</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
-                        <span class="spec-val">Hasta 5 chats simultáneos</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
-                        <span class="spec-val">Gemini 3.5 Flash Lite</span>
-                    </div>
-                </div>
-
-                <div class="tier-note">
-                    <strong>Despliegue:</strong> Corre en la PC del usuario dentro de WSL/Windows con la app local de OpenClaw.
+            <div class="hero-art-viewport">
+                <img src="hero-creation-claw.jpg" alt="La Creación de la Inteligencia: Contacto Humano y Garra Robótica" class="art-img-layer">
+                <div class="art-hologram-overlay"></div>
+                <div class="hud-crosshair center-crosshair">
+                    <span class="crosshair-label">CONTACTO // ENERGÍA NEURAL</span>
                 </div>
             </div>
 
-            <!-- Tier 2: Empresa Mediana -->
-            <div class="compute-card featured-tier">
-                <div class="tier-badge popular">TIER 02: MEDIANA EMPRESA</div>
-                <div class="tier-capacity">10 a 100 Colaboradores / Clientes</div>
-                <h3 class="tier-name">Plan Pro Dedicado</h3>
-                <p class="tier-summary">Diseñado para comercios, inmobiliarias o empresas de servicios con flujo continuo de prospectos.</p>
-                
-                <div class="tier-specs">
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="cpu"></i> Hardware / VPS:</span>
-                        <span class="spec-val">8 Cores vCPU / 16 GB RAM</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
-                        <span class="spec-val">50 GB NVMe SSD</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
-                        <span class="spec-val">Hasta 50 chats simultáneos</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
-                        <span class="spec-val">Gemini 3.5 Flash + RAG Docs</span>
-                    </div>
+            <div class="hero-control-overlay">
+                <div class="hud-kicker-tag">
+                    <i data-lucide="zap"></i> PROTOCOLO DE DESPLIEGUE DETERMINISTA
                 </div>
-
-                <div class="tier-note">
-                    <strong>Despliegue:</strong> Servidor VPS Windows/Linux 24/7 o PC dedicada conectada permanentemente.
-                </div>
-            </div>
-
-            <!-- Tier 3: Corporativo / Alto Volumen -->
-            <div class="compute-card">
-                <div class="tier-badge">TIER 03: CORPORACIÓN</div>
-                <div class="tier-capacity">1,000+ Usuarios / Tráfico Masivo</div>
-                <h3 class="tier-name">Plan Enterprise Cloud</h3>
-                <p class="tier-summary">Para cadenas comerciales, bancos, aseguradoras o atención masiva omni-canal.</p>
-                
-                <div class="tier-specs">
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="cpu"></i> Infraestructura:</span>
-                        <span class="spec-val">Cluster Cloud Escalable (Kubernetes)</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
-                        <span class="spec-val">PostgreSQL / Vector DB Distribuida</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
-                        <span class="spec-val">1,000+ chats concurrentes</span>
-                    </div>
-                    <div class="spec-row">
-                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
-                        <span class="spec-val">Gemini 3.5 Pro + Balanceador</span>
-                    </div>
-                </div>
-
-                <div class="tier-note">
-                    <strong>Despliegue:</strong> WhatsApp Business Cloud API oficial con SLAs empresariales del 99.99%.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guía de Hardware: Enlace Móvil y Depuración USB -->
-    <section id="hardware" class="section">
-        <div class="section-header">
-            <span class="section-kicker">PRÁCTICAS DE MÁXIMA EFECTIVIDAD</span>
-            <h2 class="section-title">Recomendaciones de Conexión de Hardware</h2>
-            <p class="section-subtitle">La diferencia entre un bot que se desconecta al bloquearse la pantalla y uno que opera con 99.8% de disponibilidad.</p>
-        </div>
-
-        <div class="hardware-grid">
-            <!-- Opción A: Enlace Móvil -->
-            <div class="hardware-card">
-                <div class="hw-header">
-                    <div class="hw-icon"><i data-lucide="link"></i></div>
-                    <div>
-                        <h3>Método 1: Enlace Móvil de Windows (Phone Link)</h3>
-                        <span class="hw-status-tag recommended">Recomendado para Uso Diario</span>
-                    </div>
-                </div>
-                <p class="hw-desc">
-                    Vincula tu teléfono Android o iOS directamente con la app nativa de Windows. Esto mantiene el socket de notificaciones activo en segundo plano sin cerrar la sesión de WhatsApp Web.
+                <h1 class="glitch-title" data-text="LA CREACIÓN DEL ASISTENTE AUTÓNOMO">
+                    LA CREACIÓN DEL <br>
+                    <span class="holo-text">ASISTENTE AUTÓNOMO</span>
+                </h1>
+                <p class="hero-pitch">
+                    Transforma tu WhatsApp en una central de ventas, agendamiento y atención automatizada sin programar una sola línea. OpenClaw se instala, activa ClawBoard en tu PC y se enlaza con tu móvil en un entorno visual en primer plano.
                 </p>
-                <div class="checklist">
-                    <div class="check-item"><i data-lucide="check"></i> <span>Tener instalada la app "Enlace a Windows" en tu smartphone.</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Escanear el código QR en la app "Enlace Móvil" de Windows 10/11.</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Permitir permisos de "Ejecución en segundo plano sin restricciones".</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Mantener la PC y el móvil conectados a la misma red Wi-Fi o datos estables.</span></div>
+
+                <div class="hero-deck-actions">
+                    <button class="hud-btn hud-btn-action" onclick="scrollToSection('command-center')">
+                        <i data-lucide="play"></i> ABRIR TERMINAL DE DESPLIEGUE
+                    </button>
+                    <button class="hud-btn hud-btn-hollow" onclick="scrollToSection('marketplace-grid')">
+                        <i data-lucide="cpu"></i> MARKETPLACE DE ARQUETIPOS
+                    </button>
                 </div>
             </div>
+        </section>
 
-            <!-- Opción B: USB Debugging -->
-            <div class="hardware-card">
-                <div class="hw-header">
-                    <div class="hw-icon"><i data-lucide="cable"></i></div>
-                    <div>
-                        <h3>Método 2: Conexión USB con Depuración (ADB Mode)</h3>
-                        <span class="hw-status-tag expert">Para Máxima Estabilidad (99.8%)</span>
+        <!-- Command Deck Layout: Orquestador & Mobile Sandbox -->
+        <section id="command-center" class="hud-deck-row">
+            
+            <!-- Left Console: Interactive Configuration & Orchestrator -->
+            <div class="hud-panel console-deck">
+                <div class="deck-header">
+                    <div class="deck-title">
+                        <i data-lucide="sliders-horizontal"></i>
+                        <span>CENTRAL DE ORQUESTACIÓN DETERMINISTA</span>
                     </div>
+                    <span class="deck-id">NODE_ID // 0x7F9A</span>
                 </div>
-                <p class="hw-desc">
-                    Conectar el smartphone a la PC mediante cable USB con el modo de depuración activado evita que el sistema operativo del teléfono mate el proceso de WhatsApp por ahorro de energía.
-                </p>
-                <div class="checklist">
-                    <div class="check-item"><i data-lucide="check"></i> <span>Activar "Opciones de Desarrollador" en Ajustes del teléfono (pulsar 7 veces el Número de Compilación).</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Encender la casilla <strong>"Depuración por USB"</strong>.</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Conectar el cable USB a la PC y marcar "Permitir siempre desde este equipo".</span></div>
-                    <div class="check-item"><i data-lucide="check"></i> <span>Desactivar la "Optimización de batería" específicamente para WhatsApp.</span></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Warning / Tip Alert -->
-        <div class="pro-tip-box">
-            <div class="tip-icon"><i data-lucide="lightbulb"></i></div>
-            <div class="tip-content">
-                <h4>Regla de Oro para Evitar Desconexiones:</h4>
-                <p>Los teléfonos modernos suspenden las conexiones Wi-Fi en reposo para ahorrar batería. Al activar el modo USB o Enlace Móvil con permisos sin restricciones, garantizas que cada mensaje de un cliente despierte al bot de inmediato.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketplace de Modelos -->
-    <section id="marketplace" class="section bg-elevated">
-        <div class="section-header">
-            <span class="section-kicker">CATÁLOGO DE ASISTENTES</span>
-            <h2 class="section-title">Arquetipos Especializados para Negocios</h2>
-            <p class="section-subtitle">Plantillas pre-configuradas listas para ser cargadas en tu asistente.</p>
-        </div>
-
-        <div class="marketplace-grid">
-            <!-- Arquetipo 1: Ventas -->
-            <div class="agent-card featured" onclick="selectAgent('sales')">
-                <div class="agent-badge">RECOMENDADO PARA NEGOCIOS</div>
-                <div class="agent-header">
-                    <div class="agent-icon-wrapper sales-theme">
-                        <i data-lucide="trending-up"></i>
-                    </div>
-                    <div>
-                        <h3 class="agent-name">Aura — Cierre Comercial</h3>
-                        <span class="agent-channel">Canal: WhatsApp Business</span>
-                    </div>
-                </div>
-                <p class="agent-description">
-                    Especializada en capturar prospectos, responder dudas sobre servicios, generar cotizaciones dinámicas y guiar al cliente hacia la compra.
-                </p>
-                <ul class="agent-spec-list">
-                    <li><i data-lucide="check"></i> Calificación automática de prospectos B2B/B2C</li>
-                    <li><i data-lucide="check"></i> Manejo de objeciones y presupuestos</li>
-                    <li><i data-lucide="check"></i> Formato de respuesta breve de 2-4 líneas</li>
-                </ul>
-                <div class="agent-card-footer">
-                    <button class="btn btn-primary btn-sm btn-full">Seleccionar para Despliegue</button>
-                </div>
-            </div>
-
-            <!-- Arquetipo 2: Agendador -->
-            <div class="agent-card" onclick="selectAgent('calendar')">
-                <div class="agent-header">
-                    <div class="agent-icon-wrapper calendar-theme">
-                        <i data-lucide="calendar"></i>
-                    </div>
-                    <div>
-                        <h3 class="agent-name">Cronos — Recepción & Citas</h3>
-                        <span class="agent-channel">Canal: WhatsApp & Cal.com</span>
-                    </div>
-                </div>
-                <p class="agent-description">
-                    Coordina agendas en tiempo real, verifica disponibilidad de consultorios o despachos y envía recordatorios automáticos.
-                </p>
-                <ul class="agent-spec-list">
-                    <li><i data-lucide="check"></i> Sincronización con Google Calendar / Cal.com</li>
-                    <li><i data-lucide="check"></i> Confirmación y reprogramación sin fricción</li>
-                    <li><i data-lucide="check"></i> Reducción drástica de inasistencias</li>
-                </ul>
-                <div class="agent-card-footer">
-                    <button class="btn btn-secondary btn-sm btn-full">Seleccionar para Despliegue</button>
-                </div>
-            </div>
-
-            <!-- Arquetipo 3: Soporte -->
-            <div class="agent-card" onclick="selectAgent('support')">
-                <div class="agent-header">
-                    <div class="agent-icon-wrapper support-theme">
-                        <i data-lucide="shield-alert"></i>
-                    </div>
-                    <div>
-                        <h3 class="agent-name">Atlas — Helpdesk Corporativo</h3>
-                        <span class="agent-channel">Canal: WhatsApp & Telegram</span>
-                    </div>
-                </div>
-                <p class="agent-description">
-                    Entrenado sobre manuales de políticas y documentos técnicos para brindar soporte 24/7 sin inventar respuestas.
-                </p>
-                <ul class="agent-spec-list">
-                    <li><i data-lucide="check"></i> Base de conocimiento documental estricta</li>
-                    <li><i data-lucide="check"></i> Traspaso ordenado a soporte humano</li>
-                    <li><i data-lucide="check"></i> Respuestas certeras basadas en fuentes oficiales</li>
-                </ul>
-                <div class="agent-card-footer">
-                    <button class="btn btn-secondary btn-sm btn-full">Seleccionar para Despliegue</button>
-                </div>
-            </div>
-
-            <!-- Arquetipo 4: Ejecutivo -->
-            <div class="agent-card" onclick="selectAgent('executive')">
-                <div class="agent-header">
-                    <div class="agent-icon-wrapper executive-theme">
-                        <i data-lucide="briefcase"></i>
-                    </div>
-                    <div>
-                        <h3 class="agent-name">Nova — Asistente Ejecutivo</h3>
-                        <span class="agent-channel">Canal: WhatsApp Personal</span>
-                    </div>
-                </div>
-                <p class="agent-description">
-                    Copiloto diario de productividad: extrae tareas de mensajes de voz, resume hilos de conversación y redacta minutas.
-                </p>
-                <ul class="agent-spec-list">
-                    <li><i data-lucide="check"></i> Transcripción y síntesis de notas de voz</li>
-                    <li><i data-lucide="check"></i> Organización y priorización de pendientes</li>
-                    <li><i data-lucide="check"></i> Redacción de borradores ejecutivos</li>
-                </ul>
-                <div class="agent-card-footer">
-                    <button class="btn btn-secondary btn-sm btn-full">Seleccionar para Despliegue</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Orquestación Visual en Vivo -->
-    <section id="despliegue-visual" class="section">
-        <div class="section-header">
-            <span class="section-kicker">EXPERIENCIA DE INSTALACIÓN GUIADA</span>
-            <h2 class="section-title">Orquestador Visual de Asistentes</h2>
-            <p class="section-subtitle">Configura los parámetros esenciales y observa cómo el sistema construye la identidad, inyecta las credenciales y enlaza el canal.</p>
-        </div>
-
-        <div class="orchestrator-box">
-            <!-- Formulario Parámetros -->
-            <div class="orchestrator-form-side">
-                <div class="box-title">
-                    <i data-lucide="sliders"></i>
-                    <span>Parámetros de Configuración</span>
-                </div>
-                <form id="agent-config-form" onsubmit="startLiveOrchestration(event)">
-                    <div class="form-group">
-                        <label for="biz-name">Nombre de la Empresa o Profesional</label>
-                        <input type="text" id="biz-name" class="minimal-input" value="Consultoría Integral Mexa" placeholder="Ej. Soluciones Legales Gómez" required>
+                <form id="agent-config-form" onsubmit="startLiveOrchestration(event)" class="hud-form">
+                    <div class="hud-input-row">
+                        <div class="hud-field">
+                            <label>IDENTIFICADOR DE EMPRESA / MARCA</label>
+                            <input type="text" id="biz-name" class="hud-input" value="Consultoría Integral Mexa" placeholder="Ej. Soluciones Legales Gómez" required>
+                        </div>
+                        <div class="hud-field">
+                            <label>NÚMERO WHATSAPP DESTINO</label>
+                            <input type="text" id="biz-phone" class="hud-input" value="+52 55 1234 5678" placeholder="+52 55 0000 0000" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="biz-phone">Número de WhatsApp Vinculado</label>
-                        <input type="text" id="biz-phone" class="minimal-input" value="+52 55 1234 5678" placeholder="+52 55 0000 0000" required>
+                    <div class="hud-input-row">
+                        <div class="hud-field">
+                            <label>ARQUETIPO DE ASISTENTE</label>
+                            <select id="agent-role-select" class="hud-input" onchange="updateSelectedRolePreview()">
+                                <option value="sales">Aura — Cierre Comercial & Calificación de Leads</option>
+                                <option value="calendar">Cronos — Recepción & Agendamiento 24/7</option>
+                                <option value="support">Atlas — Helpdesk & Base de Conocimiento</option>
+                                <option value="executive">Nova — Asistente Ejecutivo & Síntesis de Voz</option>
+                            </select>
+                        </div>
+                        <div class="hud-field">
+                            <label>TONO Y REGLAS DE NEGOCIO</label>
+                            <select id="agent-tone" class="hud-input">
+                                <option value="executive">Ejecutivo, Persuasivo y Directo (2-4 líneas)</option>
+                                <option value="friendly">Dinámico, Cordial y con Emojis</option>
+                                <option value="formal">Institucional y Estrictamente Técnico</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="agent-role-select">Arquetipo de Asistente</label>
-                        <select id="agent-role-select" class="minimal-input" onchange="updateSelectedRolePreview()">
-                            <option value="sales">Aura — Cierre Comercial y Calificación</option>
-                            <option value="calendar">Cronos — Agendamiento y Citas</option>
-                            <option value="support">Atlas — Helpdesk y Soporte</option>
-                            <option value="executive">Nova — Asistente Ejecutivo</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="agent-tone">Tono de Comunicación</label>
-                        <select id="agent-tone" class="minimal-input">
-                            <option value="executive">Ejecutivo, Persuasivo y Conciso</option>
-                            <option value="friendly">Dinámico, Cordial y Empático</option>
-                            <option value="formal">Institucional y Estrictamente Técnico</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" id="btn-deploy" class="btn btn-primary btn-full btn-lg">
-                        <i data-lucide="play-circle"></i> Iniciar Despliegue Visual
+                    <button type="submit" id="btn-deploy" class="hud-btn hud-btn-trigger">
+                        <i data-lucide="play-circle"></i> EJECUTAR DESPLIEGUE VISUAL EN VIVO
                     </button>
                 </form>
-            </div>
 
-            <!-- Panel de Ejecución y Log -->
-            <div class="orchestrator-exec-side">
-                <div class="box-title between">
-                    <div class="state-indicator">
-                        <span class="dot-live"></span>
-                        <span id="orchestrator-status-text">Listo para iniciar orquestación</span>
-                    </div>
-                    <span class="engine-tag"><i data-lucide="cpu"></i> OpenClaw Engine</span>
-                </div>
-
-                <!-- Timeline de 4 Pasos -->
-                <div class="timeline-container">
-                    <div class="timeline-step" id="step-1">
-                        <div class="step-badge">1</div>
-                        <div class="step-details">
-                            <span class="step-heading">Construcción de Identidad (SOUL.md)</span>
-                            <span class="step-subtext">Generando reglas de comportamiento y restricciones de respuesta.</span>
+                <!-- Step Matrix Timeline -->
+                <div class="hud-matrix-stepper">
+                    <div class="matrix-step" id="step-1">
+                        <div class="matrix-step-indicator">01</div>
+                        <div class="matrix-step-content">
+                            <span class="matrix-step-title">CONSTRUCCIÓN SOUL.MD & REGLAS</span>
+                            <span class="matrix-step-desc">Generación determinista de identidad comercial y restricciones de respuesta.</span>
                         </div>
-                        <div class="step-check"><i data-lucide="clock"></i></div>
+                        <div class="matrix-step-status"><i data-lucide="circle-dot"></i></div>
                     </div>
 
-                    <div class="timeline-step" id="step-2">
-                        <div class="step-badge">2</div>
-                        <div class="step-details">
-                            <span class="step-heading">Inyección de Credenciales de Entorno</span>
-                            <span class="step-subtext">Asignando claves de API en variables de sistema sin bloquear base de datos.</span>
+                    <div class="matrix-step" id="step-2">
+                        <div class="matrix-step-indicator">02</div>
+                        <div class="matrix-step-content">
+                            <span class="matrix-step-title">INYECCIÓN DE VARIABLES DE ENTORNO</span>
+                            <span class="matrix-step-desc">Asignación de env.GEMINI_API_KEY sin bloqueos de base de datos SQLite.</span>
                         </div>
-                        <div class="step-check"><i data-lucide="clock"></i></div>
+                        <div class="matrix-step-status"><i data-lucide="circle-dot"></i></div>
                     </div>
 
-                    <div class="timeline-step" id="step-3">
-                        <div class="step-badge">3</div>
-                        <div class="step-details">
-                            <span class="step-heading">Enlace de Canal y Política de Acceso</span>
-                            <span class="step-subtext">Configurando política abierta de mensajería para clientes.</span>
+                    <div class="matrix-step" id="step-3">
+                        <div class="matrix-step-indicator">03</div>
+                        <div class="matrix-step-content">
+                            <span class="matrix-step-title">ENLACE DE SOCKET Y POLÍTICA PÚBLICA</span>
+                            <span class="matrix-step-desc">Configuración de dm_policy: open en OpenClaw para acceso libre de clientes.</span>
                         </div>
-                        <div class="step-check"><i data-lucide="clock"></i></div>
+                        <div class="matrix-step-status"><i data-lucide="circle-dot"></i></div>
                     </div>
 
-                    <div class="timeline-step" id="step-4">
-                        <div class="step-badge">4</div>
-                        <div class="step-details">
-                            <span class="step-heading">Verificación en Simulador Móvil</span>
-                            <span class="step-subtext">Habilitando sandbox para pruebas de interacción en vivo.</span>
+                    <div class="matrix-step" id="step-4">
+                        <div class="matrix-step-indicator">04</div>
+                        <div class="matrix-step-content">
+                            <span class="matrix-step-title">VINCULACIÓN SANDBOX EN TIEMPO REAL</span>
+                            <span class="matrix-step-desc">Sincronización con el simulador móvil interactivo en pantalla dividida.</span>
                         </div>
-                        <div class="step-check"><i data-lucide="clock"></i></div>
+                        <div class="matrix-step-status"><i data-lucide="circle-dot"></i></div>
                     </div>
                 </div>
 
-                <!-- Log Visual -->
-                <div class="console-box">
-                    <div class="console-header">
-                        <span class="console-title">orquestador://salida-de-sistema</span>
+                <!-- Live Stream Console Log -->
+                <div class="hud-console">
+                    <div class="console-hud-bar">
+                        <span class="console-hud-title">MEXABOT://KERNEL_STREAM.LOG</span>
+                        <span class="console-hud-meta">TTY: OPEN</span>
                     </div>
-                    <div class="console-body" id="terminal-output">
-                        <div class="log-item dim">[Sistema] Selecciona tu arquetipo y pulsa "Iniciar Despliegue Visual" para ejecutar el pipeline.</div>
+                    <div class="console-hud-body" id="terminal-output">
+                        <div class="log-entry">[Kernel] Sistema inicializado. Configura los parámetros y presiona "Ejecutar Despliegue".</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Simulador Sandbox de WhatsApp -->
-    <section id="sandbox" class="section bg-elevated">
-        <div class="section-header">
-            <span class="section-kicker">PRUEBA DE INTERACCIÓN</span>
-            <h2 class="section-title">Simulador Interactivo de WhatsApp</h2>
-            <p class="section-subtitle">Comprueba cómo interactúa tu asistente en tiempo real simulando la experiencia de un cliente en su móvil.</p>
-        </div>
+            <!-- Right Console: Mobile Cyber Sandbox -->
+            <div class="hud-panel phone-deck">
+                <div class="deck-header">
+                    <div class="deck-title">
+                        <i data-lucide="smartphone"></i>
+                        <span>SIMULADOR MÓVIL EN VIVO</span>
+                    </div>
+                    <span class="deck-id highlight-green">EMULADOR CONECTADO</span>
+                </div>
 
-        <div class="sandbox-wrapper">
-            <!-- Smartphone Device -->
-            <div class="minimal-phone">
-                <div class="phone-speaker-notch"></div>
-                <div class="phone-inner-screen">
-                    <div class="wa-nav">
-                        <div class="wa-profile">
-                            <div class="wa-avatar-icon"><i data-lucide="bot"></i></div>
-                            <div class="wa-profile-text">
-                                <span class="wa-profile-name" id="preview-bot-name">Aura — Cierre Comercial</span>
-                                <span class="wa-profile-status">● en línea</span>
+                <div class="cyber-device-frame">
+                    <div class="device-bezel">
+                        <div class="device-speaker"></div>
+                    </div>
+                    <div class="device-viewport">
+                        <!-- WhatsApp Top Nav -->
+                        <div class="wa-hud-header">
+                            <div class="wa-user-cluster">
+                                <div class="wa-avatar-core">
+                                    <i data-lucide="bot"></i>
+                                </div>
+                                <div>
+                                    <span class="wa-agent-name" id="preview-bot-name">Aura — Cierre Comercial</span>
+                                    <span class="wa-agent-status">● en línea (Gemini 3.5)</span>
+                                </div>
+                            </div>
+                            <div class="wa-nav-icons">
+                                <i data-lucide="phone"></i>
+                                <i data-lucide="more-vertical"></i>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="wa-chat-window" id="chat-messages">
-                        <div class="wa-msg-bubble incoming">
-                            <p>¡Hola! 👋 Soy <strong>Aura</strong>, asistente virtual de <em>Consultoría Integral Mexa</em>. ¿En qué servicio o solución podemos apoyarte hoy?</p>
-                            <span class="msg-timestamp">Ahora</span>
+                        <!-- Chat Messages Screen -->
+                        <div class="wa-hud-screen" id="chat-messages">
+                            <div class="wa-bubble-msg incoming-msg">
+                                <p>¡Hola! 👋 Soy <strong>Aura</strong>, asistente virtual de <em>Consultoría Integral Mexa</em>. ¿En qué proceso o servicio podemos apoyarte hoy?</p>
+                                <span class="wa-time-stamp">Ahora</span>
+                            </div>
+                        </div>
+
+                        <!-- Instant Prompt Triggers -->
+                        <div class="wa-chip-deck">
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('¿Cuáles son sus planes y precios?')">💰 Planes y Precios</button>
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('Quiero agendar una llamada de 15 min')">📅 Agendar Demo</button>
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('¿Cómo opera la integración?')">⚡ Integración</button>
+                        </div>
+
+                        <!-- Input Bar -->
+                        <div class="wa-hud-inputbar">
+                            <input type="text" id="chat-input" placeholder="Escribe un mensaje de prueba..." onkeypress="handleChatKeyPress(event)">
+                            <button class="wa-hud-send" onclick="sendChatMessage()">
+                                <i data-lucide="send"></i>
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Quick Suggestions -->
-                    <div class="wa-chips-row">
-                        <button class="wa-chip" onclick="sendQuickMessage('¿Cuáles son sus planes y precios?')">Planes y Precios</button>
-                        <button class="wa-chip" onclick="sendQuickMessage('Quiero agendar una llamada de 15 min')">Agendar Demo</button>
-                        <button class="wa-chip" onclick="sendQuickMessage('¿Cómo opera la integración?')">Cómo Funciona</button>
+        <!-- Arquetipos de Marketplace Grid -->
+        <section id="marketplace-grid" class="hud-panel full-width-panel">
+            <div class="panel-hud-header">
+                <span class="hud-sub-label">CATÁLOGO DE ARQUETIPOS</span>
+                <h2>MATRIZ DE ASISTENTES ESPECIALIZADOS</h2>
+            </div>
+
+            <div class="archetype-hud-grid">
+                <!-- Sales -->
+                <div class="archetype-tile featured-tile" onclick="selectAgent('sales')">
+                    <div class="tile-corner-tag">TIER S • VENTAS</div>
+                    <div class="tile-icon-box bg-emerald"><i data-lucide="trending-up"></i></div>
+                    <h3>Aura — Cierre Comercial</h3>
+                    <p>Calificación en caliente de prospectos B2B/B2C, manejo de objeciones y cotizaciones automáticas en WhatsApp.</p>
+                    <div class="tile-specs-list">
+                        <span>✓ Respuestas móviles breves (2-4 líneas)</span>
+                        <span>✓ Preguntas de avance comercial activas</span>
+                        <span>✓ Audio a Texto contextual</span>
                     </div>
+                    <button class="hud-btn hud-btn-tile">SELECCIONAR MODELO</button>
+                </div>
 
-                    <div class="wa-input-container">
-                        <input type="text" id="chat-input" placeholder="Escribe un mensaje de prueba..." onkeypress="handleChatKeyPress(event)">
-                        <button class="wa-send-btn" onclick="sendChatMessage()">
-                            <i data-lucide="send"></i>
-                        </button>
+                <!-- Calendar -->
+                <div class="archetype-tile" onclick="selectAgent('calendar')">
+                    <div class="tile-corner-tag">AGENDAMIENTO</div>
+                    <div class="tile-icon-box bg-blue"><i data-lucide="calendar"></i></div>
+                    <h3>Cronos — Recepción & Citas</h3>
+                    <p>Sincronización en tiempo real con Google Calendar y Cal.com para bloquear cupos y enviar recordatorios anti-inasistencia.</p>
+                    <div class="tile-specs-list">
+                        <span>✓ Confirmación y reprogramación de citas</span>
+                        <span>✓ Bloqueo de espacios sin doble reserva</span>
+                        <span>✓ Alarmas automáticas previas</span>
+                    </div>
+                    <button class="hud-btn hud-btn-tile">SELECCIONAR MODELO</button>
+                </div>
+
+                <!-- Support -->
+                <div class="archetype-tile" onclick="selectAgent('support')">
+                    <div class="tile-corner-tag">HELPDESK RAG</div>
+                    <div class="tile-icon-box bg-purple"><i data-lucide="shield-check"></i></div>
+                    <h3>Atlas — Soporte Técnico</h3>
+                    <p>Entrenado con la documentación, PDFs y políticas de tu empresa para responder con precisión estricta 24/7.</p>
+                    <div class="tile-specs-list">
+                        <span>✓ Cero alucinaciones con base documental</span>
+                        <span>✓ SLA corporativo de respuesta inmediata</span>
+                        <span>✓ Escalamiento a agentes humanos</span>
+                    </div>
+                    <button class="hud-btn hud-btn-tile">SELECCIONAR MODELO</button>
+                </div>
+
+                <!-- Executive -->
+                <div class="archetype-tile" onclick="selectAgent('executive')">
+                    <div class="tile-corner-tag">PRODUCTIVIDAD</div>
+                    <div class="tile-icon-box bg-amber"><i data-lucide="briefcase"></i></div>
+                    <h3>Nova — Asistente Ejecutivo</h3>
+                    <p>Copiloto de alto rendimiento: transcribe notas de voz largas, extrae tareas pendientes y redacta minutas de reuniones.</p>
+                    <div class="tile-specs-list">
+                        <span>✓ Resumen de notas de voz en segundos</span>
+                        <span>✓ Priorización de agenda diaria</span>
+                        <span>✓ Redacción de borradores ejecutivos</span>
+                    </div>
+                    <button class="hud-btn hud-btn-tile">SELECCIONAR MODELO</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Matriz de Cómputo e Infraestructura -->
+        <section id="computo-matrix" class="hud-panel full-width-panel">
+            <div class="panel-hud-header">
+                <span class="hud-sub-label">INFRAESTRUCTURA & ESCALA</span>
+                <h2>MATRIZ DE CAPACIDAD DE CÓMPUTO DETERMINISTA</h2>
+            </div>
+
+            <div class="compute-deck-grid">
+                <div class="compute-box">
+                    <span class="box-tier-id">ESCALA // 01</span>
+                    <h3>1 a 10 Usuarios (PYME / Profesional)</h3>
+                    <p>Despliegue local desatendido en PC mediante OpenClaw en Windows/WSL.</p>
+                    <div class="spec-matrix">
+                        <div class="matrix-row"><span>CPU / RAM:</span><strong>4 Cores / 8 GB RAM</strong></div>
+                        <div class="matrix-row"><span>Almacenamiento:</span><strong>10 GB SSD Libres</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>Hasta 5 chats en paralelo</strong></div>
+                    </div>
+                </div>
+
+                <div class="compute-box active-compute-box">
+                    <span class="box-tier-id highlight-blue">ESCALA // 02 [RECOMENDADO]</span>
+                    <h3>10 a 100 Colaboradores (Empresa Mediana)</h3>
+                    <p>Servidor VPS dedicado 24/7 para flujo continuo de prospectos y atención comercial.</p>
+                    <div class="spec-matrix">
+                        <div class="matrix-row"><span>VPS vCPU / RAM:</span><strong>8 Cores / 16 GB RAM</strong></div>
+                        <div class="matrix-row"><span>Almacenamiento:</span><strong>50 GB NVMe SSD</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>Hasta 50 chats simultáneos</strong></div>
+                    </div>
+                </div>
+
+                <div class="compute-box">
+                    <span class="box-tier-id highlight-purple">ESCALA // 03</span>
+                    <h3>1,000+ Usuarios (Corporativo Masivo)</h3>
+                    <p>Clúster Cloud elástico (Kubernetes) con WhatsApp Cloud API oficial de Meta.</p>
+                    <div class="spec-matrix">
+                        <div class="matrix-row"><span>Infraestructura:</span><strong>Clúster Cloud Balanceado</strong></div>
+                        <div class="matrix-row"><span>Base de Datos:</span><strong>PostgreSQL Distribuido</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>1,000+ chats en tiempo real</strong></div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Explicación de Semántica y Buenas Prácticas -->
-            <div class="sandbox-guide-panel">
-                <h3>Semántica de Respuesta en Mensajería Empresarial:</h3>
-                
-                <div class="guide-item">
-                    <div class="guide-bullet">1</div>
-                    <div>
-                        <h4>Extensión Optimizada para Móvil</h4>
-                        <p>Los mensajes se limitan a 2-4 líneas estructuradas para evitar que el usuario se abrume con bloques densos de texto.</p>
+        <!-- Hardware Guidelines: Phone Link & USB -->
+        <section id="hardware-matrix" class="hud-panel full-width-panel">
+            <div class="panel-hud-header">
+                <span class="hud-sub-label">HARDWARE OPERATIVO</span>
+                <h2>PROTOCOLOS DE EMPAREJAMIENTO DISPOSITIVO-PC</h2>
+            </div>
+
+            <div class="hardware-deck-grid">
+                <div class="hw-deck-box">
+                    <div class="hw-deck-badge">MÉTODO 1: ENLACE MÓVIL WINDOWS (PHONE LINK)</div>
+                    <p class="hw-deck-intro">Permite mantener el socket activo mediante sincronización nativa de Windows 10/11 sin que el móvil cierre WhatsApp al bloquearse.</p>
+                    <div class="hw-checklist">
+                        <div><i data-lucide="check"></i> Instalar app "Enlace a Windows" en tu dispositivo.</div>
+                        <div><i data-lucide="check"></i> Vincular por código QR con "Enlace Móvil" de PC.</div>
+                        <div><i data-lucide="check"></i> Habilitar permiso "Ejecución en segundo plano sin restricciones".</div>
                     </div>
                 </div>
 
-                <div class="guide-item">
-                    <div class="guide-bullet">2</div>
-                    <div>
-                        <h4>Llamadas a la Acción (CTA) Activas</h4>
-                        <p>Cada respuesta concluye con una pregunta de avance clara para guiar la conversación hacia la cotización o la cita.</p>
-                    </div>
-                </div>
-
-                <div class="guide-item">
-                    <div class="guide-bullet">3</div>
-                    <div>
-                        <h4>Traspaso Asistido a Asesor Humano</h4>
-                        <p>Si el cliente solicita atención directa o un caso excede los parámetros, el bot ofrece canalizarlo con un asesor del equipo.</p>
+                <div class="hw-deck-box">
+                    <div class="hw-deck-badge highlight-green">MÉTODO 2: CONEXIÓN USB CON DEPURACIÓN ADB (99.8% ESTABILIDAD)</div>
+                    <p class="hw-deck-intro">Para servidores o terminales críticas donde no puede existir desconexión por ahorro de batería del teléfono.</p>
+                    <div class="hw-checklist">
+                        <div><i data-lucide="check"></i> Activar "Opciones de Desarrollador" en Ajustes del teléfono.</div>
+                        <div><i data-lucide="check"></i> Encender casilla "Depuración por USB" y conectar cable.</div>
+                        <div><i data-lucide="check"></i> Desactivar optimización de batería para WhatsApp.</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <span class="footer-logo">MEXABOT</span>
-                <p>Plataforma de despliegue y orquestación de asistentes de IA para negocios.</p>
+    </main>
+
+    <!-- HUD Footer -->
+    <footer class="hud-footer">
+        <div class="footer-hud-content">
+            <div class="footer-hud-brand">
+                <span class="hud-brand-title">MEXABOT<span class="accent-dot">.</span>AI</span>
+                <p>Suite determinista de asistentes autónomos para empresas. Potenciado con Gemini & OpenClaw Gateway.</p>
             </div>
-            <div class="footer-bottom">
-                <span>© 2026 MEXABOT. Arquitectura y Código Abierto.</span>
-                <span>Potenciado con Google Gemini & OpenClaw Gateway</span>
+            <div class="footer-hud-meta">
+                <span>REPOSITORIO: dixi3stdgdl-design / Mexabot</span>
+                <span>© 2026 MEXABOT. TODOS LOS DERECHOS RESERVADOS.</span>
             </div>
         </div>
     </footer>
