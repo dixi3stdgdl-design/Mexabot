@@ -5,12 +5,18 @@ const mexabotMasterIdentity = {
     roleTitle: "Especialista Comercial en IA Autónoma",
     welcomeMsg: `¡Hola! 👋 Soy <strong>MexaBot</strong>, especialista comercial en implementación de Asistentes Digitales e IA Autónoma para empresas y profesionistas.<br><br>¿En qué podemos potenciar tu negocio hoy? Responde con el número de tu interés:<br><br>1️⃣ <em>Conocer los Asistentes Digitales disponibles</em><br>2️⃣ <em>Modelos comerciales y métodos de instalación</em><br>3️⃣ <em>Precios, paquetes y asesoría personalizada</em><br>4️⃣ <em>Proceso de activación rápida y requisitos</em><br>5️⃣ <em>Probar la IA en vivo (Hazme cualquier pregunta)</em><br>0️⃣ <em>Hablar con un asesor humano (Pausar MexaBot)</em>`,
     options: {
-        "1": `💼 <strong>Catálogo de Asistentes Disponibles en MexaBot:</strong><br><br>• <strong>Cerrador Comercial (Aura):</strong> Califica leads, resuelve objeciones y cotiza 24/7.<br>• <strong>Recepción & Citas (Cronos):</strong> Agenda en tiempo real sincronizado con Google Calendar / Cal.com.<br>• <strong>Soporte RAG (Atlas):</strong> Resuelve consultas técnicas con tus propios PDFs y manuales de empresa.<br>• <strong>Copiloto Ejecutivo (Nova):</strong> Procesa notas de voz, minutas y listas de tareas.<br><br><em>¿Cuál de estos te interesa implementar? (Escribe el nombre o 'menu' para volver)</em>`,
-        "2": `⚙️ <strong>Modelos Comerciales & Equipos de Despliegue:</strong><br><br>• 🐳 <strong>Equipo Docker:</strong> Contenedor aislado con BD Postgres/Redis y restart automático para servidores VPS.<br>• 🟢 <strong>Equipo Node.js / Baileys:</strong> Ligero, ágil y con vinculación QR rápida.<br>• 🐍 <strong>Equipo Python / Meta API:</strong> Integración oficial con WhatsApp Cloud API para alto volumen.<br>• ⚡ <strong>Script 1-Clic:</strong> Auto-instalador en PowerShell/Bash que autoconfigura tu PC o servidor.<br><br><em>El backend es 100% tuyo y mantienes el control total de tus datos.</em>`,
-        "3": `💰 <strong>Precios, Paquetes & Asesoría:</strong><br><br>• 🚀 <strong>Plan Inicial / Profesionista:</strong> 1 Asistente con flujo comercial y reglas clave.<br>• 🏢 <strong>Plan Empresa / Multi-Agente:</strong> Despliegue con integración a calendarios y base documental RAG.<br>• 🛠️ <strong>Implementación Llave en Mano:</strong> Te entregamos el entorno instalado, probado y funcionando en tu propio número telefónico.<br><br><em>¿Deseas que formulemos una propuesta personalizada para tu volumen de mensajes?</em>`,
-        "4": `⏱️ <strong>Proceso de Activación Rápida & Requisitos:</strong><br><br>1. <strong>Definición:</strong> Ajustamos el arquetipo, tono y reglas del negocio.<br>2. <strong>Generación:</strong> Compilamos tu paquete de instalación y llaves seguras.<br>3. <strong>Enlace:</strong> Vinculamos tu número de WhatsApp en menos de 10 minutos.<br><br>📌 <em>Requisitos mínimos:</em> Un número de WhatsApp disponible y una PC/Servidor VPS para el host del agente.`,
-        "5": `🧠 <strong>Modo IA Libre Activado:</strong><br><br>¡Excelente! A partir de este momento puedes preguntarme cualquier duda sobre automatización, procesos de negocio, integraciones técnicas o pedirme ejemplos de respuestas comerciales para tus clientes.<br><br><em>¿Qué proceso de tu empresa te gustaría optimizar hoy?</em>`,
-        "0": `🛑 <strong>MexaBot Pausado.</strong><br><br>Los envíos automáticos de la IA han sido desactivados para esta sesión. He notificado a nuestro equipo comercial y un asesor humano continuará la atención contigo en breve.<br><br><em>(Escribe 'menu' o 'activar' en cualquier momento para reiniciar MexaBot).</em>`
+        "1": `💼 <strong>Catálogo de Asistentes Disponibles en MexaBot:</strong><br><br>1️⃣ <strong>Aura (Cerrador Comercial):</strong> Califica prospectos y cotiza 24/7.<br>2️⃣ <strong>Cronos (Recepción & Citas):</strong> Agenda en tiempo real sincronizado con Google Calendar.<br>3️⃣ <strong>Atlas (Soporte RAG):</strong> Resuelve dudas con tus manuales y PDFs corporativos.<br>4️⃣ <strong>Nova (Copiloto Ejecutivo):</strong> Minutas, notas de voz y tareas.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br><em>(Envía 1, 2, 3, 4 para ver detalles o 9 para volver)</em>`,
+        "1_1": `💼 <strong>Aura — Cerrador Comercial 24/7:</strong><br>Especializada en convertir prospectos frios en ventas cerradas en WhatsApp.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
+        "1_2": `📅 <strong>Cronos — Recepción & Citas:</strong><br>Elimina inasistencias y coordina citas sincronizado con Google Calendar o Cal.com.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
+        "1_3": `🛡️ <strong>Atlas — Helpdesk RAG:</strong><br>Indexa catálogos y manuales PDF respondiendo con 100% de precisión técnica.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
+        "1_4": `🚀 <strong>Nova — Copiloto Ejecutivo:</strong><br>Procesa notas de voz, crea resúmenes ejecutivos y asigna tareas.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
+        "2": `⚙️ <strong>Equipos & Métodos de Despliegue:</strong><br><br>1️⃣ <strong>Equipo Docker:</strong> Contenedor aislado con Postgres/Redis (Ideal para VPS).<br>2️⃣ <strong>Equipo Node.js / Baileys:</strong> Ligero, ágil y con vinculación QR rápida.<br>3️⃣ <strong>Equipo Python / Meta API:</strong> Integración oficial con WhatsApp Cloud API.<br>4️⃣ <strong>Script 1-Clic Nativo:</strong> Auto-instalador en PowerShell para PC Windows.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br><em>(El backend es 100% tuyo y mantienes el control total de tus datos)</em>`,
+        "3": `💰 <strong>Precios y Esquemas de Implementación:</strong><br><br>1️⃣ <strong>Plan Inicial / Profesionista:</strong> 1 Asistente con reglas clave y flujo comercial.<br>2️⃣ <strong>Plan Empresa / Multi-Agente:</strong> Despliegue con integración a calendarios y base RAG.<br>3️⃣ <strong>Implementación Llave en Mano:</strong> Entorno instalado y operando en tu propio número.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br><em>(Envía 1, 2, 3 para cotizar tu plan o 9 para volver)</em>`,
+        "4": `⏱️ <strong>Proceso de Activación Rápida:</strong><br><br>1. <strong>Definición:</strong> Ajustamos el arquetipo, tono y reglas del negocio.<br>2. <strong>Generación:</strong> Compilamos tu paquete de instalación y llaves seguras.<br>3. <strong>Enlace:</strong> Vinculamos tu número de WhatsApp en menos de 10 minutos.<br><br>1️⃣ <em>Ver Requisitos Técnicos Mínimos</em><br>2️⃣ <em>Iniciar Activación con un Asesor</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor humano</em>`,
+        "4_1": `📌 <strong>Requisitos Técnicos Mínimos:</strong><br><br>• Un número de teléfono para el asistente.<br>• Computadora o Servidor VPS (Windows, Linux o Docker).<br>• Conexión estable a Internet.<br><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
+        "5": `🧠 <strong>Modo IA Libre Activado:</strong><br><br>¡Excelente! A partir de este momento puedes preguntarme cualquier duda sobre automatización, procesos de negocio, integraciones técnicas o pedirme ejemplos de respuestas comerciales.<br><br><em>(Envía 9 en cualquier momento para regresar al menú numerado)</em>`,
+        "0_user": `🛑 <strong>MexaBot Pausado.</strong><br><br>Los envíos automáticos de la IA han sido desactivados para esta conversación. He notificado a nuestro equipo comercial y un asesor humano te atenderá en breve.<br><br><em>(Envía '9' o 'menu' en cualquier momento para reactivar a MexaBot).</em>`,
+        "0_admin": `⚡ <strong>MODO AGENTE NATIVO ACTIVADO</strong> ⚡<br><br>MexaBot comercial pausado en este canal.<br><strong>Hola Administrador</strong>, soy tu copiloto de sistema local. Estoy listo para recibir instrucciones directas, diagnosticar procesos, consultar memoria, ejecutar tareas o asistir en programación.<br><br><em>¿En qué proceso técnico o personal trabajamos ahora? (Envía 'comercial' o '9' para volver al bot público).</em>`
     }
 };
 
@@ -40,6 +46,8 @@ const agentPresets = {
 let currentPreset = 'sales';
 let isBotPaused = false;
 let isFreeAiMode = false;
+let isNativeAdminMode = false;
+let currentMenuLevel = 'main';
 
 // Helper: Scroll suave con foco
 function scrollToSection(id) {
@@ -69,6 +77,8 @@ function updateSelectedRolePreview() {
     currentPreset = selectedKey;
     isBotPaused = false;
     isFreeAiMode = false;
+    isNativeAdminMode = false;
+    currentMenuLevel = 'main';
     
     const bizName = document.getElementById('biz-name').value || 'Tu Negocio';
     const preset = agentPresets[currentPreset];
@@ -260,19 +270,48 @@ async function sendChatMessage() {
     
     const lower = msg.toLowerCase();
     
-    // Manejo de reinicio / despausar
+    // Manejo de regreso al Menú o cambio de modo
+    if (msg === "9" || lower === 'menu' || lower === 'menú' || lower === 'inicio' || lower === 'hola' || lower === 'comercial' || lower === 'mexabot') {
+        isBotPaused = false;
+        isFreeAiMode = false;
+        isNativeAdminMode = false;
+        currentMenuLevel = 'main';
+        
+        const nameEl = document.getElementById('preview-bot-name');
+        if (nameEl) nameEl.innerText = "MexaBot — IA Comercial";
+
+        const replyBubble = document.createElement('div');
+        replyBubble.className = 'wa-bubble-msg incoming-msg';
+        replyBubble.innerHTML = `<p>${mexabotMasterIdentity.welcomeMsg}</p><span class="wa-time-stamp">${now}</span>`;
+        chatBody.appendChild(replyBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        return;
+    }
+    
+    // Si está en Modo Agente Nativo (Administrador)
+    if (isNativeAdminMode) {
+        const typingBubble = document.createElement('div');
+        typingBubble.className = 'wa-bubble-msg incoming-msg';
+        typingBubble.innerHTML = `<p><em style="opacity:0.7;">Copiloto Nativo procesando instrucción...</em></p>`;
+        chatBody.appendChild(typingBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        
+        await wait(900);
+        if (typingBubble.parentNode) chatBody.removeChild(typingBubble);
+        
+        const adminReply = `⚡ <strong>[Copiloto Nativo]:</strong><br>Instrucción recibida: <em>"${escapeHtml(msg)}"</em>.<br><br>He verificado el estado del kernel local. Todos los sockets y servicios se encuentran operando con latencia de 18ms. Puedes enviarme cualquier instrucción de desarrollo, script o diagnóstico del sistema.<br><br><em>(Envía '9' para volver al modo comercial público).</em>`;
+        
+        const botBubble = document.createElement('div');
+        botBubble.className = 'wa-bubble-msg incoming-msg';
+        botBubble.innerHTML = `<p>${adminReply}</p><span class="wa-time-stamp">${now}</span>`;
+        chatBody.appendChild(botBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        return;
+    }
+    
+    // Si está pausado (Modo Asesor Humano para clientes)
     if (isBotPaused) {
-        if (lower === 'menu' || lower === 'menú' || lower === 'activar' || lower === 'reiniciar' || lower === 'hola') {
-            isBotPaused = false;
-            isFreeAiMode = false;
-            const reactivateBubble = document.createElement('div');
-            reactivateBubble.className = 'wa-bubble-msg incoming-msg';
-            reactivateBubble.innerHTML = `<p>🔄 <strong>MexaBot reactivado.</strong><br><br>${mexabotMasterIdentity.welcomeMsg}</p><span class="wa-time-stamp">${now}</span>`;
-            chatBody.appendChild(reactivateBubble);
-            chatBody.scrollTop = chatBody.scrollHeight;
-            return;
-        }
-        // Si está pausado, no responde nada (comportamiento silencioso para asesor humano)
+        // En silencio esperando traspaso humano
         return;
     }
     
@@ -284,35 +323,49 @@ async function sendChatMessage() {
     chatBody.scrollTop = chatBody.scrollHeight;
     
     // Inferencia contextual con delay humano
-    await wait(900);
+    await wait(800);
     if (typingBubble.parentNode) {
         chatBody.removeChild(typingBubble);
     }
     
     let replyText = "";
     
-    // Lógica estructurada de opciones MexaBot
+    // Ruteo de opciones numeradas
     if (msg === "0" || lower.includes("humano") || lower.includes("asesor") || lower.includes("pausar")) {
-        isBotPaused = true;
-        replyText = mexabotMasterIdentity.options["0"];
-    } else if (msg === "1" || lower.includes("asistentes") || lower.includes("disponibles") || lower.includes("catalogo") || lower.includes("catálogo")) {
+        // En el sandbox permitimos probar el Modo Admin Nativo
+        isNativeAdminMode = true;
+        const nameEl = document.getElementById('preview-bot-name');
+        if (nameEl) nameEl.innerText = "⚡ Copiloto Nativo (Admin)";
+        replyText = mexabotMasterIdentity.options["0_admin"];
+    } else if (msg === "1") {
+        currentMenuLevel = 'asistentes';
         replyText = mexabotMasterIdentity.options["1"];
-    } else if (msg === "2" || lower.includes("modelos") || lower.includes("instalacion") || lower.includes("instalación") || lower.includes("despliegue") || lower.includes("docker")) {
+    } else if (msg === "2") {
+        currentMenuLevel = 'instalacion';
         replyText = mexabotMasterIdentity.options["2"];
-    } else if (msg === "3" || lower.includes("precio") || lower.includes("precios") || lower.includes("costo") || lower.includes("paquete") || lower.includes("paquetes") || lower.includes("plan")) {
+    } else if (msg === "3") {
+        currentMenuLevel = 'precios';
         replyText = mexabotMasterIdentity.options["3"];
-    } else if (msg === "4" || lower.includes("activacion") || lower.includes("activación") || lower.includes("requisito") || lower.includes("requisitos") || lower.includes("pasos")) {
+    } else if (msg === "4") {
+        currentMenuLevel = 'activacion';
         replyText = mexabotMasterIdentity.options["4"];
-    } else if (msg === "5" || lower.includes("probar") || lower.includes("ia en vivo") || lower.includes("prueba libre")) {
+    } else if (msg === "5") {
         isFreeAiMode = true;
         replyText = mexabotMasterIdentity.options["5"];
-    } else if (lower === "menu" || lower === "menú" || lower === "inicio" || lower === "hola") {
-        isFreeAiMode = false;
-        replyText = mexabotMasterIdentity.welcomeMsg;
+    } else if (currentMenuLevel === 'asistentes' && (msg === "1" || msg === "11")) {
+        replyText = mexabotMasterIdentity.options["1_1"];
+    } else if (currentMenuLevel === 'asistentes' && (msg === "2" || msg === "12")) {
+        replyText = mexabotMasterIdentity.options["1_2"];
+    } else if (currentMenuLevel === 'asistentes' && (msg === "3" || msg === "13")) {
+        replyText = mexabotMasterIdentity.options["1_3"];
+    } else if (currentMenuLevel === 'asistentes' && (msg === "4" || msg === "14")) {
+        replyText = mexabotMasterIdentity.options["1_4"];
+    } else if (currentMenuLevel === 'activacion' && msg === "1") {
+        replyText = mexabotMasterIdentity.options["4_1"];
     } else if (isFreeAiMode) {
-        replyText = `🧠 <strong>Respuesta IA (MexaBot Live Core):</strong><br><br>Respecto a <em>"${escapeHtml(msg)}"</em>: Nuestra arquitectura permite automatizar completamente este flujo mediante árboles deterministas e inferencia semántica con Gemini. Puedes conectarlo con tus bases de datos, APIs de pago o CRM manteniendo 99.8% de disponibilidad.<br><br><em>¿Deseas ver cómo se instalaría en tu entorno? Envía '2' para ver opciones de despliegue o '3' para precios.</em>`;
+        replyText = `🧠 <strong>Respuesta IA (MexaBot Live Core):</strong><br><br>Respecto a <em>"${escapeHtml(msg)}"</em>: Nuestra arquitectura permite automatizar completamente este proceso sin fricción técnica. El asistente responderá de forma determinista y en tiempo real.<br><br>1️⃣ Ver Asistentes Disponibles<br>2️⃣ Ver Métodos de Instalación<br>3️⃣ Ver Precios y Paquetes<br>9️⃣ Volver al Menú Principal`;
     } else {
-        replyText = `He recibido tu mensaje. Para asistirte de forma ágil, puedes elegir una de nuestras opciones enviando el número:<br><br>1️⃣ Ver Asistentes Disponibles<br>2️⃣ Métodos de Instalación<br>3️⃣ Precios y Asesoría<br>4️⃣ Proceso de Activación<br>5️⃣ Probar la IA en vivo<br>0️⃣ Hablar con un asesor humano`;
+        replyText = `He recibido tu mensaje. Por favor responde con el número de la opción:<br><br>1️⃣ Conocer Asistentes Disponibles<br>2️⃣ Métodos de Instalación<br>3️⃣ Precios y Paquetes<br>4️⃣ Proceso de Activación<br>5️⃣ Probar la IA en vivo<br>9️⃣ Volver al Menú<br>0️⃣ Pausar / Asesor Humano`;
     }
     
     const botBubble = document.createElement('div');
