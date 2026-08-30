@@ -1,53 +1,45 @@
 // MEXABOT — Neural Command OS Engine & Holographic Algorithms Controller
 
+const mexabotMasterIdentity = {
+    name: "MexaBot — IA Comercial",
+    roleTitle: "Especialista Comercial en IA Autónoma",
+    welcomeMsg: `¡Hola! 👋 Soy <strong>MexaBot</strong>, especialista comercial en implementación de Asistentes Digitales e IA Autónoma para empresas y profesionistas.<br><br>¿En qué podemos potenciar tu negocio hoy? Responde con el número de tu interés:<br><br>1️⃣ <em>Conocer los Asistentes Digitales disponibles</em><br>2️⃣ <em>Modelos comerciales y métodos de instalación</em><br>3️⃣ <em>Precios, paquetes y asesoría personalizada</em><br>4️⃣ <em>Proceso de activación rápida y requisitos</em><br>5️⃣ <em>Probar la IA en vivo (Hazme cualquier pregunta)</em><br>0️⃣ <em>Hablar con un asesor humano (Pausar MexaBot)</em>`,
+    options: {
+        "1": `💼 <strong>Catálogo de Asistentes Disponibles en MexaBot:</strong><br><br>• <strong>Cerrador Comercial (Aura):</strong> Califica leads, resuelve objeciones y cotiza 24/7.<br>• <strong>Recepción & Citas (Cronos):</strong> Agenda en tiempo real sincronizado con Google Calendar / Cal.com.<br>• <strong>Soporte RAG (Atlas):</strong> Resuelve consultas técnicas con tus propios PDFs y manuales de empresa.<br>• <strong>Copiloto Ejecutivo (Nova):</strong> Procesa notas de voz, minutas y listas de tareas.<br><br><em>¿Cuál de estos te interesa implementar? (Escribe el nombre o 'menu' para volver)</em>`,
+        "2": `⚙️ <strong>Modelos Comerciales & Equipos de Despliegue:</strong><br><br>• 🐳 <strong>Equipo Docker:</strong> Contenedor aislado con BD Postgres/Redis y restart automático para servidores VPS.<br>• 🟢 <strong>Equipo Node.js / Baileys:</strong> Ligero, ágil y con vinculación QR rápida.<br>• 🐍 <strong>Equipo Python / Meta API:</strong> Integración oficial con WhatsApp Cloud API para alto volumen.<br>• ⚡ <strong>Script 1-Clic:</strong> Auto-instalador en PowerShell/Bash que autoconfigura tu PC o servidor.<br><br><em>El backend es 100% tuyo y mantienes el control total de tus datos.</em>`,
+        "3": `💰 <strong>Precios, Paquetes & Asesoría:</strong><br><br>• 🚀 <strong>Plan Inicial / Profesionista:</strong> 1 Asistente con flujo comercial y reglas clave.<br>• 🏢 <strong>Plan Empresa / Multi-Agente:</strong> Despliegue con integración a calendarios y base documental RAG.<br>• 🛠️ <strong>Implementación Llave en Mano:</strong> Te entregamos el entorno instalado, probado y funcionando en tu propio número telefónico.<br><br><em>¿Deseas que formulemos una propuesta personalizada para tu volumen de mensajes?</em>`,
+        "4": `⏱️ <strong>Proceso de Activación Rápida & Requisitos:</strong><br><br>1. <strong>Definición:</strong> Ajustamos el arquetipo, tono y reglas del negocio.<br>2. <strong>Generación:</strong> Compilamos tu paquete de instalación y llaves seguras.<br>3. <strong>Enlace:</strong> Vinculamos tu número de WhatsApp en menos de 10 minutos.<br><br>📌 <em>Requisitos mínimos:</em> Un número de WhatsApp disponible y una PC/Servidor VPS para el host del agente.`,
+        "5": `🧠 <strong>Modo IA Libre Activado:</strong><br><br>¡Excelente! A partir de este momento puedes preguntarme cualquier duda sobre automatización, procesos de negocio, integraciones técnicas o pedirme ejemplos de respuestas comerciales para tus clientes.<br><br><em>¿Qué proceso de tu empresa te gustaría optimizar hoy?</em>`,
+        "0": `🛑 <strong>MexaBot Pausado.</strong><br><br>Los envíos automáticos de la IA han sido desactivados para esta sesión. He notificado a nuestro equipo comercial y un asesor humano continuará la atención contigo en breve.<br><br><em>(Escribe 'menu' o 'activar' en cualquier momento para reiniciar MexaBot).</em>`
+    }
+};
+
 const agentPresets = {
     sales: {
-        name: "Aura — Cierre Comercial",
-        roleTitle: "Cerrador de Ventas WhatsApp",
-        welcomeMsg: "¡Hola! 👋 Soy <strong>Aura</strong>, consultora comercial de <em>{bizName}</em>. Me especializo en analizar las necesidades de tu empresa, presentarte soluciones de automatización y formular cotizaciones a medida. ¿Qué proceso comercial buscas optimizar hoy?",
-        responses: {
-            "precios": "Nuestras soluciones cuentan con opciones escalables: paquetes iniciales para negocios locales y cotizaciones personalizadas según el volumen de mensajes de tu empresa. ¿Te gustaría que formulemos una propuesta para tu equipo?",
-            "demo": "¡Excelente iniciativa! Podemos coordinar una sesión técnica de 15 minutos en vivo para mostrarte la arquitectura en funcionamiento. ¿Qué día y horario te acomoda mejor?",
-            "integracion": "El despliegue opera mediante OpenClaw Gateway con socket local seguro en el puerto 18789 y enlace directo a WhatsApp Business. ¡Cero dependencias manuales ni errores de compilación!",
-            "default": "Comprendo el objetivo de tu negocio. Con nuestra arquitectura neural podemos automatizar esa interacción 24/7 con respuestas inmediatas y traspaso asistido a tu equipo humano. ¿Deseas que activemos una prueba piloto?"
-        }
+        name: "MexaBot — Especialista Comercial",
+        roleTitle: "Especialista Comercial en IA Autónoma",
+        welcomeMsg: mexabotMasterIdentity.welcomeMsg
     },
     calendar: {
         name: "Cronos — Recepción & Citas",
         roleTitle: "Recepción & Agendamiento 24/7",
-        welcomeMsg: "¡Hola! 📅 Soy <strong>Cronos</strong>, recepcionista digital de <em>{bizName}</em>. Gestiono agendas y citas en tiempo real sin esperas. ¿Para qué fecha u horario buscas disponibilidad?",
-        responses: {
-            "precios": "El módulo de agendamiento y confirmación anti-inasistencia está integrado en todas nuestras configuraciones de recepción inteligente.",
-            "demo": "Podemos agendar una llamada de 15 minutos para sincronizar tu Google Calendar o Cal.com. ¿Prefieres hoy por la tarde o mañana?",
-            "integracion": "Nos sincronizamos mediante Webhooks bidireccionales con Google Calendar, Outlook y Cal.com para evitar duplicidad de turnos.",
-            "default": "Perfecto. He consultado los bloques libres en la agenda y puedo apartar ese espacio para ti de inmediato. ¿Me confirmas tu nombre completo y correo de contacto?"
-        }
+        welcomeMsg: "¡Hola! 📅 Soy <strong>Cronos</strong>, recepcionista digital de <em>{bizName}</em>. Gestiono agendas y citas en tiempo real sin esperas. ¿Para qué fecha u horario buscas disponibilidad?"
     },
     support: {
         name: "Atlas — Helpdesk RAG",
         roleTitle: "Soporte Técnico & Base Documental",
-        welcomeMsg: "¡Buen día! 🛡️ Soy <strong>Atlas</strong>, especialista de soporte técnico de <em>{bizName}</em>. Cuéntame con qué módulo o proceso requieres asistencia hoy.",
-        responses: {
-            "precios": "Los acuerdos de nivel de servicio (SLA) incluyen soporte continuo 24/7, base documental privada y escalamiento prioritario.",
-            "demo": "Podemos coordinar una demostración con tu departamento de sistemas para revisar las políticas de aislamiento y cifrado.",
-            "integracion": "Soportamos integración con repositorios documentales PDF/Docs, Zendesk, Jira y WhatsApp Business API.",
-            "default": "He registrado tu consulta técnica. Según los protocolos de nuestra base documental, el procedimiento recomendado es validar las variables de entorno. ¿Deseas que te guíe paso a paso?"
-        }
+        welcomeMsg: "¡Buen día! 🛡️ Soy <strong>Atlas</strong>, especialista de soporte técnico de <em>{bizName}</em>. Cuéntame con qué módulo o proceso requieres asistencia hoy."
     },
     executive: {
         name: "Nova — Asistente Ejecutivo",
         roleTitle: "Copiloto de Productividad",
-        welcomeMsg: "¡Hola! 🚀 Soy <strong>Nova</strong>, tu copiloto ejecutivo para <em>{bizName}</em>. Envíame notas de voz, listas de tareas o minutas y las convertiré en acciones concretas.",
-        responses: {
-            "precios": "Nova cuenta con planes individuales para directivos y licencias por volumen para equipos ejecutivos.",
-            "demo": "Envíame cualquier nota de voz extensa o lista desordenada y verás cómo estructuro un resumen ejecutivo en segundos.",
-            "integracion": "Opera nativamente en WhatsApp, Telegram y Notion para que mantengas tu flujo de trabajo habitual.",
-            "default": "Registrado en tu matriz de prioridades del día. He configurado una alerta de seguimiento para las 5:00 PM."
-        }
+        welcomeMsg: "¡Hola! 🚀 Soy <strong>Nova</strong>, tu copiloto ejecutivo para <em>{bizName}</em>. Envíame notas de voz, listas de tareas o minutas y las convertiré en acciones concretas."
     }
 };
 
 let currentPreset = 'sales';
+let isBotPaused = false;
+let isFreeAiMode = false;
 
 // Helper: Scroll suave con foco
 function scrollToSection(id) {
@@ -75,6 +67,8 @@ function updateSelectedRolePreview() {
     const roleSelect = document.getElementById('agent-role-select');
     const selectedKey = roleSelect ? roleSelect.value : 'sales';
     currentPreset = selectedKey;
+    isBotPaused = false;
+    isFreeAiMode = false;
     
     const bizName = document.getElementById('biz-name').value || 'Tu Negocio';
     const preset = agentPresets[currentPreset];
@@ -86,7 +80,7 @@ function updateSelectedRolePreview() {
     if (chatBody) {
         chatBody.innerHTML = `
             <div class="wa-bubble-msg incoming-msg">
-                <p>${preset.welcomeMsg.replace('{bizName}', bizName)}</p>
+                <p>${preset.welcomeMsg.replace(/{bizName}/g, bizName)}</p>
                 <span class="wa-time-stamp">Ahora</span>
             </div>
         `;
@@ -108,10 +102,10 @@ function appendTerminalLog(msg, type = 'dim') {
 
 // Dynamic Algorithmic Code Generators for HUD Stream
 const algorithmSnippets = [
-    "SHA256(entropy) => 0x9f82ab44e1 · Cipher handshake initialized",
-    "AST.compile('SOUL.md') => { temperature: 0.35, max_tokens: 300, format: 'mobile_concise' }",
+    "ANTI_SPAM.enforce('INBOUND_ONLY') => Outbound blocked. Listening for user-initiated interactions only",
+    "AST.compile('SOUL.md') => { agent: 'MexaBot', role: 'Commercial_AI_Specialist', format: 'menu_5_options' }",
     "OpenClaw.Kernel.bindPort(18789) · Socket listening on loopback",
-    "Meta.Policy.verify('dm_policy', 'open') · Whitelist bypassed for customer acquisition",
+    "DeploymentTeam.select('Docker | Node.js | Python | NativeScript') · Multi-stack ready",
     "Gemini.GenerativeAI.ping('gemini-3.5-flash-lite') · 200 OK (Latency: 84ms)",
     "ADB.Bridge.checkDeviceState('USB_DEBUG_MODE') · Device verified (Active Link)",
     "VectorIndex.embedKnowledge() · Cosine similarity cache warm"
@@ -141,60 +135,52 @@ async function startLiveOrchestration(e) {
     if (window.lucide) lucide.createIcons();
     
     // Step 1: Compilación de Identidad & Reglas
-    await runStep(1, `[Fase 1] Inicializando compilador semántico para "${bizName}"...`, 'cyan');
+    await runStep(1, `[Fase 1] Inicializando compilador semántico para "${bizName}" con agente MexaBot...`, 'cyan');
     await streamAlgorithms(2);
-    await wait(1400);
-    completeStep(1, `SOUL.md compilado con formato móvil de 2-4 líneas y árboles de decisión.`);
+    await wait(1200);
+    completeStep(1, `SOUL.md compilado con menú de 5 opciones y política estricta anti-spam Inbound-Only.`);
     
     // Step 2: Inyección de Credenciales & Aislamiento
     await runStep(2, `[Fase 2] Inyectando variable segura env.GEMINI_API_KEY en espacio de kernel...`, 'purple');
     await streamAlgorithms(2);
-    await wait(1500);
-    completeStep(2, `Credenciales inyectadas sin bloqueos de SQLite (Lock-Free State).`);
+    await wait(1200);
+    completeStep(2, `Aislamiento de credenciales completado. Sin bloqueos de SQLite.`);
     
-    // Step 3: Enlace de Socket & Política Abierta
-    await runStep(3, `[Fase 3] Vinculando socket de mensajería para ${phone} (dm_policy: open)...`, 'cyan');
+    // Step 3: Enlace Socket & Política Pública
+    await runStep(3, `[Fase 3] Vinculando socket OpenClaw en puerto 18789 y configurando DM policy...`, 'blue');
     await streamAlgorithms(2);
-    await wait(1600);
-    completeStep(3, `Canal de WhatsApp enlazado y listo para recibir llamadas entrantes.`);
+    await wait(1200);
+    completeStep(3, `Socket 18789 activo y conectado.`);
     
-    // Step 4: Sincronización en Tiempo Real con Sandbox
-    await runStep(4, `[Fase 4] Estableciendo puente de telemetría con el emulador móvil...`, 'green');
-    await streamAlgorithms(1);
-    await wait(1000);
-    completeStep(4, `¡Asistente 100% activo en producción y simulador sincronizado!`);
+    // Step 4: Vinculación Móvil & Sandbox
+    await runStep(4, `[Fase 4] Sincronizando con dispositivo en ${phone || '+52 33 0000 0000'}...`, 'green');
+    await streamAlgorithms(2);
+    await wait(1200);
+    completeStep(4, `Asistente MexaBot operativo en tiempo real.`);
     
-    statusText.innerText = 'SISTEMA 100% OPERATIVO EN VIVO';
     btn.disabled = false;
-    btn.innerHTML = `<i data-lucide="check-circle-2"></i> ¡DESPLIEGUE COMPLETADO CON ÉXITO!`;
+    btn.innerHTML = `<i data-lucide="check-circle"></i> DESPLIEGUE DETERMINISTA COMPLETADO`;
+    statusText.innerText = 'SISTEMA OPERATIVO Y VINCULADO';
     if (window.lucide) lucide.createIcons();
     
     updateSelectedRolePreview();
-    
-    // Scroll focalizado al smartphone con leve delay
-    setTimeout(() => {
-        const phoneElem = document.querySelector('.cyber-device-frame');
-        if (phoneElem) phoneElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 600);
+    appendTerminalLog(`[Éxito] Asistente MexaBot desplegado exitosamente con regla Inbound-Only activa.`, 'green');
+}
+
+async function runStep(stepNum, logMsg, logType) {
+    const step = document.getElementById(`step-${stepNum}`);
+    step.className = 'matrix-step active';
+    step.querySelector('.matrix-step-status').innerHTML = `<i data-lucide="loader" class="animate-spin"></i>`;
+    appendTerminalLog(logMsg, logType);
+    if (window.lucide) lucide.createIcons();
 }
 
 async function streamAlgorithms(count = 2) {
     for (let i = 0; i < count; i++) {
-        const snippet = algorithmSnippets[Math.floor(Math.random() * algorithmSnippets.length)];
-        appendTerminalLog(`> ${snippet}`, 'dim');
-        await wait(350);
+        const randIndex = Math.floor(Math.random() * algorithmSnippets.length);
+        appendTerminalLog(`> ${algorithmSnippets[randIndex]}`, 'dim');
+        await wait(250);
     }
-}
-
-function runStep(stepNum, logMsg, logType) {
-    return new Promise(resolve => {
-        const step = document.getElementById(`step-${stepNum}`);
-        step.className = 'matrix-step active';
-        step.querySelector('.matrix-step-status').innerHTML = `<i data-lucide="loader" class="animate-spin"></i>`;
-        appendTerminalLog(logMsg, logType);
-        if (window.lucide) lucide.createIcons();
-        resolve();
-    });
 }
 
 function completeStep(stepNum, logMsg) {
@@ -239,27 +225,61 @@ async function sendChatMessage() {
     input.value = '';
     chatBody.scrollTop = chatBody.scrollHeight;
     
+    const lower = msg.toLowerCase();
+    
+    // Manejo de reinicio / despausar
+    if (isBotPaused) {
+        if (lower === 'menu' || lower === 'menú' || lower === 'activar' || lower === 'reiniciar' || lower === 'hola') {
+            isBotPaused = false;
+            isFreeAiMode = false;
+            const reactivateBubble = document.createElement('div');
+            reactivateBubble.className = 'wa-bubble-msg incoming-msg';
+            reactivateBubble.innerHTML = `<p>🔄 <strong>MexaBot reactivado.</strong><br><br>${mexabotMasterIdentity.welcomeMsg}</p><span class="wa-time-stamp">${now}</span>`;
+            chatBody.appendChild(reactivateBubble);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return;
+        }
+        // Si está pausado, no responde nada (comportamiento silencioso para asesor humano)
+        return;
+    }
+    
     // Indicador "Escribiendo..." con animación
     const typingBubble = document.createElement('div');
     typingBubble.className = 'wa-bubble-msg incoming-msg';
-    typingBubble.innerHTML = `<p><em style="opacity:0.7;">Analizando intención semántica...</em></p>`;
+    typingBubble.innerHTML = `<p><em style="opacity:0.7;">MexaBot está escribiendo...</em></p>`;
     chatBody.appendChild(typingBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
     
-    // Inferencia contextual con delay de tipeo humano
-    await wait(1100);
-    chatBody.removeChild(typingBubble);
+    // Inferencia contextual con delay humano
+    await wait(900);
+    if (typingBubble.parentNode) {
+        chatBody.removeChild(typingBubble);
+    }
     
-    const lower = msg.toLowerCase();
-    const preset = agentPresets[currentPreset];
-    let replyText = preset.responses.default;
+    let replyText = "";
     
-    if (lower.includes('precio') || lower.includes('costo') || lower.includes('plan')) {
-        replyText = preset.responses.precios;
-    } else if (lower.includes('demo') || lower.includes('cita') || lower.includes('agendar') || lower.includes('reunion') || lower.includes('llamada')) {
-        replyText = preset.responses.demo;
-    } else if (lower.includes('integracion') || lower.includes('como funciona') || lower.includes('instalar') || lower.includes('opera')) {
-        replyText = preset.responses.integracion;
+    // Lógica estructurada de opciones MexaBot
+    if (msg === "0" || lower.includes("humano") || lower.includes("asesor") || lower.includes("pausar")) {
+        isBotPaused = true;
+        replyText = mexabotMasterIdentity.options["0"];
+    } else if (msg === "1" || lower.includes("asistentes") || lower.includes("disponibles") || lower.includes("catalogo") || lower.includes("catálogo")) {
+        replyText = mexabotMasterIdentity.options["1"];
+    } else if (msg === "2" || lower.includes("modelos") || lower.includes("instalacion") || lower.includes("instalación") || lower.includes("despliegue") || lower.includes("docker")) {
+        replyText = mexabotMasterIdentity.options["2"];
+    } else if (msg === "3" || lower.includes("precio") || lower.includes("precios") || lower.includes("costo") || lower.includes("paquete") || lower.includes("paquetes") || lower.includes("plan")) {
+        replyText = mexabotMasterIdentity.options["3"];
+    } else if (msg === "4" || lower.includes("activacion") || lower.includes("activación") || lower.includes("requisito") || lower.includes("requisitos") || lower.includes("pasos")) {
+        replyText = mexabotMasterIdentity.options["4"];
+    } else if (msg === "5" || lower.includes("probar") || lower.includes("ia en vivo") || lower.includes("prueba libre")) {
+        isFreeAiMode = true;
+        replyText = mexabotMasterIdentity.options["5"];
+    } else if (lower === "menu" || lower === "menú" || lower === "inicio" || lower === "hola") {
+        isFreeAiMode = false;
+        replyText = mexabotMasterIdentity.welcomeMsg;
+    } else if (isFreeAiMode) {
+        replyText = `🧠 <strong>Respuesta IA (MexaBot Live Core):</strong><br><br>Respecto a <em>"${escapeHtml(msg)}"</em>: Nuestra arquitectura permite automatizar completamente este flujo mediante árboles deterministas e inferencia semántica con Gemini. Puedes conectarlo con tus bases de datos, APIs de pago o CRM manteniendo 99.8% de disponibilidad.<br><br><em>¿Deseas ver cómo se instalaría en tu entorno? Envía '2' para ver opciones de despliegue o '3' para precios.</em>`;
+    } else {
+        replyText = `He recibido tu mensaje. Para asistirte de forma ágil, puedes elegir una de nuestras opciones enviando el número:<br><br>1️⃣ Ver Asistentes Disponibles<br>2️⃣ Métodos de Instalación<br>3️⃣ Precios y Asesoría<br>4️⃣ Proceso de Activación<br>5️⃣ Probar la IA en vivo<br>0️⃣ Hablar con un asesor humano`;
     }
     
     const botBubble = document.createElement('div');
