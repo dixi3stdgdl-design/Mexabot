@@ -146,6 +146,8 @@ Diseñado para dueños de empresa y profesionistas que reciben cientos de mensaj
    • Setup & Despliegue Clúster: *$9,990 MXN* (Pago único).
    • Mensualidad Todo Incluido: *$2,990 MXN / mes* (IA Ilimitada + WhatsApp Cloud API Meta + Asesor 24/7).
 
+💳 *Pago Seguro con PayPal:* https://paypal.me/DixLqb
+
 9️⃣ *Volver al Menú Principal*
 0️⃣ *Hablar con un asesor humano*
 

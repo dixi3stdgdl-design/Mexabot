@@ -11,7 +11,7 @@ const mexabotMasterIdentity = {
         "1_3": `🛡️ <strong>Atlas — Soporte Técnico & Base Documental RAG:</strong><br>Indexa tus manuales, políticas y catálogos en PDF para responder preguntas complejas sin alucinaciones.<br><br>💡 <strong>¿Para qué te sirve en tu negocio?</strong><br>• <em>Software & SaaS:</em> Resuelve dudas de configuración paso a paso con capturas y guías.<br>• <em>Distribuidores Industriales:</em> Consulta existencias, códigos de refacción y fichas técnicas al instante.<br>• <em>Escuelas & Universidades:</em> Responde sobre costos, fechas de inscripción y reglamentos escolares.<br><br>⌨️ <strong>Comandos base:</strong> <em>'buscar manual [tema]'</em>, <em>'garantía [producto]'</em>, <em>'0' (soporte humano)</em>.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "1_4": `🚀 <strong>Nova — Copiloto Ejecutivo & Productividad:</strong><br>Diseñado para dueños de empresa y profesionistas que reciben cientos de mensajes y audios al día.<br><br>💡 <strong>¿Para qué te sirve en tu negocio?</strong><br>• <em>Directores & Founders:</em> Envías un audio de 5 minutos y Nova extrae los acuerdos y compromisos.<br>• <em>Gestión de Equipos:</em> Convierte notas de voz en tareas accionables para tu CRM o gestor de proyectos.<br>• <em>Seguimiento Diario:</em> Te envía un resumen matutino con las prioridades de tu día.<br><br>⌨️ <strong>Comandos base:</strong> <em>'resumen del día'</em>, <em>'nueva tarea [texto/audio]'</em>, <em>'borrador [tema]'</em>.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "2": `⚙️ <strong>Equipos & Métodos de Despliegue:</strong><br><br>1️⃣ <strong>Equipo Docker VPS (Recomendado 24/7):</strong> Contenedor aislado con reinicio automático y base PostgreSQL. Ideal para operar día y noche.<br>2️⃣ <strong>Equipo Node.js / Baileys (Ágil):</strong> Instalación ultraligera para servidores locales o microservicios con enlace QR directo.<br>3️⃣ <strong>Equipo Python Cloud API (Corporativo):</strong> Conexión oficial con WhatsApp Cloud API de Meta para alto volumen.<br>4️⃣ <strong>Script 1-Clic Windows (Autónomo):</strong> Instalador nativo en PowerShell que autoconfigura tu PC sin requerir conocimientos técnicos.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br>🔒 <em>Privacidad: El backend es 100% tuyo; tus datos y clientes nunca pasan por servidores de terceros.</em>`,
-        "3": `💰 <strong>Estructura de Precios & Planes Todo Incluido:</strong><br><br>1️⃣ <strong>Plan Inicial / Profesionista:</strong><br>• Setup & Instalación Base: <strong>$2,490 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$790 MXN / mes</strong> (IA hasta 2,500 chats + Soporte y Monitoreo).<br><br>2️⃣ <strong>Plan Empresa / Multi-Agente:</strong><br>• Setup & Instalación Base: <strong>$4,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$1,490 MXN / mes</strong> (VPS Dedicado 24/7 + IA hasta 10,000 chats + RAG/Calendario).<br><br>3️⃣ <strong>Plan Corporativo Llave en Mano:</strong><br>• Setup & Despliegue Clúster: <strong>$9,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$2,990 MXN / mes</strong> (IA Ilimitada + WhatsApp Cloud API Meta + Asesor 24/7).<br><br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br>🔒 <em>Cero facturas sorpresa: El consumo de IA y la atención técnica están cubiertos en tu mensualidad fija.</em>`,
+        "3": `💰 <strong>Estructura de Precios & Planes Todo Incluido:</strong><br><br>1️⃣ <strong>Plan Inicial / Profesionista:</strong><br>• Setup & Instalación Base: <strong>$2,490 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$790 MXN / mes</strong> (IA hasta 2,500 chats + Soporte y Monitoreo).<br><br>2️⃣ <strong>Plan Empresa / Multi-Agente:</strong><br>• Setup & Instalación Base: <strong>$4,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$1,490 MXN / mes</strong> (VPS Dedicado 24/7 + IA hasta 10,000 chats + RAG/Calendario).<br><br>3️⃣ <strong>Plan Corporativo Llave en Mano:</strong><br>• Setup & Despliegue Clúster: <strong>$9,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$2,990 MXN / mes</strong> (IA Ilimitada + WhatsApp Cloud API Meta + Asesor 24/7).<br><br>💳 <strong>Pago Seguro con PayPal:</strong> <a href="https://paypal.me/DixLqb" target="_blank" style="color:#38bdf8; text-decoration:underline;">paypal.me/DixLqb</a><br><br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br>🔒 <em>Cero facturas sorpresa: El consumo de IA y la atención técnica están cubiertos en tu mensualidad fija.</em>`,
         "4": `⏱️ <strong>Proceso de Activación Rápida:</strong><br><br>1. <strong>Definición:</strong> Ajustamos el arquetipo, tono y reglas del negocio.<br>2. <strong>Generación:</strong> Compilamos tu paquete de instalación y llaves seguras.<br>3. <strong>Enlace:</strong> Vinculamos tu número de WhatsApp en menos de 10 minutos.<br><br>1️⃣ <em>Ver Requisitos Técnicos Mínimos</em><br>2️⃣ <em>Iniciar Activación con un Asesor</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor humano</em>`,
         "4_1": `📌 <strong>Requisitos Técnicos Mínimos:</strong><br><br>• Un número de teléfono para el asistente.<br>• Computadora o Servidor VPS (Windows, Linux o Docker).<br>• Conexión estable a Internet.<br><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "5": `🧠 <strong>Modo IA Libre Activado:</strong><br><br>¡Excelente! A partir de este momento puedes preguntarme cualquier duda sobre automatización, procesos de negocio, integraciones técnicas o pedirme ejemplos de respuestas comerciales.<br><br><em>(Envía 9 en cualquier momento para regresar al menú numerado)</em>`,
@@ -423,7 +423,9 @@ const scaleDeepDiveData = {
     starter: {
         title: "PLAN 01: INICIAL / PROFESIONISTA (1 ASISTENTE)",
         subtitle: "DESPLIEGUE LOCAL PC / MINI PC · OPENCLAW GATEWAY :18789 · IA GESTIONADA",
+        paypalUrl: "https://paypal.me/DixLqb/2490MXN",
         geminiPricing: {
+            setupPrice: "$2,490 MXN",
             setupFee: "$2,490 MXN (Pago Único de Instalación y Parametrización)",
             monthlyFee: "$790 MXN / mes (Todo Incluido: IA, Soporte y Monitoreo)",
             includedCapacity: "Hasta 2,500 conversaciones mensuales incluidas (Cero cobros sorpresa de tokens).",
@@ -445,7 +447,9 @@ const scaleDeepDiveData = {
     pro: {
         title: "PLAN 02: EMPRESA / MULTI-AGENTE (HASTA 3 ASISTENTES)",
         subtitle: "SERVIDOR VPS LINUX DEDICADO 24/7 · BASE RAG DOCUMENTAL · SLAS COMERCIALES",
+        paypalUrl: "https://paypal.me/DixLqb/4990MXN",
         geminiPricing: {
+            setupPrice: "$4,990 MXN",
             setupFee: "$4,990 MXN (Pago Único de Instalación Multi-Agente y RAG)",
             monthlyFee: "$1,490 MXN / mes (Todo Incluido: Servidor VPS 24/7 + IA + Soporte Prioritario)",
             includedCapacity: "Hasta 10,000 conversaciones mensuales y lectura de PDFs/Catálogos.",
@@ -467,7 +471,9 @@ const scaleDeepDiveData = {
     enterprise: {
         title: "PLAN 03: CORPORATIVO LLAVE EN MANO (ALTO VOLUMEN)",
         subtitle: "CLÚSTER AISLADO · WHATSAPP CLOUD API OFICIAL (META) · BASE DISTRIBUIDA",
+        paypalUrl: "https://paypal.me/DixLqb/9990MXN",
         geminiPricing: {
+            setupPrice: "$9,990 MXN",
             setupFee: "$9,990 MXN (Pago Único de Arquitectura e Integración Completa)",
             monthlyFee: "$2,990 MXN / mes (Todo Incluido: IA Ilimitada + Asesor Dedicado 24/7 + SLA 99.9%)",
             includedCapacity: "Capacidad de IA Ilimitada para alto volumen empresarial sin cortes.",
@@ -542,10 +548,22 @@ function openScaleDeepDive(scaleKey) {
                 `).join('')}
             </div>
         </div>
+
+        <!-- Sección 4: Checkout Seguro PayPal -->
+        <div class="deep-dive-section-block" style="border-top:1px solid rgba(0,240,255,0.25); padding-top:16px; margin-top:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div style="font-size:0.85rem; color:#94a3b8;">
+                <span style="color:#10b981;">● Garantía de Despliegue</span> · Setup inicial en menos de 24 horas.
+            </div>
+            <a href="${data.paypalUrl}" target="_blank" class="hud-btn hud-btn-primary" style="background: linear-gradient(135deg, #0070ba, #003087); border-color:#0070ba; color:#fff; text-decoration:none; padding:10px 20px; font-weight:700; border-radius:6px; box-shadow:0 0 15px rgba(0,112,186,0.5);">
+                💳 PAGAR SETUP CON PAYPAL (${data.geminiPricing.setupPrice})
+            </a>
+        </div>
     `;
     
     document.getElementById('scale-deep-dive-modal').classList.add('open');
-    if (window.lucide) lucide.createIcons();
+    if (window.lucide) {
+        try { lucide.createIcons(); } catch(e){}
+    }
 }
 
 // Cerrar Modal
