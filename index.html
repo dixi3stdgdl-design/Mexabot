@@ -61,9 +61,6 @@
         </div>
 
         <div class="hud-topbar-right">
-            <a href="https://github.com/dixi3stdgdl-design/Mexabot/releases" target="_blank" class="hud-btn btn-download-exe">
-                <i data-lucide="download"></i> DESCARGAR APP (.EXE)
-            </a>
             <a href="#command-center" class="hud-btn hud-btn-primary">
                 <i data-lucide="terminal"></i> CONSOLA DE MANDO
             </a>
@@ -542,7 +539,9 @@
     <!-- Scripts -->
     <script src="app.js"></script>
     <script>
-        lucide.createIcons();
+        if (window.lucide) {
+            try { lucide.createIcons(); } catch(e) { console.warn(e); }
+        }
     </script>
 </body>
 </html>
