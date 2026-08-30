@@ -156,13 +156,23 @@ Diseñado para dueños de empresa y profesionistas que reciben cientos de mensaj
 ---
 
 ### 🔹 Si el usuario envía "4" (Activación y Requisitos):
-"⏱️ *Proceso de Activación Rápida:*
-1. *Definición:* Ajustamos el arquetipo, tono y reglas del negocio.
-2. *Generación:* Compilamos tu paquete de instalación y llaves seguras.
-3. *Enlace:* Vinculamos tu número de WhatsApp en menos de 10 minutos.
+"⏱️ *Proceso de Activación Oficial & Dashboard:*
+1. *Puente Oficial:* Activamos el módulo oficial *Clawboard* en *Microsoft PC Manager* (despliegue del sandbox seguro).
+2. *Dashboard Automático:* PC Manager genera tu panel local de control en http://127.0.0.1:18789/.
+3. *Enlace en 10s:* Vinculamos tu número escaneando el QR oficial en pantalla.
+4. *App Móvil (Opcional):* Puedes monitorear desde el dashboard web, la app oficial de OpenClaw, cualquier cliente Gateway o nuestra app MexaBot Mobile.
 
-1️⃣ *Ver Requisitos Técnicos Mínimos*
+1️⃣ *Ver Requisitos Técnicos & Aviso de Responsabilidad*
 2️⃣ *Iniciar Activación con un Asesor*
+9️⃣ *Volver al Menú Principal*
+0️⃣ *Hablar con un asesor humano*"
+
+### 🔹 Si el usuario envía "41" o "1" dentro de Activación:
+"📌 *Requisitos Técnicos & Cláusula de Operación Local:*
+• *Requisitos:* Windows 10/11 (con Microsoft PC Manager) o Servidor VPS/Linux.
+• *Privacidad Total:* Los datos, base de clientes e inteligencia residen 100% en tu propio equipo.
+• *⚖️ Descargo de Responsabilidad:* MexaBot provee la arquitectura y configuración para el sandbox oficial de Microsoft. La administración y mantenimiento del sistema operativo es responsabilidad del usuario. Cualquier modificación manual no autorizada de puertos o archivos de configuración corre bajo su propio riesgo.
+
 9️⃣ *Volver al Menú Principal*
 0️⃣ *Hablar con un asesor humano*"
 
