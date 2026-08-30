@@ -1,63 +1,63 @@
-// AutomaPulse AI - Orchestrator & Sandbox Controller
+// MEXABOT — Neural Command OS Engine & Holographic Algorithms Controller
 
 const agentPresets = {
     sales: {
-        name: "Aura — Cerrador de Ventas",
+        name: "Aura — Cierre Comercial",
         roleTitle: "Cerrador de Ventas WhatsApp",
-        welcomeMsg: "¡Hola! 👋 Soy <strong>Aura</strong> de <em>{bizName}</em>. Me especializo en asesorarte con nuestros servicios, enviarte cotizaciones personalizadas y ayudarte a elegir la mejor opción para tu negocio. ¿En qué área buscas mejorar hoy?",
+        welcomeMsg: "¡Hola! 👋 Soy <strong>Aura</strong>, consultora comercial de <em>{bizName}</em>. Me especializo en analizar las necesidades de tu empresa, presentarte soluciones de automatización y formular cotizaciones a medida. ¿Qué proceso comercial buscas optimizar hoy?",
         responses: {
-            "precios": "Nuestros planes comienzan con una prueba sin costo y paquetes desde $49 USD/mes adaptados al volumen de mensajes de tu empresa. ¿Te gustaría que te envíe un desglose detallado?",
-            "demo": "¡Con gusto! Puedes agendar una sesión en vivo de 15 minutos con nuestro equipo en este enlace: https://cal.com/automa-pulse o dime qué día te acomoda mejor.",
-            "integracion": "Nos integramos en menos de 60 segundos conectando tu número de WhatsApp directamente con IA de Google Gemini 3.5. ¡Cero código ni configuraciones complejas!",
-            "default": "Comprendo perfectamente lo que necesitas para tu negocio. Con nuestra IA podemos automatizar ese proceso en WhatsApp las 24 horas del día. ¿Te gustaría activarlo ahora mismo?"
+            "precios": "Nuestras soluciones cuentan con opciones escalables: paquetes iniciales para negocios locales y cotizaciones personalizadas según el volumen de mensajes de tu empresa. ¿Te gustaría que formulemos una propuesta para tu equipo?",
+            "demo": "¡Excelente iniciativa! Podemos coordinar una sesión técnica de 15 minutos en vivo para mostrarte la arquitectura en funcionamiento. ¿Qué día y horario te acomoda mejor?",
+            "integracion": "El despliegue opera mediante OpenClaw Gateway con socket local seguro en el puerto 18789 y enlace directo a WhatsApp Business. ¡Cero dependencias manuales ni errores de compilación!",
+            "default": "Comprendo el objetivo de tu negocio. Con nuestra arquitectura neural podemos automatizar esa interacción 24/7 con respuestas inmediatas y traspaso asistido a tu equipo humano. ¿Deseas que activemos una prueba piloto?"
         }
     },
     calendar: {
-        name: "Cronos — Agendador & Citas",
-        roleTitle: "Recepcionista & Agendamiento",
-        welcomeMsg: "¡Hola! 📅 Soy <strong>Cronos</strong>, recepcionista digital de <em>{bizName}</em>. Estoy aquí para coordinar tus citas y resolver tus dudas sin esperas. ¿Para qué fecha u horario buscas disponibilidad?",
+        name: "Cronos — Recepción & Citas",
+        roleTitle: "Recepción & Agendamiento 24/7",
+        welcomeMsg: "¡Hola! 📅 Soy <strong>Cronos</strong>, recepcionista digital de <em>{bizName}</em>. Gestiono agendas y citas en tiempo real sin esperas. ¿Para qué fecha u horario buscas disponibilidad?",
         responses: {
-            "precios": "El servicio de agendamiento y recordatorios anti-inasistencia está incluido en todos nuestros planes de recepción inteligente.",
-            "demo": "Tenemos disponibilidad hoy a las 4:00 PM o mañana a las 11:00 AM. ¿Cuál te queda mejor para confirmar tu espacio?",
-            "integracion": "Sincronizamos directamente con Google Calendar, Outlook y Cal.com para evitar dobles reservas automáticamente.",
-            "default": "Excelente. He verificado los horarios y puedo bloquear ese espacio para ti de inmediato. ¿Me confirmas tu nombre completo?"
+            "precios": "El módulo de agendamiento y confirmación anti-inasistencia está integrado en todas nuestras configuraciones de recepción inteligente.",
+            "demo": "Podemos agendar una llamada de 15 minutos para sincronizar tu Google Calendar o Cal.com. ¿Prefieres hoy por la tarde o mañana?",
+            "integracion": "Nos sincronizamos mediante Webhooks bidireccionales con Google Calendar, Outlook y Cal.com para evitar duplicidad de turnos.",
+            "default": "Perfecto. He consultado los bloques libres en la agenda y puedo apartar ese espacio para ti de inmediato. ¿Me confirmas tu nombre completo y correo de contacto?"
         }
     },
     support: {
-        name: "Atlas — Helpdesk Corporativo",
-        roleTitle: "Soporte Corporativo 24/7",
-        welcomeMsg: "¡Buen día! 🛡️ Soy <strong>Atlas</strong>, del equipo de soporte de <em>{bizName}</em>. Cuéntame con qué módulo o requerimiento necesitas asistencia técnica hoy.",
+        name: "Atlas — Helpdesk RAG",
+        roleTitle: "Soporte Técnico & Base Documental",
+        welcomeMsg: "¡Buen día! 🛡️ Soy <strong>Atlas</strong>, especialista de soporte técnico de <em>{bizName}</em>. Cuéntame con qué módulo o proceso requieres asistencia hoy.",
         responses: {
-            "precios": "Nuestros SLA de soporte empresarial incluyen atención 24/7, base de conocimiento privada y escalamiento prioritario.",
-            "demo": "Podemos coordinar una demostración con tu equipo de sistemas para mostrarte las políticas de seguridad y cifrado.",
-            "integracion": "Soportamos conectores directos a Zendesk, Jira, Slack y WhatsApp Business API con certificados de nivel empresarial.",
-            "default": "He registrado tu solicitud en el sistema. Según nuestros manuales, el paso recomendado es verificar la sincronización del token. ¿Deseas que te guíe paso a paso?"
+            "precios": "Los acuerdos de nivel de servicio (SLA) incluyen soporte continuo 24/7, base documental privada y escalamiento prioritario.",
+            "demo": "Podemos coordinar una demostración con tu departamento de sistemas para revisar las políticas de aislamiento y cifrado.",
+            "integracion": "Soportamos integración con repositorios documentales PDF/Docs, Zendesk, Jira y WhatsApp Business API.",
+            "default": "He registrado tu consulta técnica. Según los protocolos de nuestra base documental, el procedimiento recomendado es validar las variables de entorno. ¿Deseas que te guíe paso a paso?"
         }
     },
     executive: {
         name: "Nova — Asistente Ejecutivo",
         roleTitle: "Copiloto de Productividad",
-        welcomeMsg: "¡Hola! 🚀 Soy <strong>Nova</strong>, tu copiloto ejecutivo para <em>{bizName}</em>. Envíame audios, notas o listas de pendientes y los convertiré en acciones concretas.",
+        welcomeMsg: "¡Hola! 🚀 Soy <strong>Nova</strong>, tu copiloto ejecutivo para <em>{bizName}</em>. Envíame notas de voz, listas de tareas o minutas y las convertiré en acciones concretas.",
         responses: {
-            "precios": "Nova cuenta con planes individuales para directivos y licencias corporativas por volumen para comités ejecutivos.",
-            "demo": "Envíame un mensaje de audio o una lista desordenada y verás cómo genero un resumen ejecutivo estructurado en 3 segundos.",
-            "integracion": "Funciona de manera nativa en WhatsApp, Telegram y Notion para que no cambies tu flujo de trabajo.",
-            "default": "Anotado en tus prioridades del día. He generado un recordatorio para dar seguimiento hoy a las 5:00 PM."
+            "precios": "Nova cuenta con planes individuales para directivos y licencias por volumen para equipos ejecutivos.",
+            "demo": "Envíame cualquier nota de voz extensa o lista desordenada y verás cómo estructuro un resumen ejecutivo en segundos.",
+            "integracion": "Opera nativamente en WhatsApp, Telegram y Notion para que mantengas tu flujo de trabajo habitual.",
+            "default": "Registrado en tu matriz de prioridades del día. He configurado una alerta de seguimiento para las 5:00 PM."
         }
     }
 };
 
 let currentPreset = 'sales';
 
-// Scroll to section helper
+// Helper: Scroll suave con foco
 function scrollToSection(id) {
     const el = document.getElementById(id);
     if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
-// Select Agent from Marketplace
+// Selección de agente desde el catálogo HUD
 function selectAgent(presetKey) {
     currentPreset = presetKey;
     const roleSelect = document.getElementById('agent-role-select');
@@ -65,12 +65,12 @@ function selectAgent(presetKey) {
         roleSelect.value = presetKey;
     }
     updateSelectedRolePreview();
-    scrollToSection('live-orchestrator');
+    scrollToSection('command-center');
     
-    appendTerminalLog(`[Marketplace] Plantilla seleccionada: "${agentPresets[presetKey].roleTitle}". Parámetros cargados en el orquestador.`, 'text-cyan');
+    appendTerminalLog(`[Arquetipo] Modelo cargado: "${agentPresets[presetKey].roleTitle}". Parámetros sincronizados en el kernel.`, 'cyan');
 }
 
-// Update Role Preview
+// Actualizar preview de rol en el chat simulado
 function updateSelectedRolePreview() {
     const roleSelect = document.getElementById('agent-role-select');
     const selectedKey = roleSelect ? roleSelect.value : 'sales';
@@ -85,28 +85,39 @@ function updateSelectedRolePreview() {
     const chatBody = document.getElementById('chat-messages');
     if (chatBody) {
         chatBody.innerHTML = `
-            <div class="wa-message-bubble incoming">
+            <div class="wa-bubble-msg incoming-msg">
                 <p>${preset.welcomeMsg.replace('{bizName}', bizName)}</p>
-                <span class="msg-time">Ahora</span>
+                <span class="wa-time-stamp">Ahora</span>
             </div>
         `;
     }
 }
 
-// Terminal Log Helper
-function appendTerminalLog(msg, cssClass = 'text-muted') {
+// Log Terminal Stream Helper
+function appendTerminalLog(msg, type = 'dim') {
     const term = document.getElementById('terminal-output');
     if (!term) return;
     
-    const now = new Date().toLocaleTimeString();
+    const now = new Date().toLocaleTimeString([], { hour12: false });
     const line = document.createElement('div');
-    line.className = `log-line ${cssClass}`;
-    line.innerText = `[${now}] ${msg}`;
+    line.className = `log-entry ${type}`;
+    line.innerHTML = `<span style="opacity:0.5;">[${now}]</span> ${msg}`;
     term.appendChild(line);
     term.scrollTop = term.scrollHeight;
 }
 
-// Start Live Visual Orchestration
+// Dynamic Algorithmic Code Generators for HUD Stream
+const algorithmSnippets = [
+    "SHA256(entropy) => 0x9f82ab44e1 · Cipher handshake initialized",
+    "AST.compile('SOUL.md') => { temperature: 0.35, max_tokens: 300, format: 'mobile_concise' }",
+    "OpenClaw.Kernel.bindPort(18789) · Socket listening on loopback",
+    "Meta.Policy.verify('dm_policy', 'open') · Whitelist bypassed for customer acquisition",
+    "Gemini.GenerativeAI.ping('gemini-3.5-flash-lite') · 200 OK (Latency: 84ms)",
+    "ADB.Bridge.checkDeviceState('USB_DEBUG_MODE') · Device verified (Active Link)",
+    "VectorIndex.embedKnowledge() · Cosine similarity cache warm"
+];
+
+// Orquestación en Vivo con Algoritmos y Transiciones con Delay Cinemático
 async function startLiveOrchestration(e) {
     e.preventDefault();
     
@@ -116,54 +127,71 @@ async function startLiveOrchestration(e) {
     const statusText = document.getElementById('orchestrator-status-text');
     
     btn.disabled = true;
-    btn.innerHTML = `<i data-lucide="loader" class="animate-spin"></i> Orquestando en vivo...`;
+    btn.innerHTML = `<i data-lucide="loader" class="animate-spin"></i> EJECUTANDO PIPELINE NEURAL...`;
     if (window.lucide) lucide.createIcons();
     
-    statusText.innerText = 'Orquestación activa...';
+    statusText.innerText = 'ORQUESTANDO PIPELINE...';
     
-    // Reset steps
+    // Reset visual stepper
     for (let i = 1; i <= 4; i++) {
         const step = document.getElementById(`step-${i}`);
-        step.className = 'step-item';
-        step.querySelector('.step-status').innerHTML = `<i data-lucide="clock"></i>`;
+        step.className = 'matrix-step';
+        step.querySelector('.matrix-step-status').innerHTML = `<i data-lucide="circle-dot"></i>`;
     }
     if (window.lucide) lucide.createIcons();
     
-    // Step 1: Identity Generation
-    await runStep(1, `Generando archivo SOUL.md e IDENTITY.md para "${bizName}"...`, 'text-cyan');
-    await wait(1200);
-    completeStep(1, `Identidad comercial y reglas de comportamiento generadas con éxito.`);
-    
-    // Step 2: Key Injection
-    await runStep(2, `Inyectando variables seguras (env.GEMINI_API_KEY y socket local)...`, 'text-purple');
+    // Step 1: Compilación de Identidad & Reglas
+    await runStep(1, `[Fase 1] Inicializando compilador semántico para "${bizName}"...`, 'cyan');
+    await streamAlgorithms(2);
     await wait(1400);
-    completeStep(2, `Credenciales enlazadas sin bloqueos de base de datos.`);
+    completeStep(1, `SOUL.md compilado con formato móvil de 2-4 líneas y árboles de decisión.`);
     
-    // Step 3: Channel Linking
-    await runStep(3, `Configurando canal WhatsApp para ${phone} (Política de acceso público: ON)...`, 'text-cyan');
+    // Step 2: Inyección de Credenciales & Aislamiento
+    await runStep(2, `[Fase 2] Inyectando variable segura env.GEMINI_API_KEY en espacio de kernel...`, 'purple');
+    await streamAlgorithms(2);
     await wait(1500);
-    completeStep(3, `Socket de WhatsApp vinculado correctamente.`);
+    completeStep(2, `Credenciales inyectadas sin bloqueos de SQLite (Lock-Free State).`);
     
-    // Step 4: Live Mobile Sandbox Test
-    await runStep(4, `Iniciando sesión en sandbox móvil para pruebas interactivas...`, 'text-green');
+    // Step 3: Enlace de Socket & Política Abierta
+    await runStep(3, `[Fase 3] Vinculando socket de mensajería para ${phone} (dm_policy: open)...`, 'cyan');
+    await streamAlgorithms(2);
+    await wait(1600);
+    completeStep(3, `Canal de WhatsApp enlazado y listo para recibir llamadas entrantes.`);
+    
+    // Step 4: Sincronización en Tiempo Real con Sandbox
+    await runStep(4, `[Fase 4] Estableciendo puente de telemetría con el emulador móvil...`, 'green');
+    await streamAlgorithms(1);
     await wait(1000);
-    completeStep(4, `¡Asistente activo y listo para interactuar!`);
+    completeStep(4, `¡Asistente 100% activo en producción y simulador sincronizado!`);
     
-    statusText.innerText = '¡Asistente 100% Desplegado!';
+    statusText.innerText = 'SISTEMA 100% OPERATIVO EN VIVO';
     btn.disabled = false;
-    btn.innerHTML = `<i data-lucide="check-circle"></i> ¡Asistente Desplegado con Éxito!`;
+    btn.innerHTML = `<i data-lucide="check-circle-2"></i> ¡DESPLIEGUE COMPLETADO CON ÉXITO!`;
     if (window.lucide) lucide.createIcons();
     
     updateSelectedRolePreview();
-    scrollToSection('mobile-sandbox');
+    
+    // Scroll focalizado al smartphone con leve delay
+    setTimeout(() => {
+        const phoneElem = document.querySelector('.cyber-device-frame');
+        if (phoneElem) phoneElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 600);
 }
 
-function runStep(stepNum, logMsg, logClass) {
+async function streamAlgorithms(count = 2) {
+    for (let i = 0; i < count; i++) {
+        const snippet = algorithmSnippets[Math.floor(Math.random() * algorithmSnippets.length)];
+        appendTerminalLog(`> ${snippet}`, 'dim');
+        await wait(350);
+    }
+}
+
+function runStep(stepNum, logMsg, logType) {
     return new Promise(resolve => {
         const step = document.getElementById(`step-${stepNum}`);
-        step.className = 'step-item active';
-        step.querySelector('.step-status').innerHTML = `<i data-lucide="loader" class="animate-spin"></i>`;
-        appendTerminalLog(logMsg, logClass);
+        step.className = 'matrix-step active';
+        step.querySelector('.matrix-step-status').innerHTML = `<i data-lucide="loader" class="animate-spin"></i>`;
+        appendTerminalLog(logMsg, logType);
         if (window.lucide) lucide.createIcons();
         resolve();
     });
@@ -171,9 +199,9 @@ function runStep(stepNum, logMsg, logClass) {
 
 function completeStep(stepNum, logMsg) {
     const step = document.getElementById(`step-${stepNum}`);
-    step.className = 'step-item completed';
-    step.querySelector('.step-status').innerHTML = `<i data-lucide="check"></i>`;
-    appendTerminalLog(`✓ ${logMsg}`, 'text-green');
+    step.className = 'matrix-step completed';
+    step.querySelector('.matrix-step-status').innerHTML = `<i data-lucide="check"></i>`;
+    appendTerminalLog(`✓ ${logMsg}`, 'green');
     if (window.lucide) lucide.createIcons();
 }
 
@@ -181,7 +209,7 @@ function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Mobile Sandbox Chat Simulator
+// Simulador Móvil de Chat
 function sendQuickMessage(text) {
     const input = document.getElementById('chat-input');
     input.value = text;
@@ -202,24 +230,24 @@ async function sendChatMessage() {
     const chatBody = document.getElementById('chat-messages');
     const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     
-    // User bubble
+    // Burbuja usuario
     const userBubble = document.createElement('div');
-    userBubble.className = 'wa-message-bubble outgoing';
-    userBubble.innerHTML = `<p>${escapeHtml(msg)}</p><span class="msg-time">${now}</span>`;
+    userBubble.className = 'wa-bubble-msg outgoing-msg';
+    userBubble.innerHTML = `<p>${escapeHtml(msg)}</p><span class="wa-time-stamp">${now}</span>`;
     chatBody.appendChild(userBubble);
     
     input.value = '';
     chatBody.scrollTop = chatBody.scrollHeight;
     
-    // Typing indicator
+    // Indicador "Escribiendo..." con animación
     const typingBubble = document.createElement('div');
-    typingBubble.className = 'wa-message-bubble incoming typing-bubble';
-    typingBubble.innerHTML = `<p><em>Escribiendo...</em></p>`;
+    typingBubble.className = 'wa-bubble-msg incoming-msg';
+    typingBubble.innerHTML = `<p><em style="opacity:0.7;">Analizando intención semántica...</em></p>`;
     chatBody.appendChild(typingBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
     
-    // Bot Response Logic
-    await wait(1200);
+    // Inferencia contextual con delay de tipeo humano
+    await wait(1100);
     chatBody.removeChild(typingBubble);
     
     const lower = msg.toLowerCase();
@@ -228,15 +256,15 @@ async function sendChatMessage() {
     
     if (lower.includes('precio') || lower.includes('costo') || lower.includes('plan')) {
         replyText = preset.responses.precios;
-    } else if (lower.includes('demo') || lower.includes('cita') || lower.includes('agendar') || lower.includes('reunion')) {
+    } else if (lower.includes('demo') || lower.includes('cita') || lower.includes('agendar') || lower.includes('reunion') || lower.includes('llamada')) {
         replyText = preset.responses.demo;
-    } else if (lower.includes('integracion') || lower.includes('como funciona') || lower.includes('instalar')) {
+    } else if (lower.includes('integracion') || lower.includes('como funciona') || lower.includes('instalar') || lower.includes('opera')) {
         replyText = preset.responses.integracion;
     }
     
     const botBubble = document.createElement('div');
-    botBubble.className = 'wa-message-bubble incoming';
-    botBubble.innerHTML = `<p>${replyText}</p><span class="msg-time">${now}</span>`;
+    botBubble.className = 'wa-bubble-msg incoming-msg';
+    botBubble.innerHTML = `<p>${replyText}</p><span class="wa-time-stamp">${now}</span>`;
     chatBody.appendChild(botBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
 }
@@ -247,13 +275,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Toggle FAQ / Troubleshooting accordion
-function toggleFaq(el) {
-    const card = el.parentElement;
-    card.classList.toggle('open');
-}
-
-// Initial preview setup
+// Iniciar estado
 document.addEventListener('DOMContentLoaded', () => {
     updateSelectedRolePreview();
 });
