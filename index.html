@@ -14,6 +14,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="deck-os">
+    <!-- Desktop Native Titlebar (Visible when running in MexaBot-Desktop.exe) -->
+    <div class="desktop-titlebar" id="desktop-titlebar">
+        <div class="titlebar-drag-region">
+            <i data-lucide="terminal" style="width:14px;height:14px;"></i>
+            <span>MEXABOT DESKTOP OS // COMMAND DECK v1.0</span>
+        </div>
+        <div class="titlebar-controls">
+            <button class="titlebar-btn" onclick="desktopMinimize()"><i data-lucide="minus" style="width:12px;height:12px;"></i></button>
+            <button class="titlebar-btn" onclick="desktopMaximize()"><i data-lucide="square" style="width:10px;height:10px;"></i></button>
+            <button class="titlebar-btn btn-close" onclick="desktopClose()"><i data-lucide="x" style="width:12px;height:12px;"></i></button>
+        </div>
+    </div>
+
     <!-- Matrix Grid & Ambient HUD -->
     <div class="hud-grid-background"></div>
     <div class="hud-scanline"></div>
@@ -38,16 +51,19 @@
                 <span class="node-val highlight-blue">GEMINI FLASH</span>
             </div>
             <div class="telemetry-node">
-                <span class="node-label">SOCKET WHATSAPP</span>
-                <span class="node-val highlight-green">ACTIVO // LINK</span>
+                <span class="node-label">CANALES</span>
+                <span class="node-val highlight-green">MULTI-PLATAFORMA</span>
             </div>
             <div class="telemetry-node">
-                <span class="node-label">CONCURRENCIA</span>
-                <span class="node-val highlight-purple">MULTI-THREAD</span>
+                <span class="node-label">EJECUCIÓN</span>
+                <span class="node-val highlight-purple">NATIVA .EXE / WEB</span>
             </div>
         </div>
 
         <div class="hud-topbar-right">
+            <a href="https://github.com/dixi3stdgdl-design/Mexabot/releases" target="_blank" class="hud-btn btn-download-exe">
+                <i data-lucide="download"></i> DESCARGAR APP (.EXE)
+            </a>
             <a href="#command-center" class="hud-btn hud-btn-primary">
                 <i data-lucide="terminal"></i> CONSOLA DE MANDO
             </a>
@@ -124,8 +140,29 @@
                             <input type="text" id="biz-name" class="hud-input" value="Consultoría Integral Mexa" placeholder="Ej. Soluciones Legales Gómez" required>
                         </div>
                         <div class="hud-field">
-                            <label>NÚMERO WHATSAPP DESTINO</label>
-                            <input type="text" id="biz-phone" class="hud-input" value="+52 55 1234 5678" placeholder="+52 55 0000 0000" required>
+                            <label>CANAL DESTINO</label>
+                            <select id="agent-channel" class="hud-input">
+                                <option value="whatsapp">🟢 WhatsApp Business (Baileys / Meta API)</option>
+                                <option value="telegram">🔵 Telegram Bot (Comandos & Inline Menus)</option>
+                                <option value="instagram">🟣 Instagram Direct & Messenger</option>
+                                <option value="webchat">💬 Widget WebChat Embebible (Flotante)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hud-input-row">
+                        <div class="hud-field">
+                            <label>TELÉFONO O ID DE CANAL</label>
+                            <input type="text" id="biz-phone" class="hud-input" value="+52 55 1234 5678" placeholder="+52 55 0000 0000 / @tu_bot" required>
+                        </div>
+                        <div class="hud-field">
+                            <label>EQUIPO / MÉTODO DE INSTALACIÓN</label>
+                            <select id="deployment-stack" class="hud-input">
+                                <option value="docker">🐳 Equipo Docker (Aislado + Postgres / VPS)</option>
+                                <option value="node">🟢 Equipo Node.js / Baileys (Ligero & QR)</option>
+                                <option value="python">🐍 Equipo Python / FastAPI (Meta Cloud API)</option>
+                                <option value="native">⚡ Script 1-Clic Nativo (PowerShell / Windows)</option>
+                            </select>
                         </div>
                     </div>
 
@@ -133,7 +170,7 @@
                         <div class="hud-field">
                             <label>ARQUETIPO DE ASISTENTE</label>
                             <select id="agent-role-select" class="hud-input" onchange="updateSelectedRolePreview()">
-                                <option value="sales">Aura — Cierre Comercial & Calificación de Leads</option>
+                                <option value="sales">MexaBot — Especialista Comercial & Cierre</option>
                                 <option value="calendar">Cronos — Recepción & Agendamiento 24/7</option>
                                 <option value="support">Atlas — Helpdesk & Base de Conocimiento</option>
                                 <option value="executive">Nova — Asistente Ejecutivo & Síntesis de Voz</option>

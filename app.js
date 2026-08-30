@@ -111,13 +111,28 @@ const algorithmSnippets = [
     "VectorIndex.embedKnowledge() · Cosine similarity cache warm"
 ];
 
+// Desktop Window Controls (Nativo Electron)
+function desktopMinimize() {
+    if (window.mexabotNative) window.mexabotNative.minimize();
+}
+
+function desktopMaximize() {
+    if (window.mexabotNative) window.mexabotNative.maximize();
+}
+
+function desktopClose() {
+    if (window.mexabotNative) window.mexabotNative.close();
+}
+
 // Orquestación en Vivo con Algoritmos y Transiciones con Delay Cinemático
 async function startLiveOrchestration(e) {
     e.preventDefault();
     
     const btn = document.getElementById('btn-deploy');
     const bizName = document.getElementById('biz-name').value;
+    const channel = document.getElementById('agent-channel') ? document.getElementById('agent-channel').value : 'whatsapp';
     const phone = document.getElementById('biz-phone').value;
+    const stack = document.getElementById('deployment-stack') ? document.getElementById('deployment-stack').value : 'docker';
     const statusText = document.getElementById('orchestrator-status-text');
     
     btn.disabled = true;
@@ -134,28 +149,46 @@ async function startLiveOrchestration(e) {
     }
     if (window.lucide) lucide.createIcons();
     
+    // Si corre en Desktop OS (.exe nativo), ejecuta el motor real con procesos en paralelo
+    if (window.mexabotNative) {
+        appendTerminalLog(`[Desktop Kernel] Modo nativo detectado. Lanzando ejecutor de subprocesos...`, 'cyan');
+        await window.mexabotNative.startRealDeployment({
+            bizName,
+            channel,
+            phone,
+            stack,
+            agentType: currentPreset
+        });
+        btn.disabled = false;
+        btn.innerHTML = `<i data-lucide="check-circle"></i> INSTALACIÓN Y ENLACE NATIVO COMPLETADO`;
+        statusText.innerText = 'SISTEMA NATIVO EN PRODUCCIÓN';
+        if (window.lucide) lucide.createIcons();
+        return;
+    }
+    
+    // Modo Web / Demostración en el navegador
     // Step 1: Compilación de Identidad & Reglas
-    await runStep(1, `[Fase 1] Inicializando compilador semántico para "${bizName}" con agente MexaBot...`, 'cyan');
+    await runStep(1, `[Fase 1] Inicializando compilador semántico para "${bizName}" en canal ${channel.toUpperCase()}...`, 'cyan');
     await streamAlgorithms(2);
-    await wait(1200);
+    await wait(1100);
     completeStep(1, `SOUL.md compilado con menú de 5 opciones y política estricta anti-spam Inbound-Only.`);
     
     // Step 2: Inyección de Credenciales & Aislamiento
-    await runStep(2, `[Fase 2] Inyectando variable segura env.GEMINI_API_KEY en espacio de kernel...`, 'purple');
+    await runStep(2, `[Fase 2] Configurando stack [${stack.toUpperCase()}] y variables de entorno...`, 'purple');
     await streamAlgorithms(2);
-    await wait(1200);
-    completeStep(2, `Aislamiento de credenciales completado. Sin bloqueos de SQLite.`);
+    await wait(1100);
+    completeStep(2, `Aislamiento de credenciales y base de datos completado.`);
     
     // Step 3: Enlace Socket & Política Pública
-    await runStep(3, `[Fase 3] Vinculando socket OpenClaw en puerto 18789 y configurando DM policy...`, 'blue');
+    await runStep(3, `[Fase 3] Vinculando socket en puerto 18789 y autorizando canal ${channel.toUpperCase()}...`, 'blue');
     await streamAlgorithms(2);
-    await wait(1200);
+    await wait(1100);
     completeStep(3, `Socket 18789 activo y conectado.`);
     
     // Step 4: Vinculación Móvil & Sandbox
     await runStep(4, `[Fase 4] Sincronizando con dispositivo en ${phone || '+52 33 0000 0000'}...`, 'green');
     await streamAlgorithms(2);
-    await wait(1200);
+    await wait(1100);
     completeStep(4, `Asistente MexaBot operativo en tiempo real.`);
     
     btn.disabled = false;
@@ -298,6 +331,38 @@ function escapeHtml(text) {
 // Iniciar estado
 document.addEventListener('DOMContentLoaded', () => {
     updateSelectedRolePreview();
+
+    // Detección de entorno nativo Desktop OS (.exe)
+    if (window.mexabotNative) {
+        document.body.classList.add('is-desktop');
+        appendTerminalLog(`[MexaBot OS] Inicializado en entorno nativo de escritorio (Windows).`, 'cyan');
+        
+        // Escuchar logs en tiempo real emitidos por el subproceso
+        window.mexabotNative.onLog((logData) => {
+            appendTerminalLog(logData.text, logData.type || 'dim');
+        });
+
+        window.mexabotNative.onStepUpdate((stepData) => {
+            if (stepData.status === 'active') {
+                runStep(stepData.step, `[Paso ${stepData.step}] ${stepData.message}`, 'cyan');
+            } else if (stepData.status === 'completed') {
+                completeStep(stepData.step, stepData.message);
+            }
+        });
+
+        window.mexabotNative.onFinished((result) => {
+            appendTerminalLog(`✓ [Finalizado] Asistente configurado y listo en ${result.path}`, 'green');
+        });
+
+        window.mexabotNative.onError((errMsg) => {
+            appendTerminalLog(`✗ [Fallo] ${errMsg}`, 'red');
+        });
+
+        // Verificar prerequisitos del sistema
+        window.mexabotNative.checkPrerequisites().then(prereqs => {
+            appendTerminalLog(`[Prerrequisitos] OS: ${prereqs.os} | Node: ${prereqs.node} | Docker: ${prereqs.docker}`, 'dim');
+        });
+    }
 });
 
 // Base de Datos Exhaustiva de Escalas, Precios Oficiales y Procesos en Segundo Plano

@@ -1,0 +1,54 @@
+{
+  "name": "mexabot-desktop",
+  "version": "1.0.0",
+  "description": "MEXABOT — Neural Command OS & Despliegue Autónomo de Asistentes Digitales",
+  "main": "desktop-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:exe": "electron-builder --win --x64"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "whatsapp",
+    "telegram",
+    "automation",
+    "mexabot"
+  ],
+  "author": "MEXABOT",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.mexabot.desktop",
+    "productName": "MexaBot Desktop OS",
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "hero-creation-claw.jpg"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "hero-creation-claw.jpg",
+      "desktop-main.js",
+      "desktop-preload.js",
+      "desktop-engine.js",
+      "SOUL.md"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
