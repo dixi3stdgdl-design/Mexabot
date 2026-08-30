@@ -279,3 +279,141 @@ function escapeHtml(text) {
 document.addEventListener('DOMContentLoaded', () => {
     updateSelectedRolePreview();
 });
+
+// Base de Datos Exhaustiva de Escalas, Precios Oficiales y Procesos en Segundo Plano
+const scaleDeepDiveData = {
+    starter: {
+        title: "ESCALA 01: STARTER NEURAL (1 A 10 USUARIOS)",
+        subtitle: "DESPLIEGUE LOCAL PC · WSL2 / WINDOWS · OPENCLAW GATEWAY :18789",
+        geminiPricing: {
+            model: "Google Gemini 3.5 Flash Lite",
+            officialCost: "$0.075 USD por 1 Millón de Tokens de Entrada / $0.30 USD por 1M Tokens de Salida",
+            mexabotFee: "$29.00 USD / mes (Licencia de Software, Orquestador Visual y Actualizaciones)",
+            monthlyEstimate: "Aproximadamente $29 a $32 USD / mes para 3,000 conversaciones mensuales."
+        },
+        foregroundSteps: [
+            "Descarga desatendida del paquete binario de OpenClaw y Node.js en WSL2.",
+            "Apertura del gestor de sistema para vincular puerto local 18789 con loopback seguro.",
+            "Generación determinista de SOUL.md e IDENTITY.md según el arquetipo elegido.",
+            "Despliegue del simulador interactivo en pantalla dividida para validación visual."
+        ],
+        backgroundProcesses: [
+            { pid: "PID: openclaw-gateway", desc: "Daemon residente que mantiene el WebSocket abierto en ws://127.0.0.1:18789 con reconexión automática en caso de caída." },
+            { pid: "PID: whatsapp-baileys-bridge", desc: "Proceso que escucha los eventos de red de WhatsApp Web. Mantiene viva la sesión de credenciales sin pedir QR en cada arranque." },
+            { pid: "PID: env-secret-resolver", desc: "Inyector de memoria que alimenta env.GEMINI_API_KEY en tiempo de ejecución sin tocar la base de datos SQLite (Lock-Free)." },
+            { pid: "PID: health-monitor-cron", desc: "Hilo de monitoreo cada 30 segundos que revisa que el socket no esté colgado y reinicia subprocesos en < 200ms si hay timeout." }
+        ]
+    },
+    pro: {
+        title: "ESCALA 02: PRO DEDICATED VPS (10 A 100 COLABORADORES)",
+        subtitle: "SERVIDOR VPS LINUX / DOCKER 24/7 · BASE RAG DOCUMENTAL · SLAS COMERCIALES",
+        geminiPricing: {
+            model: "Google Gemini 3.5 Flash (Con Embeddings Vectoriales)",
+            officialCost: "$0.15 USD por 1 Millón de Tokens de Entrada / $0.60 USD por 1M Tokens de Salida",
+            mexabotFee: "$89.00 USD / mes (Servidor VPS Dedicado 24/7, Pipeline RAG y Mantenimiento)",
+            monthlyEstimate: "Aproximadamente $89 a $98 USD / mes para 25,000 conversaciones y documentos adjuntos."
+        },
+        foregroundSteps: [
+            "Aprovisionamiento automático de servidor VPS en la nube (8 vCPU / 16 GB RAM).",
+            "Indexación de catálogos y manuales PDF mediante embeddings vectoriales para RAG.",
+            "Configuración de Webhooks seguros con Google Calendar y sistemas CRM (HubSpot/Zoho).",
+            "Monitoreo en tiempo real del tráfico comercial con dashboard de conversión."
+        ],
+        backgroundProcesses: [
+            { pid: "PID: openclaw-cluster-node", desc: "Instancia multihilo con balanceador de carga local para atender hasta 50 chats simultáneos sin degradación." },
+            { pid: "PID: vector-knowledge-indexer", desc: "Demostrador RAG que realiza búsquedas de similitud coseno en memoria caché para responder preguntas sobre PDFs en < 300ms." },
+            { pid: "PID: webhook-dispatcher", desc: "Hilo asíncrono que envía prospectos calificados, citas y resúmenes a Google Calendar y correo corporativo." },
+            { pid: "PID: phone-link-keepalive", desc: "Servicio de pulso TCP que envía 'no-op packets' cada 15s para evitar que WhatsApp suspenda la sesión por inactividad." }
+        ]
+    },
+    enterprise: {
+        title: "ESCALA 03: ENTERPRISE CLUSTER (1,000+ USUARIOS)",
+        subtitle: "CLÚSTER KUBERNETES · WHATSAPP CLOUD API OFICIAL (META) · BASE DISTRIBUIDA",
+        geminiPricing: {
+            model: "Google Gemini 3.5 Pro (Razonamiento Complejo & Multi-Agente)",
+            officialCost: "$1.25 USD por 1 Millón de Tokens de Entrada / $5.00 USD por 1M Tokens de Salida",
+            mexabotFee: "$299.00 USD / mes (Clúster Cloud K8s, WhatsApp Cloud API Meta, SLA 99.99% y Soporte Dedicado)",
+            monthlyEstimate: "Aproximadamente $299 a $380 USD / mes para 100,000+ conversaciones con alta concurrencia."
+        },
+        foregroundSteps: [
+            "Despliegue de clúster Kubernetes con pods autoescalables basados en el tráfico de red.",
+            "Enlace oficial con Meta Graph API (WhatsApp Cloud API) sin depender de teléfonos físicos.",
+            "Integración de bases de datos PostgreSQL distribuidas y almacenamiento encriptado.",
+            "Consola de auditoría para comités de seguridad y cumplimiento normativo."
+        ],
+        backgroundProcesses: [
+            { pid: "PID: k8s-auto-scaler", desc: "Orquestador de pods que levanta réplicas en caliente cuando la concurrencia supera los 500 mensajes por segundo." },
+            { pid: "PID: meta-cloud-api-gateway", desc: "Manejador de Webhooks HTTP/2 con certificación TLS y entrega garantizada mediante colas Redis/RabbitMQ." },
+            { pid: "PID: postgres-distributed-pool", desc: "Gestor de conexiones con pool optimizado para registrar historial de clientes, etiquetas y estados de compra." },
+            { pid: "PID: audit-compliance-watcher", desc: "Filtro de seguridad que anonimiza datos sensibles y almacena registros criptográficos inmutables." }
+        ]
+    }
+};
+
+// Abrir Modal de Diagnóstico y Procesos en Segundo Plano
+function openScaleDeepDive(scaleKey) {
+    const data = scaleDeepDiveData[scaleKey];
+    if (!data) return;
+    
+    document.getElementById('modal-scale-title').innerText = data.title;
+    document.getElementById('modal-scale-subtitle').innerText = data.subtitle;
+    
+    const body = document.getElementById('modal-scale-body');
+    body.innerHTML = `
+        <!-- Sección 1: Costos Oficiales y Margen de Software -->
+        <div class="deep-dive-section-block">
+            <div class="block-title"><i data-lucide="calculator"></i> ESTRUCTURA DE PRECIOS TRANSPARENTE</div>
+            <div class="financial-math-box">
+                <div class="math-card">
+                    <h5>COSTO OFICIAL MODELO IA (GOOGLE GEMINI)</h5>
+                    <p><strong>Modelo:</strong> ${data.geminiPricing.model}</p>
+                    <p><strong>Tarifa Oficial Google:</strong> ${data.geminiPricing.officialCost}</p>
+                    <p style="margin-top:6px; color:#94a3b8; font-size:0.75rem;">* Facturado directamente al consumo real de tokens sin sobreprecios.</p>
+                </div>
+                <div class="math-card">
+                    <h5>SUITE DE SOFTWARE & INGENIERÍA MEXABOT</h5>
+                    <p><strong>Tarifa Mensual:</strong> ${data.geminiPricing.mexabotFee}</p>
+                    <p><strong>Inversión Total Estimada:</strong> ${data.geminiPricing.monthlyEstimate}</p>
+                    <p style="margin-top:6px; color:#10b981; font-size:0.75rem;">✓ Incluye orquestación, soporte técnico, pasarela y actualizaciones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 2: Lo que hace el código en Primer Plano -->
+        <div class="deep-dive-section-block">
+            <div class="block-title"><i data-lucide="terminal"></i> PROCESOS EN PRIMER PLANO (LO QUE VES EN PANTALLA)</div>
+            <div class="thread-step-list">
+                ${data.foregroundSteps.map((step, idx) => `
+                    <div class="thread-node">
+                        <span class="thread-pid">PASO 0${idx+1}</span>
+                        <span class="thread-detail">${step}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+
+        <!-- Sección 3: Hilos de Ejecución en Segundo Plano (El Kernel) -->
+        <div class="deep-dive-section-block">
+            <div class="block-title"><i data-lucide="cpu"></i> HILOS Y DAEMONS EN SEGUNDO PLANO (CÓMO OPERA EL KERNEL)</div>
+            <div class="thread-step-list">
+                ${data.backgroundProcesses.map(proc => `
+                    <div class="thread-node">
+                        <span class="thread-pid">${proc.pid}</span>
+                        <span class="thread-detail">${proc.desc}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('scale-deep-dive-modal').classList.add('open');
+    if (window.lucide) lucide.createIcons();
+}
+
+// Cerrar Modal
+function closeScaleDeepDive(e) {
+    if (e && e.target && e.target.id !== 'scale-deep-dive-modal' && !e.target.classList.contains('modal-close-btn')) {
+        return;
+    }
+    document.getElementById('scale-deep-dive-modal').classList.remove('open');
+}

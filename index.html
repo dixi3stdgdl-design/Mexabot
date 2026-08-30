@@ -330,48 +330,126 @@
             </div>
         </section>
 
-        <!-- Matriz de Cómputo e Infraestructura -->
+        <!-- Matriz de Cómputo e Infraestructura con Desglose Financiero & Técnico Profundo -->
         <section id="computo-matrix" class="hud-panel full-width-panel">
             <div class="panel-hud-header">
-                <span class="hud-sub-label">INFRAESTRUCTURA & ESCALA</span>
-                <h2>MATRIZ DE CAPACIDAD DE CÓMPUTO DETERMINISTA</h2>
+                <span class="hud-sub-label">INFRAESTRUCTURA, COSTOS OFICIALES & MARGEN DE INGENIERÍA</span>
+                <h2>MATRIZ DE ESCALABILIDAD, PRECIOS & PROCESOS DE KERNEL</h2>
+                <p class="section-desc-light">Selecciona cualquier escala para abrir el desglose técnico exhaustivo: desde la compilación en primer plano hasta los hilos de ejecución en segundo plano y la estructura de costos de IA.</p>
             </div>
 
             <div class="compute-deck-grid">
-                <div class="compute-box">
-                    <span class="box-tier-id">ESCALA // 01</span>
-                    <h3>1 a 10 Usuarios (PYME / Profesional)</h3>
-                    <p>Despliegue local desatendido en PC mediante OpenClaw en Windows/WSL.</p>
-                    <div class="spec-matrix">
-                        <div class="matrix-row"><span>CPU / RAM:</span><strong>4 Cores / 8 GB RAM</strong></div>
-                        <div class="matrix-row"><span>Almacenamiento:</span><strong>10 GB SSD Libres</strong></div>
-                        <div class="matrix-row"><span>Concurrencia:</span><strong>Hasta 5 chats en paralelo</strong></div>
+                <!-- Escala 1 -->
+                <div class="compute-box interactive-compute-card" onclick="openScaleDeepDive('starter')">
+                    <div class="box-top-tag">CLIC PARA ANÁLISIS PROFUNDO</div>
+                    <span class="box-tier-id">ESCALA // 01 · MICRO / PYME</span>
+                    <h3>Starter Neural (1 a 10 Usuarios)</h3>
+                    <p>Para profesionistas, despachos y comercios locales con atención ágil.</p>
+                    
+                    <div class="financial-breakdown-card">
+                        <div class="cost-line">
+                            <span>Tokens Gemini 3.5 Flash Lite:</span>
+                            <strong>$0.075 USD / 1M tokens (Oficial Google)</strong>
+                        </div>
+                        <div class="cost-line">
+                            <span>Infraestructura & Software MEXABOT:</span>
+                            <strong>$29.00 USD / mes (Licencia & Engine)</strong>
+                        </div>
+                        <div class="cost-line highlight-total">
+                            <span>Inversión Total Estimada:</span>
+                            <span class="total-badge">$29 USD / mes + consumo</span>
+                        </div>
                     </div>
+
+                    <div class="spec-matrix">
+                        <div class="matrix-row"><span>Hardware Base:</span><strong>PC 4 Cores / 8 GB RAM</strong></div>
+                        <div class="matrix-row"><span>Socket Gateway:</span><strong>Loopback :18789</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>5 chats en paralelo</strong></div>
+                    </div>
+                    <button class="hud-btn hud-btn-tile">INSPECCIONAR PROCESOS EN SEGUNDO PLANO</button>
                 </div>
 
-                <div class="compute-box active-compute-box">
-                    <span class="box-tier-id highlight-blue">ESCALA // 02 [RECOMENDADO]</span>
-                    <h3>10 a 100 Colaboradores (Empresa Mediana)</h3>
-                    <p>Servidor VPS dedicado 24/7 para flujo continuo de prospectos y atención comercial.</p>
+                <!-- Escala 2 -->
+                <div class="compute-box interactive-compute-card active-compute-box" onclick="openScaleDeepDive('pro')">
+                    <div class="box-top-tag highlight-blue">RECOMENDADO · CLIC PARA VER KERNEL</div>
+                    <span class="box-tier-id highlight-blue">ESCALA // 02 · MEDIANA EMPRESA</span>
+                    <h3>Pro Dedicated VPS (10 a 100 Colaboradores)</h3>
+                    <p>Para empresas en crecimiento con flujo constante de prospectos y ventas.</p>
+
+                    <div class="financial-breakdown-card">
+                        <div class="cost-line">
+                            <span>Tokens Gemini 3.5 Flash (Base RAG):</span>
+                            <strong>$0.15 USD / 1M tokens (Oficial Google)</strong>
+                        </div>
+                        <div class="cost-line">
+                            <span>Servidor VPS 24/7 + Suite MEXABOT:</span>
+                            <strong>$89.00 USD / mes (Infraestructura Dedicada)</strong>
+                        </div>
+                        <div class="cost-line highlight-total">
+                            <span>Inversión Total Estimada:</span>
+                            <span class="total-badge highlight-blue-bg">$89 USD / mes + consumo</span>
+                        </div>
+                    </div>
+
                     <div class="spec-matrix">
-                        <div class="matrix-row"><span>VPS vCPU / RAM:</span><strong>8 Cores / 16 GB RAM</strong></div>
+                        <div class="matrix-row"><span>VPS Dedicado:</span><strong>8 vCPU / 16 GB RAM</strong></div>
                         <div class="matrix-row"><span>Almacenamiento:</span><strong>50 GB NVMe SSD</strong></div>
-                        <div class="matrix-row"><span>Concurrencia:</span><strong>Hasta 50 chats simultáneos</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>50 chats simultáneos</strong></div>
                     </div>
+                    <button class="hud-btn hud-btn-tile">INSPECCIONAR PROCESOS EN SEGUNDO PLANO</button>
                 </div>
 
-                <div class="compute-box">
-                    <span class="box-tier-id highlight-purple">ESCALA // 03</span>
-                    <h3>1,000+ Usuarios (Corporativo Masivo)</h3>
-                    <p>Clúster Cloud elástico (Kubernetes) con WhatsApp Cloud API oficial de Meta.</p>
-                    <div class="spec-matrix">
-                        <div class="matrix-row"><span>Infraestructura:</span><strong>Clúster Cloud Balanceado</strong></div>
-                        <div class="matrix-row"><span>Base de Datos:</span><strong>PostgreSQL Distribuido</strong></div>
-                        <div class="matrix-row"><span>Concurrencia:</span><strong>1,000+ chats en tiempo real</strong></div>
+                <!-- Escala 3 -->
+                <div class="compute-box interactive-compute-card" onclick="openScaleDeepDive('enterprise')">
+                    <div class="box-top-tag">CLIC PARA ARQUITECTURA CLOUD</div>
+                    <span class="box-tier-id highlight-purple">ESCALA // 03 · CORPORATIVO</span>
+                    <h3>Enterprise Cloud Cluster (1,000+ Usuarios)</h3>
+                    <p>Para cadenas comerciales, fintechs y atención masiva omni-canal.</p>
+
+                    <div class="financial-breakdown-card">
+                        <div class="cost-line">
+                            <span>Tokens Gemini 3.5 Pro (Alta Complejidad):</span>
+                            <strong>$1.25 USD / 1M tokens (Oficial Google)</strong>
+                        </div>
+                        <div class="cost-line">
+                            <span>Clúster Cloud K8s + WhatsApp Cloud API:</span>
+                            <strong>$299.00 USD / mes (SLA 99.99%)</strong>
+                        </div>
+                        <div class="cost-line highlight-total">
+                            <span>Inversión Total Estimada:</span>
+                            <span class="total-badge highlight-purple-bg">$299 USD / mes + consumo</span>
+                        </div>
                     </div>
+
+                    <div class="spec-matrix">
+                        <div class="matrix-row"><span>Arquitectura:</span><strong>Kubernetes Auto-Scale</strong></div>
+                        <div class="matrix-row"><span>Base de Datos:</span><strong>PostgreSQL Vectorial</strong></div>
+                        <div class="matrix-row"><span>Concurrencia:</span><strong>1,000+ chats en vivo</strong></div>
+                    </div>
+                    <button class="hud-btn hud-btn-tile">INSPECCIONAR PROCESOS EN SEGUNDO PLANO</button>
                 </div>
             </div>
         </section>
+
+        <!-- Modal de Diagnóstico y Procesos Profundos en Segundo Plano -->
+        <div id="scale-deep-dive-modal" class="hud-modal-backdrop" onclick="closeScaleDeepDive(event)">
+            <div class="hud-modal-content" onclick="event.stopPropagation()">
+                <div class="modal-hud-header">
+                    <div class="modal-title-wrap">
+                        <i data-lucide="cpu" class="modal-icon"></i>
+                        <div>
+                            <h3 id="modal-scale-title">DESGLOSE DE EJECUCIÓN & PROCESOS EN SEGUNDO PLANO</h3>
+                            <span id="modal-scale-subtitle" class="modal-sub">ESCALA SELECCIONADA: STARTER NEURAL</span>
+                        </div>
+                    </div>
+                    <button class="modal-close-btn" onclick="closeScaleDeepDive()">&times;</button>
+                </div>
+
+                <div class="modal-body-deck" id="modal-scale-body">
+                    <!-- Contenido dinámico inyectado por app.js -->
+                </div>
+            </div>
+        </div>
 
         <!-- Hardware Guidelines: Phone Link & USB -->
         <section id="hardware-matrix" class="hud-panel full-width-panel">
