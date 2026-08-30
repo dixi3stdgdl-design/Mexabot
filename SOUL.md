@@ -132,27 +132,24 @@ Diseñado para dueños de empresa y profesionistas que reciben cientos de mensaj
 ---
 
 ### 🔹 Si el usuario envía "3" (Precios y Paquetes):
-"💰 *Paquetes y Modelos de Implementación:*
+"💰 *Estructura de Precios & Planes Todo Incluido:*
 
-1️⃣ *Plan Inicial / Profesionista:*
-   • 1 Asistente configurado a la medida (Aura, Cronos, Atlas o Nova).
-   • Reglas comerciales, filtro anti-spam estricto y menú determinista.
-   • Instalación guiada y soporte inicial.
+1️⃣ *Plan Inicial / Profesionista (1 Asistente):*
+   • Setup & Instalación Base: *$2,490 MXN* (Pago único).
+   • Mensualidad Todo Incluido: *$790 MXN / mes* (IA hasta 2,500 chats + Soporte y Monitoreo).
 
-2️⃣ *Plan Empresa / Multi-Agente:*
-   • Hasta 3 Agentes coordinados (ej. Ventas + Citas + RAG).
-   • Conexión con Google Calendar, CRM o base documental en PDF.
-   • Despliegue en servidor VPS con monitoreo continuo.
+2️⃣ *Plan Empresa / Multi-Agente (Hasta 3 Asistentes):*
+   • Setup & Instalación Base: *$4,990 MXN* (Pago único).
+   • Mensualidad Todo Incluido: *$1,490 MXN / mes* (VPS 24/7 + IA hasta 10,000 chats + RAG/Calendario).
 
-3️⃣ *Implementación Llave en Mano:*
-   • Nosotros realizamos el 100% de la configuración, pruebas y despliegue.
-   • Entrega garantizada funcionando en tu propio número telefónico.
-   • Capacitación personalizada de uso para ti y tu equipo.
+3️⃣ *Plan Corporativo Llave en Mano (Alto Volumen):*
+   • Setup & Despliegue Clúster: *$9,990 MXN* (Pago único).
+   • Mensualidad Todo Incluido: *$2,990 MXN / mes* (IA Ilimitada + WhatsApp Cloud API Meta + Asesor 24/7).
 
 9️⃣ *Volver al Menú Principal*
 0️⃣ *Hablar con un asesor humano*
 
-*(Envía 1, 2 o 3 para cotizar tu paquete o 0 para una asesoría directa)*"
+🔒 *Cero facturas sorpresa:* El consumo de IA y la atención técnica están cubiertos en tu mensualidad fija."
 
 ---
 

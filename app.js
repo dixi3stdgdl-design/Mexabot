@@ -11,7 +11,7 @@ const mexabotMasterIdentity = {
         "1_3": `🛡️ <strong>Atlas — Soporte Técnico & Base Documental RAG:</strong><br>Indexa tus manuales, políticas y catálogos en PDF para responder preguntas complejas sin alucinaciones.<br><br>💡 <strong>¿Para qué te sirve en tu negocio?</strong><br>• <em>Software & SaaS:</em> Resuelve dudas de configuración paso a paso con capturas y guías.<br>• <em>Distribuidores Industriales:</em> Consulta existencias, códigos de refacción y fichas técnicas al instante.<br>• <em>Escuelas & Universidades:</em> Responde sobre costos, fechas de inscripción y reglamentos escolares.<br><br>⌨️ <strong>Comandos base:</strong> <em>'buscar manual [tema]'</em>, <em>'garantía [producto]'</em>, <em>'0' (soporte humano)</em>.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "1_4": `🚀 <strong>Nova — Copiloto Ejecutivo & Productividad:</strong><br>Diseñado para dueños de empresa y profesionistas que reciben cientos de mensajes y audios al día.<br><br>💡 <strong>¿Para qué te sirve en tu negocio?</strong><br>• <em>Directores & Founders:</em> Envías un audio de 5 minutos y Nova extrae los acuerdos y compromisos.<br>• <em>Gestión de Equipos:</em> Convierte notas de voz en tareas accionables para tu CRM o gestor de proyectos.<br>• <em>Seguimiento Diario:</em> Te envía un resumen matutino con las prioridades de tu día.<br><br>⌨️ <strong>Comandos base:</strong> <em>'resumen del día'</em>, <em>'nueva tarea [texto/audio]'</em>, <em>'borrador [tema]'</em>.<br><br>1️⃣ <em>Ver precios y paquetes</em><br>2️⃣ <em>Ver métodos de instalación</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "2": `⚙️ <strong>Equipos & Métodos de Despliegue:</strong><br><br>1️⃣ <strong>Equipo Docker VPS (Recomendado 24/7):</strong> Contenedor aislado con reinicio automático y base PostgreSQL. Ideal para operar día y noche.<br>2️⃣ <strong>Equipo Node.js / Baileys (Ágil):</strong> Instalación ultraligera para servidores locales o microservicios con enlace QR directo.<br>3️⃣ <strong>Equipo Python Cloud API (Corporativo):</strong> Conexión oficial con WhatsApp Cloud API de Meta para alto volumen.<br>4️⃣ <strong>Script 1-Clic Windows (Autónomo):</strong> Instalador nativo en PowerShell que autoconfigura tu PC sin requerir conocimientos técnicos.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br>🔒 <em>Privacidad: El backend es 100% tuyo; tus datos y clientes nunca pasan por servidores de terceros.</em>`,
-        "3": `💰 <strong>Paquetes y Modelos de Implementación:</strong><br><br>1️⃣ <strong>Plan Inicial / Profesionista:</strong> 1 Asistente a la medida con flujo comercial y reglas clave.<br>2️⃣ <strong>Plan Empresa / Multi-Agente:</strong> Hasta 3 agentes coordinados (Ventas + Citas + RAG) con conexión a calendario y CRM.<br>3️⃣ <strong>Implementación Llave en Mano:</strong> Nosotros hacemos el 100% de la instalación, pruebas y entrega en tu propio número telefónico.<br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br><em>(Envía 1, 2 o 3 para cotizar tu paquete o 0 para asesoría directa)</em>`,
+        "3": `💰 <strong>Estructura de Precios & Planes Todo Incluido:</strong><br><br>1️⃣ <strong>Plan Inicial / Profesionista:</strong><br>• Setup & Instalación Base: <strong>$2,490 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$790 MXN / mes</strong> (IA hasta 2,500 chats + Soporte y Monitoreo).<br><br>2️⃣ <strong>Plan Empresa / Multi-Agente:</strong><br>• Setup & Instalación Base: <strong>$4,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$1,490 MXN / mes</strong> (VPS Dedicado 24/7 + IA hasta 10,000 chats + RAG/Calendario).<br><br>3️⃣ <strong>Plan Corporativo Llave en Mano:</strong><br>• Setup & Despliegue Clúster: <strong>$9,990 MXN</strong> (Pago único).<br>• Mensualidad Todo Incluido: <strong>$2,990 MXN / mes</strong> (IA Ilimitada + WhatsApp Cloud API Meta + Asesor 24/7).<br><br>9️⃣ <strong>Volver al Menú Principal</strong><br>0️⃣ <strong>Hablar con un asesor humano</strong><br><br>🔒 <em>Cero facturas sorpresa: El consumo de IA y la atención técnica están cubiertos en tu mensualidad fija.</em>`,
         "4": `⏱️ <strong>Proceso de Activación Rápida:</strong><br><br>1. <strong>Definición:</strong> Ajustamos el arquetipo, tono y reglas del negocio.<br>2. <strong>Generación:</strong> Compilamos tu paquete de instalación y llaves seguras.<br>3. <strong>Enlace:</strong> Vinculamos tu número de WhatsApp en menos de 10 minutos.<br><br>1️⃣ <em>Ver Requisitos Técnicos Mínimos</em><br>2️⃣ <em>Iniciar Activación con un Asesor</em><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor humano</em>`,
         "4_1": `📌 <strong>Requisitos Técnicos Mínimos:</strong><br><br>• Un número de teléfono para el asistente.<br>• Computadora o Servidor VPS (Windows, Linux o Docker).<br>• Conexión estable a Internet.<br><br>9️⃣ <em>Volver al Menú Principal</em><br>0️⃣ <em>Hablar con un asesor</em>`,
         "5": `🧠 <strong>Modo IA Libre Activado:</strong><br><br>¡Excelente! A partir de este momento puedes preguntarme cualquier duda sobre automatización, procesos de negocio, integraciones técnicas o pedirme ejemplos de respuestas comerciales.<br><br><em>(Envía 9 en cualquier momento para regresar al menú numerado)</em>`,
@@ -418,19 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Base de Datos Exhaustiva de Escalas, Precios Oficiales y Procesos en Segundo Plano
+// Base de Datos Exhaustiva de Escalas, Precios Transparentes y Procesos en Segundo Plano
 const scaleDeepDiveData = {
     starter: {
-        title: "ESCALA 01: STARTER NEURAL (1 A 10 USUARIOS)",
-        subtitle: "DESPLIEGUE LOCAL PC · WSL2 / WINDOWS · OPENCLAW GATEWAY :18789",
+        title: "PLAN 01: INICIAL / PROFESIONISTA (1 ASISTENTE)",
+        subtitle: "DESPLIEGUE LOCAL PC / MINI PC · OPENCLAW GATEWAY :18789 · IA GESTIONADA",
         geminiPricing: {
-            model: "Google Gemini 3.5 Flash Lite",
-            officialCost: "$0.075 USD por 1 Millón de Tokens de Entrada / $0.30 USD por 1M Tokens de Salida",
-            mexabotFee: "$29.00 USD / mes (Licencia de Software, Orquestador Visual y Actualizaciones)",
-            monthlyEstimate: "Aproximadamente $29 a $32 USD / mes para 3,000 conversaciones mensuales."
+            setupFee: "$2,490 MXN (Pago Único de Instalación y Parametrización)",
+            monthlyFee: "$790 MXN / mes (Todo Incluido: IA, Soporte y Monitoreo)",
+            includedCapacity: "Hasta 2,500 conversaciones mensuales incluidas (Cero cobros sorpresa de tokens).",
+            coverageNote: "Incluye enlace a WhatsApp, reglas comerciales personalizadas y soporte a fallas."
         },
         foregroundSteps: [
-            "Descarga desatendida del paquete binario de OpenClaw y Node.js en WSL2.",
+            "Descarga desatendida del paquete binario de OpenClaw y Node.js en WSL2/Windows.",
             "Apertura del gestor de sistema para vincular puerto local 18789 con loopback seguro.",
             "Generación determinista de SOUL.md e IDENTITY.md según el arquetipo elegido.",
             "Despliegue del simulador interactivo en pantalla dividida para validación visual."
@@ -438,21 +438,21 @@ const scaleDeepDiveData = {
         backgroundProcesses: [
             { pid: "PID: openclaw-gateway", desc: "Daemon residente que mantiene el WebSocket abierto en ws://127.0.0.1:18789 con reconexión automática en caso de caída." },
             { pid: "PID: whatsapp-baileys-bridge", desc: "Proceso que escucha los eventos de red de WhatsApp Web. Mantiene viva la sesión de credenciales sin pedir QR en cada arranque." },
-            { pid: "PID: env-secret-resolver", desc: "Inyector de memoria que alimenta env.GEMINI_API_KEY en tiempo de ejecución sin tocar la base de datos SQLite (Lock-Free)." },
+            { pid: "PID: env-secret-resolver", desc: "Inyector de memoria que alimenta las llaves de IA en tiempo de ejecución sin tocar la base de datos SQLite (Lock-Free)." },
             { pid: "PID: health-monitor-cron", desc: "Hilo de monitoreo cada 30 segundos que revisa que el socket no esté colgado y reinicia subprocesos en < 200ms si hay timeout." }
         ]
     },
     pro: {
-        title: "ESCALA 02: PRO DEDICATED VPS (10 A 100 COLABORADORES)",
-        subtitle: "SERVIDOR VPS LINUX / DOCKER 24/7 · BASE RAG DOCUMENTAL · SLAS COMERCIALES",
+        title: "PLAN 02: EMPRESA / MULTI-AGENTE (HASTA 3 ASISTENTES)",
+        subtitle: "SERVIDOR VPS LINUX DEDICADO 24/7 · BASE RAG DOCUMENTAL · SLAS COMERCIALES",
         geminiPricing: {
-            model: "Google Gemini 3.5 Flash (Con Embeddings Vectoriales)",
-            officialCost: "$0.15 USD por 1 Millón de Tokens de Entrada / $0.60 USD por 1M Tokens de Salida",
-            mexabotFee: "$89.00 USD / mes (Servidor VPS Dedicado 24/7, Pipeline RAG y Mantenimiento)",
-            monthlyEstimate: "Aproximadamente $89 a $98 USD / mes para 25,000 conversaciones y documentos adjuntos."
+            setupFee: "$4,990 MXN (Pago Único de Instalación Multi-Agente y RAG)",
+            monthlyFee: "$1,490 MXN / mes (Todo Incluido: Servidor VPS 24/7 + IA + Soporte Prioritario)",
+            includedCapacity: "Hasta 10,000 conversaciones mensuales y lectura de PDFs/Catálogos.",
+            coverageNote: "Incluye servidor VPS en la nube, integración a Google Calendar y mantenimiento continuo."
         },
         foregroundSteps: [
-            "Aprovisionamiento automático de servidor VPS en la nube (8 vCPU / 16 GB RAM).",
+            "Aprovisionamiento automático de servidor VPS en la nube con respaldo diario.",
             "Indexación de catálogos y manuales PDF mediante embeddings vectoriales para RAG.",
             "Configuración de Webhooks seguros con Google Calendar y sistemas CRM (HubSpot/Zoho).",
             "Monitoreo en tiempo real del tráfico comercial con dashboard de conversión."
@@ -465,16 +465,16 @@ const scaleDeepDiveData = {
         ]
     },
     enterprise: {
-        title: "ESCALA 03: ENTERPRISE CLUSTER (1,000+ USUARIOS)",
-        subtitle: "CLÚSTER KUBERNETES · WHATSAPP CLOUD API OFICIAL (META) · BASE DISTRIBUIDA",
+        title: "PLAN 03: CORPORATIVO LLAVE EN MANO (ALTO VOLUMEN)",
+        subtitle: "CLÚSTER AISLADO · WHATSAPP CLOUD API OFICIAL (META) · BASE DISTRIBUIDA",
         geminiPricing: {
-            model: "Google Gemini 3.5 Pro (Razonamiento Complejo & Multi-Agente)",
-            officialCost: "$1.25 USD por 1 Millón de Tokens de Entrada / $5.00 USD por 1M Tokens de Salida",
-            mexabotFee: "$299.00 USD / mes (Clúster Cloud K8s, WhatsApp Cloud API Meta, SLA 99.99% y Soporte Dedicado)",
-            monthlyEstimate: "Aproximadamente $299 a $380 USD / mes para 100,000+ conversaciones con alta concurrencia."
+            setupFee: "$9,990 MXN (Pago Único de Arquitectura e Integración Completa)",
+            monthlyFee: "$2,990 MXN / mes (Todo Incluido: IA Ilimitada + Asesor Dedicado 24/7 + SLA 99.9%)",
+            includedCapacity: "Capacidad de IA Ilimitada para alto volumen empresarial sin cortes.",
+            coverageNote: "Incluye WhatsApp Cloud API oficial de Meta, integración a ERP/Bases de datos y SLA garantizado."
         },
         foregroundSteps: [
-            "Despliegue de clúster Kubernetes con pods autoescalables basados en el tráfico de red.",
+            "Despliegue de clúster aislado en Docker/Kubernetes con balanceo de carga.",
             "Enlace oficial con Meta Graph API (WhatsApp Cloud API) sin depender de teléfonos físicos.",
             "Integración de bases de datos PostgreSQL distribuidas y almacenamiento encriptado.",
             "Consola de auditoría para comités de seguridad y cumplimiento normativo."
@@ -498,21 +498,21 @@ function openScaleDeepDive(scaleKey) {
     
     const body = document.getElementById('modal-scale-body');
     body.innerHTML = `
-        <!-- Sección 1: Costos Oficiales y Margen de Software -->
+        <!-- Sección 1: Costos Transparentes y Modelo de Implementación -->
         <div class="deep-dive-section-block">
-            <div class="block-title"><i data-lucide="calculator"></i> ESTRUCTURA DE PRECIOS TRANSPARENTE</div>
+            <div class="block-title"><i data-lucide="calculator"></i> MODELO COMERCIAL: INSTALACIÓN + MENSUALIDAD TODO INCLUIDO</div>
             <div class="financial-math-box">
                 <div class="math-card">
-                    <h5>COSTO OFICIAL MODELO IA (GOOGLE GEMINI)</h5>
-                    <p><strong>Modelo:</strong> ${data.geminiPricing.model}</p>
-                    <p><strong>Tarifa Oficial Google:</strong> ${data.geminiPricing.officialCost}</p>
-                    <p style="margin-top:6px; color:#94a3b8; font-size:0.75rem;">* Facturado directamente al consumo real de tokens sin sobreprecios.</p>
+                    <h5>SETUP & INSTALACIÓN TÉCNICA (PAGO ÚNICO)</h5>
+                    <p><strong>Tarifa de Instalación:</strong> ${data.geminiPricing.setupFee}</p>
+                    <p style="margin-top:6px; color:#94a3b8; font-size:0.75rem;">${data.geminiPricing.coverageNote}</p>
+                    <p style="margin-top:6px; color:#10b981; font-size:0.75rem;">✓ Entorno 100% probado, configurado y operando en tu propio número.</p>
                 </div>
                 <div class="math-card">
-                    <h5>SUITE DE SOFTWARE & INGENIERÍA MEXABOT</h5>
-                    <p><strong>Tarifa Mensual:</strong> ${data.geminiPricing.mexabotFee}</p>
-                    <p><strong>Inversión Total Estimada:</strong> ${data.geminiPricing.monthlyEstimate}</p>
-                    <p style="margin-top:6px; color:#10b981; font-size:0.75rem;">✓ Incluye orquestación, soporte técnico, pasarela y actualizaciones.</p>
+                    <h5>MENSUALIDAD TODO INCLUIDO (IA + SOPORTE)</h5>
+                    <p><strong>Cuota Mensual Fija:</strong> ${data.geminiPricing.monthlyFee}</p>
+                    <p><strong>Capacidad de IA:</strong> ${data.geminiPricing.includedCapacity}</p>
+                    <p style="margin-top:6px; color:#38bdf8; font-size:0.75rem;">🔒 Cero cobros sorpresa: consumo de tokens y atención cubiertos.</p>
                 </div>
             </div>
         </div>
