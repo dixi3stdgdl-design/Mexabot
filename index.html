@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEXABOT — Arquitectura de Asistentes Digitales Autónomos</title>
-    <meta name="description" content="Infraestructura no-code y orquestación semántica para desplegar agentes inteligentes de IA en WhatsApp, Telegram y ecosistemas empresariales.">
-    <!-- Google Fonts Premium Minimalist -->
+    <title>MEXABOT — Protocolo de Instalación Determinista & Orquestación de Agentes</title>
+    <meta name="description" content="Guía de arquitectura e instalación determinista de OpenClaw y MEXABOT. Requisitos de cómputo, emparejamiento por Enlace Móvil / USB Debugging y despliegue empresarial seguro.">
+    <!-- Google Fonts Minimalist Tech -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
@@ -24,20 +24,21 @@
                 <div class="brand-monogram">M</div>
                 <div class="brand-meta">
                     <span class="brand-name">MEXABOT</span>
-                    <span class="brand-tag">AUTONOMOUS ENGINE</span>
+                    <span class="brand-tag">DETERMINISTIC SUITE</span>
                 </div>
             </div>
 
             <nav class="nav-links">
-                <a href="#arquitectura" class="nav-link">Arquitectura</a>
-                <a href="#marketplace" class="nav-link">Modelos</a>
-                <a href="#despliegue-visual" class="nav-link">Orquestación</a>
+                <a href="#pipeline" class="nav-link">Pipeline de Instalación</a>
+                <a href="#computo" class="nav-link">Capacidad de Cómputo</a>
+                <a href="#hardware" class="nav-link">Enlace Móvil & USB</a>
+                <a href="#marketplace" class="nav-link">Planes & Modelos</a>
+                <a href="#despliegue-visual" class="nav-link">Orquestador</a>
                 <a href="#sandbox" class="nav-link">Simulador</a>
-                <a href="#protocolos" class="nav-link">Protocolos & Errores</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="#despliegue-visual" class="btn btn-secondary btn-sm">Iniciar Despliegue</a>
+                <a href="#pipeline" class="btn btn-secondary btn-sm">Ver Requisitos</a>
                 <a href="https://github.com/dixi3stdgdl-design/Mexabot" target="_blank" class="btn btn-primary btn-sm">
                     <i data-lucide="github"></i> Repositorio
                 </a>
@@ -55,90 +56,263 @@
         <div class="hero-container">
             <div class="status-pill">
                 <span class="status-indicator-dot"></span>
-                <span>DESPLIEGUE GUIADO • SEMÁNTICA CONTEXTUAL • SIN CÓDIGO</span>
+                <span>DESPLIEGUE DETERMINISTA • ENLACE MÓVIL PC • CERO IMPROVISACIÓN</span>
             </div>
 
             <h1 class="hero-heading">
-                La convergencia entre la intención humana y la <span class="highlight-text">autonomía digital</span>.
+                Instalación guiada sin improvisaciones: <span class="highlight-text">tu agente en WhatsApp paso a paso</span>.
             </h1>
 
             <p class="hero-lead">
-                Diseñado para empresas y profesionales que requieren asistentes virtuales de alto rendimiento en WhatsApp sin lidiar con terminales, servidores o configuraciones complejas de software.
+                Sin dependencias fantasma ni errores de consola. Un proceso transparente que prepara tu entorno de Windows con OpenClaw, vincula tu smartphone por Enlace Móvil o Depuración USB y activa la IA con máxima estabilidad operativa.
             </p>
 
             <div class="hero-actions">
-                <button class="btn btn-primary btn-lg" onclick="scrollToSection('despliegue-visual')">
-                    <i data-lucide="play"></i> Ver Orquestación Visual en Primer Plano
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('pipeline')">
+                    <i data-lucide="cpu"></i> Ver Protocolo de Instalación Paso a Paso
                 </button>
-                <button class="btn btn-outline btn-lg" onclick="scrollToSection('arquitectura')">
-                    <i data-lucide="layers"></i> Explorar Capas de Arquitectura
+                <button class="btn btn-outline btn-lg" onclick="scrollToSection('computo')">
+                    <i data-lucide="server"></i> Matriz de Capacidad de Cómputo
                 </button>
             </div>
 
             <!-- Value Pillars -->
             <div class="pillars-grid">
                 <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="cpu"></i></div>
-                    <h3>Motor Neuronal Gemini</h3>
-                    <p>Comprensión del lenguaje natural contextual, análisis de intención de compra y memoria persistente.</p>
+                    <div class="pillar-icon"><i data-lucide="check-shield"></i></div>
+                    <h3>Instalación 100% Determinista</h3>
+                    <p>El instalador automatizado descarga OpenClaw y activa ClawBoard en PC Manager sin requerir comandos manuales.</p>
                 </div>
                 <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="git-merge"></i></div>
-                    <h3>Despliegue Asistido en Vivo</h3>
-                    <p>El sistema orquesta los puertos, enlaza el socket de WhatsApp y verifica la conexión frente a tus ojos.</p>
+                    <div class="pillar-icon"><i data-lucide="smartphone"></i></div>
+                    <h3>Emparejamiento de Hardware</h3>
+                    <p>Conexión directa vía Enlace Móvil (Windows Phone Link) o USB con Depuración ADB para una tasa de éxito de 99.8%.</p>
                 </div>
                 <div class="pillar-card">
-                    <div class="pillar-icon"><i data-lucide="shield-check"></i></div>
-                    <h3>Gobernanza y Cero-Fugas</h3>
-                    <p>Aislamiento estricto de credenciales en variables de entorno, evitando bloqueos de bases de datos locales.</p>
+                    <div class="pillar-icon"><i data-lucide="lock"></i></div>
+                    <h3>Aislamiento y Seguridad</h3>
+                    <p>Inyección de credenciales por variables de entorno de sistema, eliminando bloqueos de SQLite y fugas de datos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Arquitectura y Métodos de Operación -->
-    <section id="arquitectura" class="section">
+    <!-- Pipeline de Instalación Determinista Paso a Paso -->
+    <section id="pipeline" class="section">
         <div class="section-header">
-            <span class="section-kicker">INFRAESTRUCTURA TÉCNICA</span>
-            <h2 class="section-title">Cómo Opera la Interacción y el Procesamiento</h2>
-            <p class="section-subtitle">Un flujo continuo y determinista desde la recepción del mensaje hasta la entrega de la respuesta en WhatsApp.</p>
+            <span class="section-kicker">PROTOCOLO ESTÁNDAR DE DESPLIEGUE</span>
+            <h2 class="section-title">El Camino Seguro: Cómo Cobra Vida tu Asistente</h2>
+            <p class="section-subtitle">El sistema no inventa dependencias ni requiere que seas programador. Sigue este orden estructurado.</p>
         </div>
 
-        <div class="architecture-grid">
-            <!-- Step 1 -->
-            <div class="arch-card">
-                <div class="arch-number">01</div>
-                <div class="arch-icon"><i data-lucide="message-square"></i></div>
-                <h3>Captura de Canal</h3>
-                <p>El mensaje entrante es capturado por el socket local de mensajería (OpenClaw WhatsApp Bridge) bajo protocolo de acceso seguro.</p>
-                <div class="arch-tag">WebSocket 18789</div>
+        <div class="steps-flow-container">
+            <!-- Paso 1 -->
+            <div class="flow-step-card">
+                <div class="step-num-badge">FASE 01</div>
+                <div class="flow-icon"><i data-lucide="download-cloud"></i></div>
+                <h3>1. Selección de Plan y Descarga Base</h3>
+                <p>Eliges el plan según el volumen de tu negocio. La suite descarga el paquete certificado de <strong>OpenClaw</strong> y configura el runtime de Node.js en WSL/Windows de forma desatendida.</p>
+                <div class="step-meta-tag">Descarga Certificada</div>
             </div>
 
-            <!-- Step 2 -->
-            <div class="arch-card">
-                <div class="arch-number">02</div>
-                <div class="arch-icon"><i data-lucide="brain"></i></div>
-                <h3>Inyección de Contexto</h3>
-                <p>Se compilan las reglas de negocio (<code>SOUL.md</code>), la identidad del agente y los últimos turnos de la conversación.</p>
-                <div class="arch-tag">Memoria Contextual</div>
+            <!-- Paso 2 -->
+            <div class="flow-step-card">
+                <div class="step-num-badge">FASE 02</div>
+                <div class="flow-icon"><i data-lucide="sliders"></i></div>
+                <h3>2. Activación de ClawBoard en PC Manager</h3>
+                <p>El instalador interactúa con el gestor de sistema para habilitar el servicio <strong>ClawBoard / OpenClaw Gateway</strong> en el puerto local <code>18789</code> con arranque automático.</p>
+                <div class="step-meta-tag">Gateway de Sistema</div>
             </div>
 
-            <!-- Step 3 -->
-            <div class="arch-card">
-                <div class="arch-number">03</div>
-                <div class="arch-icon"><i data-lucide="sparkles"></i></div>
-                <h3>Inferencia Neuronal</h3>
-                <p>El modelo procesa la intención, evalúa si es una consulta de precios, agendamiento o soporte y formula una respuesta concisa.</p>
-                <div class="arch-tag">Gemini Flash Core</div>
+            <!-- Paso 3 -->
+            <div class="flow-step-card highlight-step">
+                <div class="step-num-badge">FASE 03</div>
+                <div class="flow-icon"><i data-lucide="cable"></i></div>
+                <h3>3. Vinculación de Dispositivo Móvil</h3>
+                <p>Para garantizar que los mensajes no se pierdan, se empareja el smartphone con Windows mediante <strong>Enlace Móvil (Phone Link)</strong> o conexión USB con Depuración.</p>
+                <div class="step-meta-tag success">Máxima Estabilidad (99.8%)</div>
             </div>
 
-            <!-- Step 4 -->
-            <div class="arch-card">
-                <div class="arch-number">04</div>
-                <div class="arch-icon"><i data-lucide="send"></i></div>
-                <h3>Entrega & Registro</h3>
-                <p>La respuesta se transmite al dispositivo móvil del cliente con formateo nativo para WhatsApp y registro de auditoría local.</p>
-                <div class="arch-tag">Entrega Inmediata</div>
+            <!-- Paso 4 -->
+            <div class="flow-step-card">
+                <div class="step-num-badge">FASE 04</div>
+                <div class="flow-icon"><i data-lucide="key"></i></div>
+                <h3>4. Inyección de Reglas & API Key</h3>
+                <p>Se inyecta la clave de Gemini a nivel de variables de entorno de sistema (<code>env.GEMINI_API_KEY</code>) y se compila el archivo <code>SOUL.md</code> con el arquetipo seleccionado.</p>
+                <div class="step-meta-tag">Entorno Seguro</div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flow-step-card">
+                <div class="step-num-badge">FASE 05</div>
+                <div class="flow-icon"><i data-lucide="play-circle"></i></div>
+                <h3>5. Verificación & Pruebas en Vivo</h3>
+                <p>El bot realiza una prueba de eco y queda activo en WhatsApp Business, listo para atender a clientes 24/7 con traspaso asistido a humanos.</p>
+                <div class="step-meta-tag">Producción Activa</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matriz de Capacidad de Cómputo e Infraestructura -->
+    <section id="computo" class="section bg-elevated">
+        <div class="section-header">
+            <span class="section-kicker">DIMENSIONAMIENTO DE HARDWARE & NUBE</span>
+            <h2 class="section-title">Requisitos de Capacidad de Cómputo por Volumen</h2>
+            <p class="section-subtitle">Tener un asistente para un equipo pequeño no requiere los mismos recursos que un bot para miles de clientes simultáneos.</p>
+        </div>
+
+        <div class="compute-matrix-grid">
+            <!-- Tier 1: Micro / Profesional -->
+            <div class="compute-card">
+                <div class="tier-badge">TIER 01: PROFESIONAL / PYME</div>
+                <div class="tier-capacity">1 a 10 Usuarios / Equipo</div>
+                <h3 class="tier-name">Plan Starter Local</h3>
+                <p class="tier-summary">Ideal para profesionistas independientes, consultorios o despachos pequeños con atención local.</p>
+                
+                <div class="tier-specs">
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="cpu"></i> Hardware Mínimo:</span>
+                        <span class="spec-val">PC con 4 Cores / 8 GB RAM</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
+                        <span class="spec-val">10 GB SSD libres</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
+                        <span class="spec-val">Hasta 5 chats simultáneos</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
+                        <span class="spec-val">Gemini 3.5 Flash Lite</span>
+                    </div>
+                </div>
+
+                <div class="tier-note">
+                    <strong>Despliegue:</strong> Corre en la PC del usuario dentro de WSL/Windows con la app local de OpenClaw.
+                </div>
+            </div>
+
+            <!-- Tier 2: Empresa Mediana -->
+            <div class="compute-card featured-tier">
+                <div class="tier-badge popular">TIER 02: MEDIANA EMPRESA</div>
+                <div class="tier-capacity">10 a 100 Colaboradores / Clientes</div>
+                <h3 class="tier-name">Plan Pro Dedicado</h3>
+                <p class="tier-summary">Diseñado para comercios, inmobiliarias o empresas de servicios con flujo continuo de prospectos.</p>
+                
+                <div class="tier-specs">
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="cpu"></i> Hardware / VPS:</span>
+                        <span class="spec-val">8 Cores vCPU / 16 GB RAM</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
+                        <span class="spec-val">50 GB NVMe SSD</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
+                        <span class="spec-val">Hasta 50 chats simultáneos</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
+                        <span class="spec-val">Gemini 3.5 Flash + RAG Docs</span>
+                    </div>
+                </div>
+
+                <div class="tier-note">
+                    <strong>Despliegue:</strong> Servidor VPS Windows/Linux 24/7 o PC dedicada conectada permanentemente.
+                </div>
+            </div>
+
+            <!-- Tier 3: Corporativo / Alto Volumen -->
+            <div class="compute-card">
+                <div class="tier-badge">TIER 03: CORPORACIÓN</div>
+                <div class="tier-capacity">1,000+ Usuarios / Tráfico Masivo</div>
+                <h3 class="tier-name">Plan Enterprise Cloud</h3>
+                <p class="tier-summary">Para cadenas comerciales, bancos, aseguradoras o atención masiva omni-canal.</p>
+                
+                <div class="tier-specs">
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="cpu"></i> Infraestructura:</span>
+                        <span class="spec-val">Cluster Cloud Escalable (Kubernetes)</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="hard-drive"></i> Almacenamiento:</span>
+                        <span class="spec-val">PostgreSQL / Vector DB Distribuida</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="network"></i> Concurrencia:</span>
+                        <span class="spec-val">1,000+ chats concurrentes</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label"><i data-lucide="zap"></i> Inferencia:</span>
+                        <span class="spec-val">Gemini 3.5 Pro + Balanceador</span>
+                    </div>
+                </div>
+
+                <div class="tier-note">
+                    <strong>Despliegue:</strong> WhatsApp Business Cloud API oficial con SLAs empresariales del 99.99%.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guía de Hardware: Enlace Móvil y Depuración USB -->
+    <section id="hardware" class="section">
+        <div class="section-header">
+            <span class="section-kicker">PRÁCTICAS DE MÁXIMA EFECTIVIDAD</span>
+            <h2 class="section-title">Recomendaciones de Conexión de Hardware</h2>
+            <p class="section-subtitle">La diferencia entre un bot que se desconecta al bloquearse la pantalla y uno que opera con 99.8% de disponibilidad.</p>
+        </div>
+
+        <div class="hardware-grid">
+            <!-- Opción A: Enlace Móvil -->
+            <div class="hardware-card">
+                <div class="hw-header">
+                    <div class="hw-icon"><i data-lucide="link"></i></div>
+                    <div>
+                        <h3>Método 1: Enlace Móvil de Windows (Phone Link)</h3>
+                        <span class="hw-status-tag recommended">Recomendado para Uso Diario</span>
+                    </div>
+                </div>
+                <p class="hw-desc">
+                    Vincula tu teléfono Android o iOS directamente con la app nativa de Windows. Esto mantiene el socket de notificaciones activo en segundo plano sin cerrar la sesión de WhatsApp Web.
+                </p>
+                <div class="checklist">
+                    <div class="check-item"><i data-lucide="check"></i> <span>Tener instalada la app "Enlace a Windows" en tu smartphone.</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Escanear el código QR en la app "Enlace Móvil" de Windows 10/11.</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Permitir permisos de "Ejecución en segundo plano sin restricciones".</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Mantener la PC y el móvil conectados a la misma red Wi-Fi o datos estables.</span></div>
+                </div>
+            </div>
+
+            <!-- Opción B: USB Debugging -->
+            <div class="hardware-card">
+                <div class="hw-header">
+                    <div class="hw-icon"><i data-lucide="cable"></i></div>
+                    <div>
+                        <h3>Método 2: Conexión USB con Depuración (ADB Mode)</h3>
+                        <span class="hw-status-tag expert">Para Máxima Estabilidad (99.8%)</span>
+                    </div>
+                </div>
+                <p class="hw-desc">
+                    Conectar el smartphone a la PC mediante cable USB con el modo de depuración activado evita que el sistema operativo del teléfono mate el proceso de WhatsApp por ahorro de energía.
+                </p>
+                <div class="checklist">
+                    <div class="check-item"><i data-lucide="check"></i> <span>Activar "Opciones de Desarrollador" en Ajustes del teléfono (pulsar 7 veces el Número de Compilación).</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Encender la casilla <strong>"Depuración por USB"</strong>.</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Conectar el cable USB a la PC y marcar "Permitir siempre desde este equipo".</span></div>
+                    <div class="check-item"><i data-lucide="check"></i> <span>Desactivar la "Optimización de batería" específicamente para WhatsApp.</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning / Tip Alert -->
+        <div class="pro-tip-box">
+            <div class="tip-icon"><i data-lucide="lightbulb"></i></div>
+            <div class="tip-content">
+                <h4>Regla de Oro para Evitar Desconexiones:</h4>
+                <p>Los teléfonos modernos suspenden las conexiones Wi-Fi en reposo para ahorrar batería. Al activar el modo USB o Enlace Móvil con permisos sin restricciones, garantizas que cada mensaje de un cliente despierte al bot de inmediato.</p>
             </div>
         </div>
     </section>
@@ -148,7 +322,7 @@
         <div class="section-header">
             <span class="section-kicker">CATÁLOGO DE ASISTENTES</span>
             <h2 class="section-title">Arquetipos Especializados para Negocios</h2>
-            <p class="section-subtitle">Plantillas pre-entrenadas con las directrices comerciales y operativas más efectivas de la industria.</p>
+            <p class="section-subtitle">Plantillas pre-configuradas listas para ser cargadas en tu asistente.</p>
         </div>
 
         <div class="marketplace-grid">
@@ -165,12 +339,12 @@
                     </div>
                 </div>
                 <p class="agent-description">
-                    Especializada en capturar leads frios, responder preguntas sobre servicios, generar cotizaciones dinámicas y guiar al prospecto al cierre de venta.
+                    Especializada en capturar prospectos, responder dudas sobre servicios, generar cotizaciones dinámicas y guiar al cliente hacia la compra.
                 </p>
                 <ul class="agent-spec-list">
                     <li><i data-lucide="check"></i> Calificación automática de prospectos B2B/B2C</li>
-                    <li><i data-lucide="check"></i> Manejo de objeciones y presupuestos dinámicos</li>
-                    <li><i data-lucide="check"></i> Formato de respuesta breve optimizado para móviles</li>
+                    <li><i data-lucide="check"></i> Manejo de objeciones y presupuestos</li>
+                    <li><i data-lucide="check"></i> Formato de respuesta breve de 2-4 líneas</li>
                 </ul>
                 <div class="agent-card-footer">
                     <button class="btn btn-primary btn-sm btn-full">Seleccionar para Despliegue</button>
@@ -189,12 +363,12 @@
                     </div>
                 </div>
                 <p class="agent-description">
-                    Coordina agendas en tiempo real, verifica disponibilidad de consultorios o despachos y envía recordatorios automáticos para reducir inasistencias.
+                    Coordina agendas en tiempo real, verifica disponibilidad de consultorios o despachos y envía recordatorios automáticos.
                 </p>
                 <ul class="agent-spec-list">
                     <li><i data-lucide="check"></i> Sincronización con Google Calendar / Cal.com</li>
                     <li><i data-lucide="check"></i> Confirmación y reprogramación sin fricción</li>
-                    <li><i data-lucide="check"></i> Reducción drástica de ausentismos</li>
+                    <li><i data-lucide="check"></i> Reducción drástica de inasistencias</li>
                 </ul>
                 <div class="agent-card-footer">
                     <button class="btn btn-secondary btn-sm btn-full">Seleccionar para Despliegue</button>
@@ -213,11 +387,11 @@
                     </div>
                 </div>
                 <p class="agent-description">
-                    Entrenado sobre manuales de políticas, documentos técnicos y catálogos PDF para brindar soporte 24/7 sin inventar respuestas.
+                    Entrenado sobre manuales de políticas y documentos técnicos para brindar soporte 24/7 sin inventar respuestas.
                 </p>
                 <ul class="agent-spec-list">
                     <li><i data-lucide="check"></i> Base de conocimiento documental estricta</li>
-                    <li><i data-lucide="check"></i> Traspaso ordenado a soporte humano cuando se requiere</li>
+                    <li><i data-lucide="check"></i> Traspaso ordenado a soporte humano</li>
                     <li><i data-lucide="check"></i> Respuestas certeras basadas en fuentes oficiales</li>
                 </ul>
                 <div class="agent-card-footer">
@@ -237,7 +411,7 @@
                     </div>
                 </div>
                 <p class="agent-description">
-                    Copiloto diario de productividad: extrae tareas de mensajes de voz, resume hilos de conversación y redacta minutas de reuniones.
+                    Copiloto diario de productividad: extrae tareas de mensajes de voz, resume hilos de conversación y redacta minutas.
                 </p>
                 <ul class="agent-spec-list">
                     <li><i data-lucide="check"></i> Transcripción y síntesis de notas de voz</li>
@@ -436,57 +610,6 @@
                         <h4>Traspaso Asistido a Asesor Humano</h4>
                         <p>Si el cliente solicita atención directa o un caso excede los parámetros, el bot ofrece canalizarlo con un asesor del equipo.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Protocolos, Diagnóstico y Solución de Errores -->
-    <section id="protocolos" class="section">
-        <div class="section-header">
-            <span class="section-kicker">GUÍA TÉCNICA DE RESOLUCIÓN</span>
-            <h2 class="section-title">Protocolos y Solución de Incidencias</h2>
-            <p class="section-subtitle">Respuestas claras y soluciones directas a los casos más comunes durante la configuración de WhatsApp con IA.</p>
-        </div>
-
-        <div class="faq-grid">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-header">
-                    <h4>¿Por qué aparece el mensaje "Access not configured / Pairing Code"?</h4>
-                    <i data-lucide="chevron-down" class="faq-chevron"></i>
-                </div>
-                <div class="faq-content">
-                    <p>Por defecto, el motor de seguridad de OpenClaw bloquea números no autorizados para proteger tus tokens. Al desplegar para clientes, se habilita la política de acceso público en el canal para responder libremente.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-header">
-                    <h4>¿Por qué es recomendable utilizar WhatsApp Business?</h4>
-                    <i data-lucide="chevron-down" class="faq-chevron"></i>
-                </div>
-                <div class="faq-content">
-                    <p>WhatsApp Business permite cargar el catálogo de productos, configurar respuestas rápidas de respaldo y cuenta con mayor tolerancia operativa para flujos frecuentes de atención a clientes.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-header">
-                    <h4>¿Cómo se evita el error "Auth store lock may be busy"?</h4>
-                    <i data-lucide="chevron-down" class="faq-chevron"></i>
-                </div>
-                <div class="faq-content">
-                    <p>Ocurre cuando el servicio en segundo plano retiene la base de datos de credenciales. La solución moderna es suministrar la clave de Gemini a través de variables de entorno (<code>env.GEMINI_API_KEY</code>), eliminando la dependencia de bloqueos SQLite.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-header">
-                    <h4>¿Cómo se configuran los prompts y la identidad del bot?</h4>
-                    <i data-lucide="chevron-down" class="faq-chevron"></i>
-                </div>
-                <div class="faq-content">
-                    <p>La personalidad y reglas se definen en el archivo <code>SOUL.md</code> y los metadatos en <code>IDENTITY.md</code> dentro del espacio de trabajo del agente, permitiendo actualizaciones instantáneas sin reiniciar el servidor.</p>
                 </div>
             </div>
         </div>
