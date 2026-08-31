@@ -29,12 +29,15 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    min-height: 100vh;
+    background-color: #030407 !important;
+    background: #030407 !important;
+    color: #ffffff;
 }
 
 body.deck-os {
-    background-color: var(--deck-bg);
+    background-color: #030407 !important;
     color: var(--text-pure);
     font-family: var(--font-ui);
     line-height: 1.55;
@@ -1379,10 +1382,15 @@ body.is-desktop {
 /* Responsive */
 @media (max-width: 1080px) {
     .hero-deck-panel { grid-template-columns: 1fr; }
+    .hero-art-viewport { min-height: 260px; height: 260px; }
     .hud-deck-row { grid-template-columns: 1fr; }
     .compute-deck-grid { grid-template-columns: 1fr; }
     .hardware-deck-grid { grid-template-columns: 1fr; }
+    .archetype-hud-grid { grid-template-columns: 1fr; }
     .hud-telemetry { display: none; }
     .footer-hud-content { flex-direction: column; text-align: center; gap: 16px; }
     .footer-hud-meta { text-align: center; }
+    .hud-topbar { padding: 12px 16px; flex-wrap: wrap; }
+    .hud-master-deck { padding: 12px; }
+    .desktop-titlebar { display: none !important; }
 }
