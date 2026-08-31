@@ -13,7 +13,7 @@
 
 | Interfaz de Escritorio (Windows 11 Fluent) | Aplicación Móvil Nativa (Android Jetpack Compose) |
 | :---: | :---: |
-| ![MexaBot Desktop UI](mexabot-windows-app.jpg) | ![MexaBot Mobile UI](mexabot_mobile_native.png) |
+| ![MexaBot Desktop UI](mexabot-windows-app.jpg) | ![MexaBot Mobile Native UI](mexabot-android-app.png) |
 
 ---
 
