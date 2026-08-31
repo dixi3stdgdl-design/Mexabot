@@ -605,19 +605,19 @@ async function checkGatewayAndAutoConnect() {
             discoveryDot.style.boxShadow = "0 0 12px #10b981";
         }
         if (endpointVal) {
-            endpointVal.innerText = "127.0.0.1:18789 (LAN 192.168.100.190)";
+            endpointVal.innerText = "127.0.0.1:18789 (Local Loopback)";
         }
         if (phoneVal) {
-            phoneVal.innerText = "+52 33 5015 5571 (Owner Enlazado)";
+            phoneVal.innerText = "[CANAL_ACTIVO_ONLINE]";
         }
         if (modeVal) {
-            modeVal.innerText = "Copiloto Gemini / MexaBot (Dual)";
+            modeVal.innerText = "Copiloto Privado / MexaBot (Dual)";
         }
 
         // Terminal Log reporting
-        appendTerminalLog("[AUTO-DISCOVERY] ✓ Gateway detectado en 127.0.0.1:18789 (LAN 192.168.100.190)", "green");
-        appendTerminalLog("[AUTO-DISCOVERY] ✓ Canal WhatsApp activo y escuchando (+52 1 33 5015 5571)", "cyan");
-        appendTerminalLog("[AUTO-DISCOVERY] ✓ Modo dual activo: Copiloto Gemini en canal personal / MexaBot comercial en clientes", "purple");
+        appendTerminalLog("[AUTO-DISCOVERY] ✓ Gateway detectado en 127.0.0.1:18789", "green");
+        appendTerminalLog("[AUTO-DISCOVERY] ✓ Canal de mensajería vinculado - Estado: LISTENING", "cyan");
+        appendTerminalLog("[AUTO-DISCOVERY] ✓ Modo dual activo: Copiloto en canal personal / Asistente comercial en clientes", "purple");
         appendTerminalLog("[AUTO-DISCOVERY] ✓ Cero configuración requerida: Entorno listo para operar a 60 FPS.", "green");
 
     } catch (e) {

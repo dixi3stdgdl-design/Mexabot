@@ -8,3 +8,7 @@ www/
 android/.gradle/
 android/app/build/
 android/build/
+
+releases/windows/*.exe
+dist/
+
