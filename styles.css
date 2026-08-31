@@ -1379,6 +1379,60 @@ body.is-desktop {
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }
 
+/* Live Auto-Discovery Banner */
+.live-auto-discovery-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(0, 240, 255, 0.08));
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.12);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.discovery-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-code);
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #10b981;
+}
+
+.status-pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { opacity: 0.5; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1.15); }
+}
+
+.discovery-details {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.78rem;
+    color: #cbd5e1;
+    flex-wrap: wrap;
+}
+
+.discovery-details .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 /* Responsive */
 @media (max-width: 1080px) {
     .hero-deck-panel { grid-template-columns: 1fr; }
@@ -1393,4 +1447,5 @@ body.is-desktop {
     .hud-topbar { padding: 12px 16px; flex-wrap: wrap; }
     .hud-master-deck { padding: 12px; }
     .desktop-titlebar { display: none !important; }
+    .live-auto-discovery-banner { flex-direction: column; align-items: flex-start; }
 }
