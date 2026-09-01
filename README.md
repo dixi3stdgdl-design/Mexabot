@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](https://opensource.org/licenses/MIT)
 [![Platform: Windows 10/11](https://img.shields.io/badge/Platform-Windows%2011%20%7C%20Android%20%7C%20Linux-00f0ff.svg)](https://microsoft.com)
 [![Engine: Gemini 3.5 Flash](https://img.shields.io/badge/AI%20Engine-Gemini%20Flash%20Lite-10b981.svg)](https://ai.google.dev)
-[![Gateway: OpenClaw :18789](https://img.shields.io/badge/Gateway-OpenClaw%20%3A18789-8b5cf6.svg)](http://127.0.0.1:18789)
+[![Gateway: OpenClaw](https://img.shields.io/badge/Gateway-OpenClaw%20On--Premise-8b5cf6.svg)](#)
 
 **MexaBot** es una suite empresarial de automatización comercial e inteligencia artificial autónoma diseñada para operar de forma **100% On-Premise** (localmente en la computadora o infraestructura del cliente). Transforma WhatsApp, Telegram y la web en una central 24/7 de ventas, agendamiento de citas y soporte técnico sin programar una sola línea de código y con absoluta privacidad de datos.
 
@@ -116,7 +116,7 @@ Instala el archivo APK disponible en `releases/android/` para monitorear el esta
 ## 🌐 Enlaces Oficiales
 
 - **Portal Web Oficial:** [https://dixi3stdgdl-design.github.io/Mexabot/](https://dixi3stdgdl-design.github.io/Mexabot/)
-- **Control UI Local:** [http://127.0.0.1:18789/](http://127.0.0.1:18789/)
+- **Control UI Local:** Panel de control local de OpenClaw (Puerto 18789)
 
 ---
 
