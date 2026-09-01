@@ -1,7 +1,7 @@
-# MiMo Mobile ProGuard Rules
+# MexaBot ProGuard Rules
 
 # Keep app classes
--keep class com.mimo.mobile.** { *; }
+-keep class com.mexabot.app.** { *; }
 -keepclassmembers class * extends androidx.lifecycle.ViewModel { <init>(...); }
 
 # Kotlin
@@ -54,14 +54,15 @@
 -dontwarn retrofit2.**
 
 # Keep data classes used in serialization
--keep class com.mimo.mobile.network.WsMessage { *; }
--keep class com.mimo.mobile.network.AdbDevice { *; }
--keep class com.mimo.mobile.network.AdbResult { *; }
--keep class com.mimo.mobile.viewmodel.AppState { *; }
--keep class com.mimo.mobile.viewmodel.ChatInstance { *; }
--keep class com.mimo.mobile.viewmodel.ChatMsg { *; }
--keep class com.mimo.mobile.network.ApiProvider { *; }
--keep class com.mimo.mobile.network.ApiConfig { *; }
+-keep class com.mexabot.app.network.WsMessage { *; }
+-keep class com.mexabot.app.network.AdbDevice { *; }
+-keep class com.mexabot.app.network.AdbResult { *; }
+-keep class com.mexabot.app.viewmodel.AppState { *; }
+-keep class com.mexabot.app.viewmodel.ChatInstance { *; }
+-keep class com.mexabot.app.viewmodel.ChatMsg { *; }
+-keep class com.mexabot.app.network.ApiProvider { *; }
+-keep class com.mexabot.app.network.ApiConfig { *; }
+-keep class com.mexabot.app.engine.** { *; }
 
 # Remove logging in release
 -assumenosideeffects class android.util.Log {

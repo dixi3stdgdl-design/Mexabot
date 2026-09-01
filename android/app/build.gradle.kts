@@ -16,11 +16,11 @@ val keyProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.mimo.mobile"
+    namespace = "com.mexabot.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.mimo.mobile"
+        applicationId = "com.mexabot.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

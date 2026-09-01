@@ -146,11 +146,98 @@
                     </a>
                 </div>
 
-                <form id="agent-config-form" onsubmit="startLiveOrchestration(event)" class="hud-form">
+                <!-- Engine Selector & Local Mesh Banner -->
+                <div class="hud-engine-selector-bar">
+                    <div class="engine-mode-group">
+                        <span class="engine-mode-label"><i data-lucide="cpu"></i> MOTOR DE INFERENCIA:</span>
+                        <button type="button" class="engine-toggle-btn active" id="btn-engine-ondevice" onclick="switchAiEngine('ondevice')">
+                            <span class="engine-dot green"></span>
+                            <span>⚡ ON-DEVICE OFFLINE (Gemma / Nano)</span>
+                            <span class="engine-badge">$0 COSTO</span>
+                        </button>
+                        <button type="button" class="engine-toggle-btn" id="btn-engine-cloud" onclick="switchAiEngine('cloud')">
+                            <span class="engine-dot blue"></span>
+                            <span>🌐 GEMINI CLOUD (Flash 3.5)</span>
+                            <span class="engine-badge">EXTENDIDO</span>
+                        </button>
+                    </div>
+                    <div class="mesh-status-indicator">
+                        <span class="mesh-pulse"></span>
+                        <span>MESH P2P: <strong>ANDROID ◄─ LAN ─► WINDOWS</strong> (LOCAL)</span>
+                    </div>
+                </div>
+
+                <!-- Dual Onboarding Wizard Tabs -->
+                <div class="onboarding-tabs-container">
+                    <div class="onboarding-tab-nav">
+                        <button type="button" class="onboarding-nav-btn active" id="tab-btn-ai" onclick="switchOnboardingTab('ai')">
+                            <i data-lucide="sparkles"></i>
+                            <span>PANEL 1: SUGERIDO POR IA (1-CLIC)</span>
+                        </button>
+                        <button type="button" class="onboarding-nav-btn" id="tab-btn-manual" onclick="switchOnboardingTab('manual')">
+                            <i data-lucide="sliders-horizontal"></i>
+                            <span>PANEL 2: CONFIGURACIÓN MANUAL (5 PREGUNTAS)</span>
+                        </button>
+                    </div>
+
+                    <!-- Panel 1: Sugerido por IA -->
+                    <div class="onboarding-panel-body active" id="panel-ai-suggested">
+                        <div class="ai-prompt-box">
+                            <label><i data-lucide="wand-2"></i> DESCRIBE TU NEGOCIO EN 1 FRASE:</label>
+                            <div class="ai-input-cluster">
+                                <input type="text" id="ai-quick-desc" class="hud-input" placeholder="Ej. Ferretería en Guadalajara con entrega a domicilio y cotizaciones al momento..." value="Ferretería en Guadalajara con entrega local y cotizaciones">
+                                <button type="button" class="hud-btn hud-btn-action" onclick="generateAiSuggestedConfig()">
+                                    <i data-lucide="sparkles"></i> AUTO-COMPILAR
+                                </button>
+                            </div>
+                            <div class="ai-quick-pills">
+                                <span class="quick-pill-label">Ejemplos rápidos:</span>
+                                <button type="button" class="quick-pill" onclick="applyQuickExample('ferreteria')">🔧 Ferretería</button>
+                                <button type="button" class="quick-pill" onclick="applyQuickExample('abarrotes')">🏪 Abarrotera</button>
+                                <button type="button" class="quick-pill" onclick="applyQuickExample('plastico')">🏭 Plásticos B2B</button>
+                                <button type="button" class="quick-pill" onclick="applyQuickExample('clinica')">🩺 Clínica / Spa</button>
+                                <button type="button" class="quick-pill" onclick="applyQuickExample('abogados')">⚖️ Legal / Asesoría</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Personalización Manual (5 Preguntas de Oro) -->
+                    <div class="onboarding-panel-body" id="panel-manual-config" style="display: none;">
+                        <div class="golden-questions-grid">
+                            <div class="hud-field full-span">
+                                <label><span class="q-num">1</span> NOMBRE Y GIRO COMERCIAL EXACTO</label>
+                                <input type="text" id="gq-biz-name" class="hud-input" value="Ferretería El Tornillo MX" placeholder="Ej. Abarrotes Don Pepe / Distribuidora de Plásticos del Norte">
+                            </div>
+                            <div class="hud-field full-span">
+                                <label><span class="q-num">2</span> ¿QUÉ ES LO QUE MÁS TE PREGUNTAN TUS CLIENTES? (FAQS)</label>
+                                <textarea id="gq-faqs" class="hud-input hud-textarea" rows="2" placeholder="Ej. ¿Tienen envíos a domicilio?, ¿Manejan factura?, ¿Tienen taladro de 1/2?">¿Tienen envíos a domicilio?, ¿Manejan precios de mayoreo?, ¿Expiden factura fiscal inmediata?</textarea>
+                            </div>
+                            <div class="hud-field">
+                                <label><span class="q-num">3</span> PRECIOS, CATÁLOGO O COTIZACIÓN</label>
+                                <input type="text" id="gq-catalog-type" class="hud-input" value="Cotización al instante según lista de materiales o catálogo digital" placeholder="Ej. Lista de precios fija / Cotización bajo pedido">
+                            </div>
+                            <div class="hud-field">
+                                <label><span class="q-num">4</span> HORARIOS Y UBICACIÓN FÍSICA</label>
+                                <input type="text" id="gq-hours-location" class="hud-input" value="Lun a Sáb 8:00 AM - 7:00 PM (Av. Hidalgo 120, Col. Centro)" placeholder="Ej. Lun a Vie 9am-6pm / Sucursal matriz...">
+                            </div>
+                            <div class="hud-field full-span">
+                                <label><span class="q-num">5</span> ¿QUÉ ACCIÓN DEBE CERRAR EL ASISTENTE?</label>
+                                <select id="gq-closing-goal" class="hud-input">
+                                    <option value="quote_payment">Generar cotización y enviar link de pago / transferencia</option>
+                                    <option value="appointment">Agendar cita o visita técnica en Google Calendar</option>
+                                    <option value="order_delivery">Tomar pedido para entrega a domicilio</option>
+                                    <option value="b2b_advisor">Calificar prospecto y transferir con un ejecutivo B2B</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="agent-config-form" onsubmit="startLiveOrchestration(event)" class="hud-form" style="margin-top: 15px;">
                     <div class="hud-input-row">
                         <div class="hud-field">
                             <label>IDENTIFICADOR DE EMPRESA / MARCA</label>
-                            <input type="text" id="biz-name" class="hud-input" value="Consultoría Integral Mexa" placeholder="Ej. Soluciones Legales Gómez" required>
+                            <input type="text" id="biz-name" class="hud-input" value="Ferretería El Tornillo MX" placeholder="Ej. Soluciones Legales Gómez" required>
                         </div>
                         <div class="hud-field">
                             <label>CANAL DESTINO</label>
@@ -166,15 +253,15 @@
                     <div class="hud-input-row">
                         <div class="hud-field">
                             <label>TELÉFONO O ID DE CANAL</label>
-                            <input type="text" id="biz-phone" class="hud-input" value="+52 55 1234 5678" placeholder="+52 55 0000 0000 / @tu_bot" required>
+                            <input type="text" id="biz-phone" class="hud-input" value="+52 33 1234 5678" placeholder="+52 55 0000 0000 / @tu_bot" required>
                         </div>
                         <div class="hud-field">
                             <label>EQUIPO / MÉTODO DE INSTALACIÓN</label>
                             <select id="deployment-stack" class="hud-input">
+                                <option value="native">⚡ Script 1-Clic Nativo (PowerShell / Windows)</option>
+                                <option value="ondevice">📱 On-Device Edge (Android NotificationListener)</option>
                                 <option value="docker">🐳 Equipo Docker (Aislado + Postgres / VPS)</option>
                                 <option value="node">🟢 Equipo Node.js / Baileys (Ligero & QR)</option>
-                                <option value="python">🐍 Equipo Python / FastAPI (Meta Cloud API)</option>
-                                <option value="native">⚡ Script 1-Clic Nativo (PowerShell / Windows)</option>
                             </select>
                         </div>
                     </div>
@@ -297,12 +384,11 @@
 
                         <!-- Instant Prompt Triggers -->
                         <div class="wa-chip-deck">
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('1')">1️⃣ Asistentes</button>
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('2')">2️⃣ Métodos</button>
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('3')">3️⃣ Precios</button>
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('4')">4️⃣ Activación</button>
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('5')">5️⃣ Probar IA</button>
-                            <button class="wa-hud-chip" onclick="sendQuickMessage('0')">0️⃣ Pausar</button>
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('1')">1️⃣ Menú (1-5)</button>
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('¿Tienen servicio a domicilio?')">❓ Pregunta FAQ</button>
+                            <button class="wa-hud-chip" onclick="simulateAudioMessage()">🎙️ Simular Audio</button>
+                            <button class="wa-hud-chip" onclick="simulateStickerMessage()">🖼️ Sticker / Vacío</button>
+                            <button class="wa-hud-chip" onclick="sendQuickMessage('0')">0️⃣ Pausar / Admin</button>
                         </div>
 
                         <!-- Input Bar -->

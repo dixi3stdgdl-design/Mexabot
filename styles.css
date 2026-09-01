@@ -1537,3 +1537,245 @@ html, body {
         gap: 6px;
     }
 }
+
+/* ==========================================================================
+   ENGINE SELECTOR & LOCAL MESH BANNER (CYBERPUNK OLED)
+   ========================================================================== */
+.hud-engine-selector-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: rgba(10, 16, 28, 0.9);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+}
+
+.engine-mode-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.engine-mode-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-steel);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.engine-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--text-steel);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.engine-toggle-btn:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.4);
+    color: #ffffff;
+}
+
+.engine-toggle-btn.active {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.engine-toggle-btn#btn-engine-cloud.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.engine-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #64748b;
+}
+
+.engine-dot.green { background: #10b981; box-shadow: 0 0 6px #10b981; }
+.engine-dot.blue { background: #38bdf8; box-shadow: 0 0 6px #38bdf8; }
+
+.engine-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.mesh-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    color: var(--hud-cyan);
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px dashed rgba(0, 240, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.mesh-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--hud-cyan);
+    box-shadow: 0 0 8px var(--hud-cyan);
+    animation: meshPulseAnim 1.8s infinite;
+}
+
+@keyframes meshPulseAnim {
+    0% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.3); }
+    100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+/* ==========================================================================
+   DUAL ONBOARDING TABS & PANELS
+   ========================================================================== */
+.onboarding-tabs-container {
+    background: rgba(14, 20, 34, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.onboarding-tab-nav {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(8, 12, 22, 0.85);
+}
+
+.onboarding-nav-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.onboarding-nav-btn:hover {
+    color: var(--text-steel);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.onboarding-nav-btn.active {
+    color: var(--hud-cyan);
+    background: rgba(0, 240, 255, 0.06);
+    border-bottom: 2px solid var(--hud-cyan);
+}
+
+.onboarding-panel-body {
+    padding: 16px;
+}
+
+/* Panel 1: Sugerido por IA */
+.ai-prompt-box label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--hud-cyan);
+    margin-bottom: 8px;
+}
+
+.ai-input-cluster {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ai-quick-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.quick-pill-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-right: 4px;
+}
+
+.quick-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    color: var(--text-steel);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-pill:hover {
+    background: rgba(0, 240, 255, 0.12);
+    border-color: var(--hud-cyan);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Panel 2: Golden Questions */
+.golden-questions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.golden-questions-grid .full-span {
+    grid-column: 1 / -1;
+}
+
+.q-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--hud-cyan);
+    color: #030407;
+    font-size: 0.65rem;
+    font-weight: 800;
+    margin-right: 6px;
+}
+
+.hud-textarea {
+    resize: vertical;
+    min-height: 52px;
+    font-family: inherit;
+}
+

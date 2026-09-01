@@ -48,6 +48,181 @@ let isBotPaused = false;
 let isFreeAiMode = false;
 let isNativeAdminMode = false;
 let currentMenuLevel = 'main';
+let selectedAiEngine = 'ondevice'; // 'ondevice' | 'cloud'
+let activeOnboardingTab = 'ai'; // 'ai' | 'manual'
+
+// Perfiles Predefinidos para Demostración Rápida
+const quickExamplesData = {
+    ferreteria: {
+        desc: "Ferretería en Guadalajara con entrega local y cotizaciones",
+        bizName: "Ferretería El Tornillo MX",
+        faqs: "¿Tienen envíos a domicilio?, ¿Manejan precios de mayoreo?, ¿Expiden factura fiscal inmediata?",
+        catalog: "Cotización al instante según lista de materiales o catálogo digital",
+        hours: "Lun a Sáb 8:00 AM - 7:00 PM (Av. Hidalgo 120, Col. Centro)",
+        closing: "quote_payment",
+        role: "sales",
+        phone: "+52 33 1234 5678"
+    },
+    abarrotes: {
+        desc: "Abarrotera mayorista y menudeo con servicio a domicilio rápido",
+        bizName: "Abarrotes La Central",
+        faqs: "¿Cuál es el pedido mínimo para envío?, ¿Qué marcas de lácteos y granos manejan?, ¿Aceptan transferencia?",
+        catalog: "Lista de precios del día con ofertas por bulto y menudeo",
+        hours: "Lun a Dom 7:00 AM - 9:00 PM (Mercado de Abastos Local)",
+        closing: "order_delivery",
+        role: "sales",
+        phone: "+52 55 9876 5432"
+    },
+    plastico: {
+        desc: "Fábrica e inyección de plásticos industriales y envases B2B",
+        bizName: "Plásticos y Polímeros Industriales MX",
+        faqs: "¿Cuál es el millaje mínimo de producción?, ¿Cuentan con moldes personalizados?, ¿Tienen ficha técnica grado alimenticio?",
+        catalog: "Cotización personalizada bajo plano o especificación de gramaje",
+        hours: "Lun a Vie 8:30 AM - 6:00 PM (Parque Industrial Norte)",
+        closing: "b2b_advisor",
+        role: "support",
+        phone: "+52 81 4455 6677"
+    },
+    clinica: {
+        desc: "Clínica dental y spa médico con reservación de citas en línea",
+        bizName: "Clínica Dental & Estética Santa María",
+        faqs: "¿Qué costo tiene la valoración inicial?, ¿Aceptan seguros de gastos médicos?, ¿Dónde se ubican?",
+        catalog: "Paquetes de profilaxis, ortodoncia y tratamientos estéticos",
+        hours: "Lun a Sáb 9:00 AM - 8:00 PM (Torre Médica Piso 4)",
+        closing: "appointment",
+        role: "calendar",
+        phone: "+52 33 5566 7788"
+    },
+    abogados: {
+        desc: "Despacho jurídico corporativo, laboral y consultoría fiscal",
+        bizName: "Gómez & Asociados — Abogados Corporativos",
+        faqs: "¿Cómo se agenda la primera asesoría?, ¿Atienden controversias laborales y contratos?, ¿Manejan igualas mensuales?",
+        catalog: "Planes de asesoría mensual y honorarios por etapa procesal",
+        hours: "Lun a Vie 9:00 AM - 7:00 PM (Distrito Financiero)",
+        closing: "appointment",
+        role: "executive",
+        phone: "+52 55 3322 1100"
+    }
+};
+
+// Conmutar Pestaña de Onboarding (IA vs Manual)
+function switchOnboardingTab(tabKey) {
+    activeOnboardingTab = tabKey;
+    const btnAi = document.getElementById('tab-btn-ai');
+    const btnManual = document.getElementById('tab-btn-manual');
+    const panelAi = document.getElementById('panel-ai-suggested');
+    const panelManual = document.getElementById('panel-manual-config');
+
+    if (tabKey === 'ai') {
+        btnAi.classList.add('active');
+        btnManual.classList.remove('active');
+        panelAi.style.display = 'block';
+        panelManual.style.display = 'none';
+        appendTerminalLog("[Wizard] Panel 1 activado: Asistente Sugerido por IA.", "cyan");
+    } else {
+        btnManual.classList.add('active');
+        btnAi.classList.remove('active');
+        panelManual.style.display = 'block';
+        panelAi.style.display = 'none';
+        appendTerminalLog("[Wizard] Panel 2 activado: Personalización Manual (5 Preguntas de Oro).", "cyan");
+    }
+}
+
+// Conmutar Motor de Inferencia (On-Device vs Cloud)
+function switchAiEngine(mode) {
+    selectedAiEngine = mode;
+    const btnOnDevice = document.getElementById('btn-engine-ondevice');
+    const btnCloud = document.getElementById('btn-engine-cloud');
+
+    if (mode === 'ondevice') {
+        btnOnDevice.classList.add('active');
+        btnCloud.classList.remove('active');
+        appendTerminalLog("⚡ [Motor] Activado: On-Device Edge (Gemma / Gemini Nano). 100% Offline, $0 costo, latencia <100ms.", "green");
+    } else {
+        btnCloud.classList.add('active');
+        btnOnDevice.classList.remove('active');
+        appendTerminalLog("🌐 [Motor] Activado: Gemini Cloud (Flash 3.5). Procesamiento multimodal y catálogos masivos.", "blue");
+    }
+}
+
+// Aplicar ejemplo rápido
+function applyQuickExample(key) {
+    const data = quickExamplesData[key];
+    if (!data) return;
+
+    document.getElementById('ai-quick-desc').value = data.desc;
+    document.getElementById('gq-biz-name').value = data.bizName;
+    document.getElementById('gq-faqs').value = data.faqs;
+    document.getElementById('gq-catalog-type').value = data.catalog;
+    document.getElementById('gq-hours-location').value = data.hours;
+    document.getElementById('gq-closing-goal').value = data.closing;
+    
+    document.getElementById('biz-name').value = data.bizName;
+    document.getElementById('biz-phone').value = data.phone;
+    
+    const roleSelect = document.getElementById('agent-role-select');
+    if (roleSelect) roleSelect.value = data.role;
+
+    updateSelectedRolePreview();
+    appendTerminalLog(`[Perfil] Cargado giro: "${data.bizName}". 5 preguntas de oro actualizadas.`, "cyan");
+}
+
+// Auto-Compilar Asistente desde 1 frase
+function generateAiSuggestedConfig() {
+    const prompt = (document.getElementById('ai-quick-desc').value || "").toLowerCase();
+    let matchedKey = 'ferreteria';
+
+    if (prompt.includes('abarrot') || prompt.includes('tiend') || prompt.includes('comida') || prompt.includes('super')) {
+        matchedKey = 'abarrotes';
+    } else if (prompt.includes('plastic') || prompt.includes('industr') || prompt.includes('fabric') || prompt.includes('mayoreo')) {
+        matchedKey = 'plastico';
+    } else if (prompt.includes('clinic') || prompt.includes('dent') || prompt.includes('medic') || prompt.includes('spa') || prompt.includes('salud')) {
+        matchedKey = 'clinica';
+    } else if (prompt.includes('abog') || prompt.includes('legal') || prompt.includes('fiscal') || prompt.includes('asesor') || prompt.includes('consult')) {
+        matchedKey = 'abogados';
+    }
+
+    applyQuickExample(matchedKey);
+    appendTerminalLog(`✓ [Auto-Compiler] SOUL.md y árbol de decisiones generado para: "${document.getElementById('biz-name').value}".`, "green");
+}
+
+// Simular Mensaje de Audio (Verificar Bloqueo y Redirección Estricta)
+function simulateAudioMessage() {
+    const chatBody = document.getElementById('chat-messages');
+    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    // Burbuja de nota de voz simulada
+    const audioBubble = document.createElement('div');
+    audioBubble.className = 'wa-bubble-msg outgoing-msg';
+    audioBubble.innerHTML = `<p>🎙️ <em>[Nota de voz: 0:14s]</em></p><span class="wa-time-stamp">${now}</span>`;
+    chatBody.appendChild(audioBubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    setTimeout(() => {
+        const botBubble = document.createElement('div');
+        botBubble.className = 'wa-bubble-msg incoming-msg';
+        botBubble.innerHTML = `<p>🎙️ <strong>Nota de voz recibida:</strong><br><br>Por el momento MexaBot opera exclusivamente por texto para brindarte una atención rápida y estructurada.<br><br>Por favor escribe tu consulta o responde con un número del menú principal (<strong>1 al 5</strong>). Si deseas atención personalizada por llamada/audio, escribe <strong>0</strong> para transferirte con un asesor humano.</p><span class="wa-time-stamp">${now}</span>`;
+        chatBody.appendChild(botBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        appendTerminalLog("[Anti-Bypass] Nota de voz detectada ➔ Redirección determinista aplicada sin alucinación libre.", "cyan");
+    }, selectedAiEngine === 'ondevice' ? 120 : 600);
+}
+
+// Simular Sticker o Mensaje Vacío (Regla 2.6: Silencio Total / Ignorar)
+function simulateStickerMessage() {
+    const chatBody = document.getElementById('chat-messages');
+    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    const stickerBubble = document.createElement('div');
+    stickerBubble.className = 'wa-bubble-msg outgoing-msg';
+    stickerBubble.innerHTML = `<p>🖼️ <em>[Sticker / Imagen sin texto recibido]</em></p><span class="wa-time-stamp">${now}</span>`;
+    chatBody.appendChild(stickerBubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    setTimeout(() => {
+        appendTerminalLog("[Filtro Multimedia] 🖼️ Sticker / Video recibido ➔ Regla 2.6: SILENCIO TOTAL. Cero respuestas automáticas.", "dim");
+    }, 300);
+}
 
 // Helper: Scroll suave con foco
 function scrollToSection(id) {
@@ -322,15 +497,20 @@ async function sendChatMessage() {
     chatBody.appendChild(typingBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
     
-    // Inferencia contextual con delay humano
-    await wait(800);
+    // Inferencia contextual con delay humano / On-Device
+    const inferenceDelay = selectedAiEngine === 'ondevice' ? 180 : 750;
+    await wait(inferenceDelay);
     if (typingBubble.parentNode) {
         chatBody.removeChild(typingBubble);
     }
     
     let replyText = "";
+    const bizName = document.getElementById('biz-name')?.value || "Nuestro Negocio";
+    const faqsVal = document.getElementById('gq-faqs')?.value || "";
+    const hoursVal = document.getElementById('gq-hours-location')?.value || "Lun a Sáb 8:00 AM - 7:00 PM";
+    const catalogVal = document.getElementById('gq-catalog-type')?.value || "Catálogo digital disponible";
     
-    // Ruteo de opciones numeradas
+    // Ruteo de opciones numeradas y FAQs contextuales del negocio
     if (msg === "0" || lower.includes("humano") || lower.includes("asesor") || lower.includes("pausar")) {
         // En el sandbox permitimos probar el Modo Admin Nativo
         isNativeAdminMode = true;
@@ -362,10 +542,17 @@ async function sendChatMessage() {
         replyText = mexabotMasterIdentity.options["1_4"];
     } else if (currentMenuLevel === 'activacion' && msg === "1") {
         replyText = mexabotMasterIdentity.options["4_1"];
+    } else if (lower.includes("domicilio") || lower.includes("envio") || lower.includes("envío") || lower.includes("entrega")) {
+        replyText = `🚚 <strong>Servicio y Entregas en ${escapeHtml(bizName)}:</strong><br><br>Sí, contamos con cobertura y envíos directos. ${escapeHtml(faqsVal.split('?')[0] || '')}?<br><br>📍 <strong>Horario y Base:</strong> ${escapeHtml(hoursVal)}.<br><br>1️⃣ Ver Catálogo / Cotizar<br>0️⃣ Hablar con un asesor`;
+    } else if (lower.includes("horario") || lower.includes("ubicacion") || lower.includes("ubicación") || lower.includes("donde")) {
+        replyText = `📍 <strong>Ubicación y Horarios de Atención:</strong><br><br>${escapeHtml(hoursVal)}.<br><br>¿Deseas que te coticemos algún producto o servicio? Responde <strong>1</strong> para ver opciones o <strong>0</strong> para un asesor.`;
+    } else if (lower.includes("precio") || lower.includes("costo") || lower.includes("cotiz") || lower.includes("catalogo") || lower.includes("catálogo")) {
+        replyText = `📋 <strong>Precios y Catálogo de ${escapeHtml(bizName)}:</strong><br><br>${escapeHtml(catalogVal)}.<br><br>Escribe tu lista de productos o requisitos y te generamos tu presupuesto al momento.<br><br>0️⃣ Hablar con un asesor humano`;
     } else if (isFreeAiMode) {
-        replyText = `🧠 <strong>Respuesta IA (MexaBot Live Core):</strong><br><br>Respecto a <em>"${escapeHtml(msg)}"</em>: Nuestra arquitectura permite automatizar completamente este proceso sin fricción técnica. El asistente responderá de forma determinista y en tiempo real.<br><br>1️⃣ Ver Asistentes Disponibles<br>2️⃣ Ver Métodos de Instalación<br>3️⃣ Ver Precios y Paquetes<br>9️⃣ Volver al Menú Principal`;
+        const engineTag = selectedAiEngine === 'ondevice' ? '⚡ Gemma/Nano On-Device (0ms cloud)' : '🌐 Gemini Flash';
+        replyText = `🧠 <strong>Respuesta IA [${engineTag}]:</strong><br><br>Respecto a <em>"${escapeHtml(msg)}"</em> en <strong>${escapeHtml(bizName)}</strong>: Nuestro asistente procesa tu consulta con exactitud y sin depender de servidores externos.<br><br>1️⃣ Ver Catálogo y Opciones<br>9️⃣ Volver al Menú Principal<br>0️⃣ Hablar con un asesor`;
     } else {
-        replyText = `He recibido tu mensaje. Por favor responde con el número de la opción:<br><br>1️⃣ Conocer Asistentes Disponibles<br>2️⃣ Métodos de Instalación<br>3️⃣ Precios y Paquetes<br>4️⃣ Proceso de Activación<br>5️⃣ Probar la IA en vivo<br>9️⃣ Volver al Menú<br>0️⃣ Pausar / Asesor Humano`;
+        replyText = `¡Hola! En <strong>${escapeHtml(bizName)}</strong> estamos para servirte. Por favor responde con el número de tu consulta:<br><br>1️⃣ Conocer Productos / Servicios<br>2️⃣ Horarios y Ubicación<br>3️⃣ Cotización al Momento<br>4️⃣ Métodos de Envío y Pago<br>5️⃣ Probar la IA en vivo<br>0️⃣ Hablar con un asesor humano`;
     }
     
     const botBubble = document.createElement('div');

@@ -124,8 +124,17 @@ class DesktopEngine {
 - Empresa: ${config.bizName || 'Empresa Personal'}
 - Teléfono de Operación: ${config.phone || '+52 33 0000 0000'}
 - Canal: ${config.channel || 'WhatsApp'}
+- Motor de Inferencia: ${config.aiEngine || 'On-Device Edge (Gemma / Gemini Nano)'}
 - Política: Inbound-Only (Estricto Anti-Spam)
-- Menú: 5 Opciones Estructuradas + 0 Pausa
+- Política de Audio / Voz: Desactivado (Redirigir a menú de texto o transferir con 0)
+- Política de Multimedia Suelta: Reenviar Menú Principal
+- Matriz de 5 Preguntas de Oro:
+  1. Nombre y Giro: ${config.bizName || 'Comercio General'}
+  2. FAQs Clave: ${config.faqs || 'Envíos, facturación y catálogo'}
+  3. Precios y Cotizaciones: ${config.catalog || 'Cotización inmediata bajo pedido'}
+  4. Horarios y Ubicación: ${config.hours || 'Horario comercial estándar'}
+  5. Acción de Cierre: ${config.closing || 'Generar cotización y link de pago'}
+- Menú Comercial: 5 Opciones Estructuradas + 0 Pausa / Modo Copiloto
 `;
     }
 
