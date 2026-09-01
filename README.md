@@ -120,4 +120,4 @@ Instala el archivo APK disponible en `releases/android/` para monitorear el esta
 
 ---
 
-© 2026 MEXABOT. Ingeniería, arquitectura y desarrollo por **Octavio García**. Todos los derechos reservados.
+© 2026 MEXABOT. Ingeniería, arquitectura y desarrollo por **Dix Lqbs Std**. Todos los derechos reservados.
